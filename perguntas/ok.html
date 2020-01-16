@@ -149,7 +149,19 @@ function agora() {
 document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
 	
 function myTimer2() {
- $('#result').load(url);
+
+
+$.ajax({
+    url: url,
+    method: 'GET',
+    processData: false,
+    success: function(data){
+     document.getElementById('result').innerHTML = 'Aguarde...';
+    }
+});
+
+
+
 }
 
 function myTimer() {

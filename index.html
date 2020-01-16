@@ -52,20 +52,7 @@ input[type=submit]:hover {
     <title>Autoescola Caleffi</title>
 <script src="jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var value = window.localStorage.getItem("cpf");
-        document.getElementById('cpf').value = value;
-    }
-
-    </script>
+   
   </head>
   <body>
 <div id='app2' align='center'><div id='app'><center>
@@ -87,12 +74,15 @@ input[type=submit]:hover {
 
 <script>
 
+  var value1 = localStorage.getItem("cpf");
+  document.getElementById('cpf').value = value1;
+
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
 
 var n     = cpf1.length;
 if (n == 11) {
-window.localStorage.setItem("cpf", cpf1);
+localStorage.setItem("cpf", cpf1);
 window.location.href = "instrutor.html"; } else {
 document.getElementById("erro").innerHTML = "<small>CPF INVÁLIDO!</small>";
 
