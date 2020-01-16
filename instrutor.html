@@ -48,23 +48,7 @@ input[type=submit]:hover {
     <title>Autoescola Caleffi</title>
 <script src="jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var value = localStorage.getItem("instrutor");
-        document.getElementById('cpf').value = value;
-
-      
-        
-    }
-
-    </script>
+    
   </head>
   <body>
 <div id='app2' align='center'><div id='app'><center>
@@ -99,6 +83,9 @@ document.write(veiculo); }
   </body>
 
 <script>
+
+     var value = localStorage.getItem("instrutor");
+     document.getElementById('cpf').value = value;
 
 function sessionVariable() {
 var instrutor1 = document.getElementById("cpf").value;

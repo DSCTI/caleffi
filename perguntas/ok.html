@@ -53,22 +53,7 @@ input:hover {
     <title>Autoescola Caleffi</title>
 
     <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-     var aula = localStorage.getItem("aula");
-     document.getElementById("aula").innerHTML = aula;
-  
-
-    }
-
-    </script>
+ 
   </head>
   <body>
 
@@ -92,6 +77,9 @@ input:hover {
   </body>
 
 <script>
+
+  var aula = localStorage.getItem("aula");
+  document.getElementById("aula").innerHTML = aula;
 
 var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
