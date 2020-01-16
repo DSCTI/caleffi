@@ -78,12 +78,12 @@ input:hover {
 <br>
 <br><br>
 <img src="comecar.svg" width='80'><br>
-<span class='pergunta'><br><big><font color=white><b><span id='aula'></span> CONCLUÍDA!</b></big></font></a><br>
+<span class='pergunta'><br><big><font color=white><b><span id='aula'></span> CONCLUÃDA!</b></big></font></a><br>
 <div class='quadro'>
 
 <div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir agora</big></big></div><div id='result'></div>
 <div class="button2" id='button2' onclick="depois();" /><font color='white'><big><big>Depois</big></big></div>
-<p class='obs' id='button3'  ><font color=white><small>Não esqueça de transmitir a aula quando estiver conectado!</p></font>
+<p class='obs' id='button3'  ><font color=white><small>NÃ£o esqueÃ§a de transmitir a aula quando estiver conectado!</p></font>
 
 </div>
 
@@ -103,8 +103,8 @@ var data = new Date();
 var dia     = data.getDate();           // 1-31
 var dia_sem = data.getDay();            // 0-6 (zero=domingo)
 var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-var ano2    = data.getYear();           // 2 dígitos
-var ano4    = data.getFullYear();       // 4 dígitos
+var ano2    = data.getYear();           // 2 dÃ­gitos
+var ano4    = data.getFullYear();       // 4 dÃ­gitos
 var hora    = data.getHours();          // 0-23
 var min     = data.getMinutes();        // 0-59
 var seg     = data.getSeconds();        // 0-59
@@ -133,9 +133,9 @@ aula = aula.replace(' ','');
 
 var veiculo = localStorage.getItem("veiculo"); 
 var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + veiculo + "-" + nocoes;
-resultado = resultado.replace('ª','');
-resultado = resultado.replace('º','');
-resultado = resultado.replace('Á','A');
+resultado = resultado.replace('Âª','');
+resultado = resultado.replace('Âº','');
+resultado = resultado.replace('Ã','A');
 resultado = resultado.replace(' ','aas');
 
 var res = aluno + "-" + aula + "-" + "pendente";
@@ -146,7 +146,7 @@ var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
 function agora() {
 
-document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
+document.getElementById('result').innerHTML = '<font color=white>Checando conexÃ£o...</font>';
 	
 function myTimer2() {
  $('#result').load(url);

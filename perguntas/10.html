@@ -97,7 +97,7 @@ document.getElementById("aula").innerHTML = aula;
 
 <div class='quadro'>
 <span class='pergunta'>
-<input type='text' placeholder='Observações' size='18' id='text'>
+<input type='text' placeholder='ObservaÃ§Ãµes' size='18' id='text'>
 
 <div class="button1" value="" onclick="sessionVariable1();" /><big> Ok </big></div></div><br>
 
@@ -120,22 +120,22 @@ document.getElementById("aluno").innerHTML = aluno;
 var instrutor = window.localStorage.getItem("instrutor");
 
 
-// Obtém a data/hora atual
+// ObtÃ©m a data/hora atual
 var data = new Date();
 
-// Guarda cada pedaço em uma variável
+// Guarda cada pedaÃ§o em uma variÃ¡vel
 var dia     = data.getDate();           // 1-31
 var dia_sem = data.getDay();            // 0-6 (zero=domingo)
 var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-var ano2    = data.getYear();           // 2 dígitos
-var ano4    = data.getFullYear();       // 4 dígitos
+var ano2    = data.getYear();           // 2 dÃ­gitos
+var ano4    = data.getFullYear();       // 4 dÃ­gitos
 var hora    = data.getHours();          // 0-23
 var min     = data.getMinutes();        // 0-59
 var seg     = data.getSeconds();        // 0-59
 var mseg    = data.getMilliseconds();   // 0-999
 var tz      = data.getTimezoneOffset(); // em minutos
 
-// Formata a data e a hora (note o mês + 1)
+// Formata a data e a hora (note o mÃªs + 1)
 var data = dia + '/' + (mes+1) + '/' + ano4;
 var hora = hora + ':' + min + ':' + seg;
 

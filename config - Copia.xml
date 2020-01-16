@@ -4,7 +4,7 @@
 
 <name>Instrutores</name>
 
-<preference name="splash-screen-duration" value="0" />
+<preference name="splash-screen-duration" value="1300" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
@@ -25,10 +25,14 @@
 <icon src="icons/android/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
 <icon src="icons/android/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
+<gap:splash src="splash/android/drawable-xhdpi/xx.png" gap:platform="android" gap:density="xhdpi" />
+<gap:splash src="splash/android/drawable-mdpi/xx.png" gap:platform="android" gap:density="mdpi" />
+<gap:splash src="splash/android/drawable-hdpi/xx.png" gap:platform="android" gap:density="hdpi" />
+<gap:splash src="splash/android/drawable-xxhdpi/xx.png" gap:platform="android" gap:density="xxhdpi" />
+<gap:splash src="splash/android/drawable-xxxhdpi/xx.png" gap:platform="android" gap:density="xxxhdpi" />
 
 
 
-<access origin="*" launch-external="yes" />
 
 <access origin="*" />
 

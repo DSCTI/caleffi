@@ -97,23 +97,23 @@ temp = temp.replace(' ','');
 var aluno = temp.split("-", 1);
 var aula = temp.split("-", 2);
 var aula = aula[1];
-var aula1 = aula.split("ª", 1);
+var aula1 = aula.split("Âª", 1);
 
-document.getElementById("aula").innerHTML = aula1 + "ª AULA";
+document.getElementById("aula").innerHTML = aula1 + "Âª AULA";
 document.getElementById("aluno").innerHTML = aluno;
 
 var res = aluno + "-" + aula + "-" + "pendente";
 
 var resultado = window.localStorage.getItem(res);
-resultado = resultado.replace('ª','');
-resultado = resultado.replace('º','');
-resultado = resultado.replace('Á','A');
+resultado = resultado.replace('Âª','');
+resultado = resultado.replace('Âº','');
+resultado = resultado.replace('Ã','A');
 
 var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
 function agora() {
 
-document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
+document.getElementById('result').innerHTML = '<font color=white>Checando conexÃ£o...</font>';
 	
 function myTimer2() {
  $('#result').load(url);
