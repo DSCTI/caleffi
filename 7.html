@@ -90,8 +90,6 @@ font-size: 0.6em;
 </style>
 
     <title>Autoescola Caleffi</title>
-<script src="jquery.min.js"></script>
-    <script class="text/javascript" charset="utf-8" src="cordova.js"></script>
 
   </head>
   <body>
@@ -120,49 +118,51 @@ font-size: 0.6em;
 
 <script>
 
-var value = localStorage.getItem("instrutor");
-        document.getElementById('cpf').value = value;
-
-var questao = "7";
-
-var aula = localStorage.getItem("aula");
-document.getElementById("aula").innerHTML = aula;
-
-var aluno = localStorage.getItem("cpf");
-document.getElementById("aluno").innerHTML = aluno;
-
-var instrutor = localStorage.getItem("instrutor");
-
-
 function sessionVariable1() {
+var questao = "7";
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
 var id = "1";
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "8.html";
 }
 
 function sessionVariable4() {
+var questao = "7";
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
 var id = "2";
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "8.html";
 }
 
 function sessionVariable2() {
+var questao = "7";
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
 var id = "3";
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "8.html";
 }
 
 function sessionVariable5() {
+var questao = "7";
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
 var id = "4";
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "8.html";
 }
 
 function sessionVariable3() {
+var questao = "7";
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
 var id = "0";
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "8.html";
 }
+
 
 </script>
 
