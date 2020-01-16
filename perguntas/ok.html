@@ -139,14 +139,22 @@ document.getElementById('result').innerHTML = '<font color=white>Checando conex√
 function myTimer2() {
 
 
-$.ajax({
-    url: url,
-    method: 'GET',
-    processData: false,
-    success: function(data){
-     document.getElementById('result').innerHTML = 'Aguarde...';
-    }
-});
+
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+  $.ajax(settings).done(function (response) {
+ 
+    document.getElementById('result').innerHTML = 'Aguarde...';
+
+  });
 
 
 
@@ -155,7 +163,6 @@ $.ajax({
 function myTimer() {
 var x = document.getElementById("result").textContent;
    if (x.includes("Aguarde")) {
-localStorage.removeItem(res);
 localStorage.removeItem(res);
 location.href = "sucesso.html";
 
