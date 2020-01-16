@@ -45,9 +45,6 @@
 <icon src="icons/ios/120.png" gap:platform="ios" width="120" height="120" />
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152" />
 
-<gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.file" />
-
 <access origin="*" />
 
 </widget>
