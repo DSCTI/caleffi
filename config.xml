@@ -36,12 +36,5 @@
 <access origin="https://grupolena.com.br"/>
 <access origin="https://grupolena.com.br/*"/>
 
-<plugins>
- 
-    
-    
-    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
-</plugins>
-
 </widget>
 
