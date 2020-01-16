@@ -65,26 +65,7 @@ font-size: 0.6em;
     <title>Autoescola Caleffi</title>
 <script src="../jquery.min.js"></script>
     <script class="text/javascript" charset="utf-8" src="../cordova.js"></script>
-    <script class="text/javascript" charset="utf-8">
-
-
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var value = window.localStorage.getItem("instrutor");
-        document.getElementById('cpf').value = value;
-    }
-
-
-var aula = window.localStorage.getItem("aula");
-document.getElementById("aula").innerHTML = aula;
-
-    </script>
+    
   </head>
   <body>
 
@@ -108,7 +89,10 @@ document.getElementById("aula").innerHTML = aula;
   </body>
 
 <script>
-
+var value = window.localStorage.getItem("instrutor");
+document.getElementById('cpf').value = value;
+var aula = window.localStorage.getItem("aula");
+document.getElementById("aula").innerHTML = aula;
 var questao = "10";
 
 var aula = window.localStorage.getItem("aula");

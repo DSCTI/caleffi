@@ -93,24 +93,7 @@ font-size: 0.6em;
     <title>Autoescola Caleffi</title>
 <script src="../jquery.min.js"></script>
     <script class="text/javascript" charset="utf-8" src="../cordova.js"></script>
-    <script class="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var value = window.localStorage.getItem("instrutor");
-        document.getElementById('cpf').value = value;
-
-
-
-
-    }
-
-    </script>
+    
   </head>
   <body>
 
@@ -138,6 +121,9 @@ font-size: 0.6em;
   </body>
 
 <script>
+
+var value = window.localStorage.getItem("instrutor");
+        document.getElementById('cpf').value = value;
 
 var cpf = window.localStorage.getItem("cpf");
 var nocoes = cpf + "-" + "nocoes";

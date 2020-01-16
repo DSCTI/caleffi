@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><script src="../jquery.min.js"></script>
+<html>
   <head><link rel="stylesheet" type="text/css" href="../fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
@@ -57,26 +57,8 @@ input:hover {
 
 
 
-    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-     var aula = window.localStorage.getItem("aula");
-     document.getElementById("aula").innerHTML = aula;
-     var value = window.localStorage.getItem("instrutor");
-     document.getElementById('cpf').value = value;
-
-
-
-    }
-
-    </script>
+  
   </head>
   <body>
 
