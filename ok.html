@@ -52,7 +52,7 @@ font-size: 0.6em;
 
     <title>Autoescola Caleffi</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  
  
   </head>
   <body>
@@ -132,18 +132,18 @@ var res = aluno + "-" + aula + "-" + "pendente";
 res = res.replace(' ','');
 localStorage.setItem(res, resultado);
 
-alert (resultado);
 
-var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
+
+
 
 function agora() {
-
+alert (resultado);
 document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
 	
 function myTimer2() {
 
 
-
+var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
   var settings = {
     "async": true,
