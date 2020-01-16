@@ -19,11 +19,11 @@
 <preference name="android-minSdkVersion" value="7" />
 <preference name="android-installLocation" value="auto" />
 
-<icon src="icons/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
-<icon src="icons/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
-<icon src="icons/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
-<icon src="iconsmipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
-<icon src="iconsmipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
+<icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
+<icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
+<icon src="icons/android/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
+<icon src="icons/android/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
+<icon src="icons/android/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
 <gap:splash src="splash/android/drawable-xhdpi/xx.png" gap:platform="android" gap:density="xhdpi" />
 <gap:splash src="splash/android/drawable-mdpi/xx.png" gap:platform="android" gap:density="mdpi" />
