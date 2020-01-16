@@ -140,8 +140,6 @@ function agora() {
 alert (resultado);
 document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
 	
-function myTimer2() {
-
 
 var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
@@ -157,8 +155,22 @@ var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
   $.ajax(settings).done(function (response) {
  
     document.getElementById('result').innerHTML = 'Aguarde...';
-
+location.href = "sucesso.html";
   });
+
+
+
+
+
+
+
+
+
+
+
+function myTimer2() {
+
+
 
 
 
