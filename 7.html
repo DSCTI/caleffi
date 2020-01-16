@@ -94,9 +94,9 @@ font-size: 0.6em;
   </head>
   <body>
 
-<div class='quadro1'><SMALL></SMALL> <span id='aula'></span>
+<div class='quadro1'><SMALL> <span id='aula'></span>
 </script> <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
-<div id='app2' align='center'><div id='app'><center>
+<div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
 
 <img src="faixa.svg" width='80'>
@@ -117,7 +117,10 @@ font-size: 0.6em;
   </body>
 
 <script>
-
+var value1 = localStorage.getItem("cpf"); 
+document.getElementById("aluno").innerHTML= value1; 
+var value1 = localStorage.getItem("aula"); 
+document.getElementById("aula").innerHTML= value1; 
 function sessionVariable1() {
 var questao = "7";
 var aula = localStorage.getItem("aula");
