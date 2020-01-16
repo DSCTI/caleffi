@@ -116,20 +116,20 @@ font-size: 0.6em;
   </body>
 
 <script>
-var aluno = window.localStorage.getItem("cpf");
+var aluno = localStorage.getItem("cpf");
 
 function sessionVariable1() {
 var id = "1";
 var id2 = aluno + "-nocoes";
-window.localStorage.setItem(id2, id);
-window.location.href = "1.html";
+localStorage.setItem(id2, id);
+location.href = "1.html";
 }
 
 function sessionVariable2() {
 var id = "0";
 var id2 = aluno + "-nocoes";
-window.localStorage.setItem(id2, id);
-window.location.href = "1.html";
+localStorage.setItem(id2, id);
+location.href = "1.html";
 }
 
 </script>

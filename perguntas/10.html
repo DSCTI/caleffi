@@ -89,19 +89,19 @@ font-size: 0.6em;
   </body>
 
 <script>
-var value = window.localStorage.getItem("instrutor");
+var value = localStorage.getItem("instrutor");
 document.getElementById('cpf').value = value;
-var aula = window.localStorage.getItem("aula");
+var aula = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML = aula;
 var questao = "10";
 
-var aula = window.localStorage.getItem("aula");
+var aula = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML = aula;
 
-var aluno = window.localStorage.getItem("cpf");
+var aluno = localStorage.getItem("cpf");
 document.getElementById("aluno").innerHTML = aluno;
 
-var instrutor = window.localStorage.getItem("instrutor");
+var instrutor = localStorage.getItem("instrutor");
 
 
 // Obtém a data/hora atual
@@ -127,9 +127,9 @@ function sessionVariable1() {
 var text = document.getElementById("text").value;
 text = text.replace(' ','aas');
 
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, text);
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, text);
 
-window.location.href = "ok.html";
+location.href = "ok.html";
 
 }
 

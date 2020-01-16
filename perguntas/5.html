@@ -120,18 +120,18 @@ font-size: 0.6em;
 
 <script>
 
- var value = window.localStorage.getItem("instrutor");
+ var value = localStorage.getItem("instrutor");
         document.getElementById('cpf').value = value;
 
 var questao = "5";
 
-var aula = window.localStorage.getItem("aula");
+var aula = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML = aula;
 
-var aluno = window.localStorage.getItem("cpf");
+var aluno = localStorage.getItem("cpf");
 document.getElementById("aluno").innerHTML = aluno;
 
-var instrutor = window.localStorage.getItem("instrutor");
+var instrutor = localStorage.getItem("instrutor");
 
 
 // Obtém a data/hora atual
@@ -155,32 +155,32 @@ var hora = hora + ':' + min + ':' + seg;
 
 function sessionVariable1() {
 var id = "1";
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
-window.location.href = "6.html";
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
+location.href = "6.html";
 }
 
 function sessionVariable4() {
 var id = "2";
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
-window.location.href = "6.html";
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
+location.href = "6.html";
 }
 
 function sessionVariable2() {
 var id = "3";
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
-window.location.href = "6.html";
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
+location.href = "6.html";
 }
 
 function sessionVariable5() {
 var id = "4";
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
-window.location.href = "6.html";
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
+location.href = "6.html";
 }
 
 function sessionVariable3() {
 var id = "0";
-var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
-window.location.href = "6.html";
+var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
+location.href = "6.html";
 }
 
 </script>

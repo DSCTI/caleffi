@@ -80,7 +80,7 @@ font-size: 0.6em;
 
 <script>
 
-var temp = window.localStorage.getItem("temp");
+var temp = localStorage.getItem("temp");
 temp = temp.replace(' ','');
 var aluno = temp.split("-", 1);
 var aula = temp.split("-", 2);
@@ -92,7 +92,7 @@ document.getElementById("aluno").innerHTML = aluno;
 
 var res = aluno + "-" + aula + "-" + "pendente";
 
-var resultado = window.localStorage.getItem(res);
+var resultado = localStorage.getItem(res);
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
@@ -118,7 +118,7 @@ function myTimer() {
 var x = document.getElementById("result").textContent;
    if (x.includes("Aguarde")) {
 localStorage.removeItem(res);
-window.location.href = "sucesso2.html";
+location.href = "sucesso2.html";
 
 } 
 }
