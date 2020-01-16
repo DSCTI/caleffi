@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<script src="../jquery.min.js">
+</script>
+  <head><link rel="stylesheet" type="text/css" href="../fonts/style.css"/>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*{ font-family:Poppins Regular !important; }
+#aula  {margin-right:1px; font-weight:600; font-size: 1em;}
+#aluno {margin-right:1px; font-weight:600; font-size: 1em;}
+#questao {margin-right:1px; font-weight:600; font-size: 1em;}
+
+body { margin:0px;  background-color:#006996; }
+#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+
+.obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
+
+.button2 {
+ width: 80%;  
+  background-color: GRAY;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+
+#result { color:white; font-size:0.8em; padding:5px;}
+.button1 {
+ width: 80%;  
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+input:hover {
+  background-color: #45a049;
+}
+
+.quadro {padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+
+    }
+
+    </script>
+  </head>
+  <body>
+
+
+
+<div id='app2' align='center'><div id='app'><center>
+<br>
+<br><br>
+<img src="../telegrama.svg" width='80'><br>
+<span class='pergunta'><br><big><font color=white><b><span id='aluno'></span> - <span id='aula'></span></b></big></font></a><br>
+<div class='quadro'>
+
+<div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir!</big></big></div><div id='result'></div>
+
+<p class='obs' id='button3'  ><font color=white><small></p></font>
+
+</div>
+
+<a href='../index.html'><img src='../logo.svg' width='120'></a>
+</div></div>
+  </body>
+
+<script>
+
+var temp = window.localStorage.getItem("temp");
+temp = temp.replace(' ','');
+var aluno = temp.split("-", 1);
+var aula = temp.split("-", 2);
+var aula = aula[1];
+var aula1 = aula.split("ª", 1);
+
+document.getElementById("aula").innerHTML = aula1 + "ª AULA";
+document.getElementById("aluno").innerHTML = aluno;
+
+var res = aluno + "-" + aula + "-" + "pendente";
+
+var resultado = window.localStorage.getItem(res);
+resultado = resultado.replace('ª','');
+resultado = resultado.replace('º','');
+resultado = resultado.replace('Á','A');
+
+var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
+
+function agora() {
+
+document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
+	
+function myTimer2() {
+ $('#result').load(url);
+}
+
+function myTimer() {
+var x = document.getElementById("result").textContent;
+   if (x.includes("Aguarde")) {
+localStorage.removeItem(res);
+window.location.href = "sucesso2.html";
+
+} 
+}
+
+var myVar = setInterval(myTimer, 2000);
+var myVar = setInterval(myTimer2, 2000);
+
+}
+
+</script>
+</html>
+

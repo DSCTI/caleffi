@@ -1,0 +1,198 @@
+<!DOCclass html>
+<html>
+  <head><link rel="stylesheet" type="text/css" href="../fonts/style.css"/>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>.pergunta {margin-top:12px; margin-bottom:25px;}
+*{ font-family:Poppins Regular !important; }
+#aula  {margin-right:9px; font-weight:600; font-size: 1em;}
+#aluno {margin-right:20px; font-weight:600; font-size: 1em;}
+#questao {margin-right:5px; font-weight:600; font-size: 1em;}
+
+body { margin:0px;  background-color:#006996; }
+#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+
+.button4{
+ width: 80%;  
+  background-color: #c2991d;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button5{
+ width: 80%;  
+  background-color: #0087c1;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
+  opacity:0.8;
+}
+
+.button3{
+ width: 80%;  
+  background-color: #969696;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button2{
+ width: 80%;  
+  background-color: #ff4343;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button1{
+ width: 80%;  
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+.quadro {padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+<script src="../jquery.min.js"></script>
+    <script class="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script class="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var value = window.localStorage.getItem("instrutor");
+        document.getElementById('cpf').value = value;
+    }
+
+    </script>
+  </head>
+  <body>
+
+<div class='quadro1'><SMALL></SMALL> <span id='aula'></span>
+</script> <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
+<div id='app2' align='center'><div id='app'><center>
+<br>
+
+<img src="baliza.svg" width='80'>
+
+<div class='quadro'>
+<div class='pergunta'>Baliza</div>
+
+<div class="button1" value="" onclick="sessionVariable1();" />BOM</div>
+<div class="button4" value="" onclick="sessionVariable4();" />REGULAR</div>
+<div class="button2" value="" onclick="sessionVariable2();" />INSATISFATÓRIO</div>
+<div class="button5" value="" onclick="sessionVariable5();" />APTO</div>
+<div class="button3" value="" onclick="sessionVariable3();" />NÃO AVALIADO</div>
+
+</div>
+<br><br>
+<a href='../index.html'><img src='../logo.svg' width='120'></a>
+</div></div>
+  </body>
+
+<script>
+
+var questao = "5";
+
+var aula = window.localStorage.getItem("aula");
+document.getElementById("aula").innerHTML = aula;
+
+var aluno = window.localStorage.getItem("cpf");
+document.getElementById("aluno").innerHTML = aluno;
+
+var instrutor = window.localStorage.getItem("instrutor");
+
+
+// Obtém a data/hora atual
+var data = new Date();
+
+// Guarda cada pedaço em uma variável
+var dia     = data.getDate();           // 1-31
+var dia_sem = data.getDay();            // 0-6 (zero=domingo)
+var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+var ano2    = data.getYear();           // 2 dígitos
+var ano4    = data.getFullYear();       // 4 dígitos
+var hora    = data.getHours();          // 0-23
+var min     = data.getMinutes();        // 0-59
+var seg     = data.getSeconds();        // 0-59
+var mseg    = data.getMilliseconds();   // 0-999
+var tz      = data.getTimezoneOffset(); // em minutos
+
+// Formata a data e a hora (note o mês + 1)
+var data = dia + '/' + (mes+1) + '/' + ano4;
+var hora = hora + ':' + min + ':' + seg;
+
+function sessionVariable1() {
+var id = "1";
+var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
+window.location.href = "6.html";
+}
+
+function sessionVariable4() {
+var id = "2";
+var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
+window.location.href = "6.html";
+}
+
+function sessionVariable2() {
+var id = "3";
+var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
+window.location.href = "6.html";
+}
+
+function sessionVariable5() {
+var id = "4";
+var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
+window.location.href = "6.html";
+}
+
+function sessionVariable3() {
+var id = "0";
+var id2 = aluno + "-" + aula  + "-" + questao; window.localStorage.setItem(id2, id);
+window.location.href = "6.html";
+}
+
+</script>
+
+</html>

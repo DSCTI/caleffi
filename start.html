@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+<style>
+*{ font-family:Poppins Regular !important; }
+body { margin:0px;  background-color:#006996; font-family:arial;  font-family:arial; }
+#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); height:400px;}
+#app {width:80%; 
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+input[type=phone], select { font-family:Poppins Regular;
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+font-size:1.2em;
+background-color:white !important;
+}
+
+.button1 {
+  width: 160px;  height: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:1.1em;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+<script src="jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        
+    }
+
+    </script>
+  </head>
+  <body>
+<div id='app2' align='center'><div id='app'><center>
+<br><br><br>
+
+<img src="calendario.svg" width='70' style="padding-bottom:1px;"><br>
+
+<select id='select'>
+  <option value="1">1ª SIMULADOR</option>
+  <option value="2">2ª SIMULADOR</option>
+  <option value="3">3ª SIMULADOR</option>
+  <option value="4">4ª SIMULADOR</option>
+  <option value="5">5ª SIMULADOR</option>
+  <option value="5">-</option>
+  <option value="1">1ª PRÁTICA</option>
+  <option value="2">2ª PRÁTICA</option>
+  <option value="3">3ª PRÁTICA</option>
+  <option value="4">4ª PRÁTICA</option>
+  <option value="5">5ª PRÁTICA BALIZA</option>
+  <option value="6">6ª PRÁTICA</option>
+  <option value="7">7ª PRÁTICA</option>
+  <option value="8">8ª PRÁTICA</option>
+  <option value="9">9ª PRÁTICA</option>
+  <option value="10">10ª PRÁTICA EXAME</option>
+  <option value="11">11ª PRÁTICA</option>
+  <option value="12">12ª PRÁTICA</option>
+  <option value="13">13ª PRÁTICA EXAME</option>
+  <option value="14">14ª PRÁTICA</option>
+  <option value="15">15ª PRÁTICA EXAME</option>
+  <option value="16">16ª PRÁTICA</option>
+  <option value="17">17ª PRÁTICA</option>
+  <option value="18">18ª PRÁTICA EXAME</option>
+  <option value="19">19ª PRÁTICA</option>
+  <option value="20">20ª PRÁTICA</option>
+</select><br><br>
+<span class="button1" value="" onclick="sessionVariable();" />Ok</span>
+
+<br><br><br><div>
+<font color='white'><b><big>Aplicar a avaliação prática:</big><br></b><br>
+<b>10ª e 15ª aulas</b><br>(para alunos inscritos em 15 aulas)<br><br>
+<b>13ª e 18ª aulas</b><br>(para alunos inscritos em 20 aulas)</font></div>
+<br><br><a href='index.html'><img src='logo.svg' width='120'></a><br></div></div>
+
+<br><br>
+
+<script>
+
+
+
+
+function sessionVariable() {
+
+var e = document.getElementById("select");
+var value3 = e.options[e.selectedIndex].text;
+
+window.localStorage.setItem("aula", value3);
+
+window.location.href = "perguntas/1.html";
+
+}
+
+</script>
+
+</html>

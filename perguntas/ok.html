@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html><script src="../jquery.min.js"></script>
+  <head><link rel="stylesheet" type="text/css" href="../fonts/style.css"/>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*{ font-family:Poppins Regular !important; }
+#aula  {margin-right:1px; font-weight:600; font-size: 1em;}
+#aluno {margin-right:1px; font-weight:600; font-size: 1em;}
+#questao {margin-right:1px; font-weight:600; font-size: 1em;}
+
+body { margin:0px;  background-color:#006996; }
+#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+
+.obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
+
+.button2 {
+ width: 80%;  
+  background-color: GRAY;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+
+#result { color:white; font-size:0.8em; padding:5px;}
+.button1 {
+ width: 80%;  
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+input:hover {
+  background-color: #45a049;
+}
+
+.quadro {padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+     var aula = localStorage.getItem("aula");
+     document.getElementById("aula").innerHTML = aula;
+  
+
+    }
+
+    </script>
+  </head>
+  <body>
+
+
+
+<div id='app2' align='center'><div id='app'><center>
+<br>
+<br><br>
+<img src="comecar.svg" width='80'><br>
+<span class='pergunta'><br><big><font color=white><b><span id='aula'></span> CONCLUÍDA!</b></big></font></a><br>
+<div class='quadro'>
+
+<div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir agora</big></big></div><div id='result'></div>
+<div class="button2" id='button2' onclick="depois();" /><font color='white'><big><big>Depois</big></big></div>
+<p class='obs' id='button3'  ><font color=white><small>Não esqueça de transmitir a aula quando estiver conectado!</p></font>
+
+</div>
+
+<a href='../index.html'><img src='../logo.svg' width='120'></a>
+</div></div>
+  </body>
+
+<script>
+
+var data2 = localStorage.getItem("start-data");
+var hora2 = localStorage.getItem("start-hora");
+var aula = localStorage.getItem("aula");
+var aluno = localStorage.getItem("cpf");
+var instrutor = localStorage.getItem("instrutor");
+
+var data = new Date();
+var dia     = data.getDate();           // 1-31
+var dia_sem = data.getDay();            // 0-6 (zero=domingo)
+var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+var ano2    = data.getYear();           // 2 dígitos
+var ano4    = data.getFullYear();       // 4 dígitos
+var hora    = data.getHours();          // 0-23
+var min     = data.getMinutes();        // 0-59
+var seg     = data.getSeconds();        // 0-59
+var mseg    = data.getMilliseconds();   // 0-999
+var tz      = data.getTimezoneOffset(); // em minutos
+
+var data1 = dia + '/' + (mes+1) + '/' + ano4;
+var hora1 = hora + ':' + min + ':' + seg;
+
+
+var nocoes = aluno + "-nocoes";
+var nocoes  = localStorage.getItem(nocoes);
+
+var p1 = aluno + "-" + aula + "-" + "1";  var pergunta1  = localStorage.getItem(p1);
+var p2 = aluno + "-" + aula + "-" + "2";  var pergunta2  = localStorage.getItem(p2);
+var p3 = aluno + "-" + aula + "-" + "3";  var pergunta3  = localStorage.getItem(p3);
+var p4 = aluno + "-" + aula + "-" + "4";  var pergunta4  = localStorage.getItem(p4);
+var p5 = aluno + "-" + aula + "-" + "5";  var pergunta5  = localStorage.getItem(p5);
+var p6 = aluno + "-" + aula + "-" + "6";  var pergunta6  = localStorage.getItem(p6);
+var p7 = aluno + "-" + aula + "-" + "7";  var pergunta7  = localStorage.getItem(p7);
+var p8 = aluno + "-" + aula + "-" + "8";  var pergunta8  = localStorage.getItem(p8);
+var p9 = aluno + "-" + aula + "-" + "9";  var pergunta9  = localStorage.getItem(p9);
+var p10 = aluno + "-" + aula + "-" + "10"; var pergunta10 = localStorage.getItem(p10);
+
+aula = aula.replace(' ','');
+
+var veiculo = localStorage.getItem("veiculo"); 
+var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + veiculo + "-" + nocoes;
+resultado = resultado.replace('ª','');
+resultado = resultado.replace('º','');
+resultado = resultado.replace('Á','A');
+resultado = resultado.replace(' ','aas');
+
+var res = aluno + "-" + aula + "-" + "pendente";
+res = res.replace(' ','');
+localStorage.setItem(res, resultado);
+
+var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
+
+function agora() {
+
+document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
+	
+function myTimer2() {
+ $('#result').load(url);
+}
+
+function myTimer() {
+var x = document.getElementById("result").textContent;
+   if (x.includes("Aguarde")) {
+localStorage.removeItem(res);
+localStorage.removeItem(res);
+location.href = "sucesso.html";
+
+} else {}
+}
+
+var myVar = setInterval(myTimer, 2000);
+var myVar = setInterval(myTimer2, 2000);
+
+}
+
+
+
+function depois() {
+location.href = "../index.html";
+}
+
+
+
+
+</script>
+</html>
+
+

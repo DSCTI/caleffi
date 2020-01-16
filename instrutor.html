@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/><style>
+*{ font-family:Poppins Regular !important; }
+.x {font-size:1.5em; color:silver; padding:3px; }
+#erro {padding:20px; color:white; text-align:center;}
+body { margin:0px;  background-color:#006996;  font-family:arial; }
+#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); height:400px;}
+#app {width:80%; 
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#cpf {margin-left:32px;}
+input[type=phone], select {font-family:Poppins Regular;
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+font-size:1.2em;
+background-color:white !important;
+}
+
+.button1 {
+ width: 35px;  height: 14px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:1.4em;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+<script src="jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var value = localStorage.getItem("instrutor");
+        document.getElementById('cpf').value = value;
+
+      
+        
+    }
+
+    </script>
+  </head>
+  <body>
+<div id='app2' align='center'><div id='app'><center>
+<br><br><br>
+
+<img src="carteira-de-identidade2.svg" width='90'>
+<br>
+
+<input type='phone' placeholder='CPF do instrutor' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+<br>
+	
+<select id='select'>
+  <option><script>
+var veiculo = localStorage.getItem("veiculo"); 
+if (veiculo == null) {document.write("PLACA"); } else { 
+document.write(veiculo); }
+</script></option>
+
+  <option>FNG-1191</option>
+  <option>FSD-3002</option>
+  <option>FWL-4763</option>
+  <option>ECV-9304</option>
+  <option>DJN-0045</option>
+  <option>DSV-1016</option>
+
+</select><br> 
+
+<br>
+<span class="button1" value="" onclick="sessionVariable();" />Ok</span>
+<p id="erro"></p><a href='index.html'><img src='logo.svg' width='120'></a><br>
+</div></div>
+  </body>
+
+<script>
+
+function sessionVariable() {
+var instrutor1 = document.getElementById("cpf").value;
+
+
+var n     = instrutor1.length;
+if (n == 11) {
+
+localStorage.setItem("instrutor", instrutor1);
+var e = document.getElementById("select");
+var value1 = e.options[e.selectedIndex].text;
+localStorage.setItem("veiculo", value1);
+
+var data = new Date();
+var dia     = data.getDate();           // 1-31
+var dia_sem = data.getDay();            // 0-6 (zero=domingo)
+var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+var ano2    = data.getYear();           // 2 dígitos
+var ano4    = data.getFullYear();       // 4 dígitos
+var hora    = data.getHours();          // 0-23
+var min     = data.getMinutes();        // 0-59
+var seg     = data.getSeconds();        // 0-59
+var mseg    = data.getMilliseconds();   // 0-999
+var tz      = data.getTimezoneOffset(); // em minutos
+
+var data1 = dia + '/' + (mes+1) + '/' + ano4;
+var hora1 = hora + ':' + min + ':' + seg;
+
+localStorage.setItem("start-data", data1);
+localStorage.setItem("start-hora", hora1);
+
+location.href = "start.html";
+
+ } else {
+
+document.getElementById("erro").innerHTML = "<small>CPF INVÁLIDO!</small>";
+
+ }
+
+
+}
+
+function x() {
+var cpf1 = document.getElementById("cpf").value;
+document.getElementById('cpf').value = "";
+}
+
+function x2() {
+var placa = document.getElementById("placa").value;
+document.getElementById('placa').value = "";
+}
+
+
+</script>
+
+</html>
