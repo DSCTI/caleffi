@@ -33,6 +33,8 @@
 
 <access origin="*" />
 <access origin=".*" />
+<access origin="https://grupolena.com.br"/>
+<access origin="https://grupolena.com.br/*"/>
 
 <plugins>
     <plugin name="App" value="org.apache.cordova.App"/>
