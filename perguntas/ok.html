@@ -78,11 +78,7 @@ font-size: 0.6em;
 
 <script>
 
-$( document ).bind( "mobileinit", function() {
-    // Make your jQuery Mobile framework configuration changes here!
 
-    $.mobile.allowCrossDomainPages = true;
-});
 
 var aula = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML = aula;
@@ -135,6 +131,8 @@ resultado = resultado.replace(' ','aas');
 var res = aluno + "-" + aula + "-" + "pendente";
 res = res.replace(' ','');
 localStorage.setItem(res, resultado);
+
+alert (resultado);
 
 var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
