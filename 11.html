@@ -90,8 +90,7 @@ font-size: 0.6em;
 </style>
 
     <title>Autoescola Caleffi</title>
-<script src="jquery.min.js"></script>
-    <script class="text/javascript" charset="utf-8" src="cordova.js"></script>
+
    
   </head>
   <body>
@@ -116,9 +115,10 @@ font-size: 0.6em;
   </body>
 
 <script>
-var aluno = localStorage.getItem("cpf");
+
 
 function sessionVariable1() {
+var aluno = localStorage.getItem("cpf");
 var id = "1";
 var id2 = aluno + "-nocoes";
 localStorage.setItem(id2, id);
@@ -126,6 +126,7 @@ location.href = "1.html";
 }
 
 function sessionVariable2() {
+var aluno = localStorage.getItem("cpf");
 var id = "0";
 var id2 = aluno + "-nocoes";
 localStorage.setItem(id2, id);
