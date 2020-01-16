@@ -78,8 +78,14 @@ font-size: 0.6em;
 
 <script>
 
-  var aula = localStorage.getItem("aula");
-  document.getElementById("aula").innerHTML = aula;
+$( document ).bind( "mobileinit", function() {
+    // Make your jQuery Mobile framework configuration changes here!
+
+    $.mobile.allowCrossDomainPages = true;
+});
+
+var aula = localStorage.getItem("aula");
+document.getElementById("aula").innerHTML = aula;
 
 var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");

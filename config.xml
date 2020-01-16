@@ -31,9 +31,6 @@
 <gap:splash src="splash/android/drawable-xxhdpi/xx.png" gap:platform="android" gap:density="xxhdpi" />
 <gap:splash src="splash/android/drawable-xxxhdpi/xx.png" gap:platform="android" gap:density="xxxhdpi" />
 
-
-
-
 <access origin="*" />
 
 </widget>
