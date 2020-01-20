@@ -26,7 +26,7 @@ var name = localStorage.getItem(name);
 *{ font-family:Poppins Regular !important; }
 body { margin:0px;  background-color:#006996; font-family:arial;  font-family:arial; }
 #app2 { width:100%; background-color: #006895;}
-#app {max-width:400px; width:80%; 
+#app {max-width:500px; width:80%; 
   border-radius: 5px;
   padding: 20px;
 }
@@ -60,10 +60,7 @@ min-width:100px;
 max-width:200px;
 }
 
- .button1:hover {
-opacity:0.8;
-
-}
+ .button1:hover { opacity:0.8; }
 
 </style>
 
@@ -232,12 +229,12 @@ var url = "https://grupolena.com.br/aulas.php?plano=" + plano + "&aluno=" + alun
   $.ajax(settings).done(function (response) {
 $("#result").hide();
 document.getElementById("result").innerHTML = response;
-$("#result").fadeIn(400);
+$("#result").fadeIn(500);
 
   })
 
   $.ajax(settings).fail(function (response) {
-$("#result").fadeIn(400);
+$("#result").fadeIn(500);
 $("#load").fadeOut(50);
 document.getElementById("result").innerHTML = "<font color='white'><small>Não foi possível conectar-se com o servidor.<br>Toque em recarregar para tentar novamente!<br>";
 
@@ -255,7 +252,7 @@ var v = key.includes("pendente");
 if (v == true) {
 key = key.replace(' ','');
 window.localStorage.setItem("temp", key);
-$("#attention").fadeIn(400);
+$("#attention").fadeIn(500);
 
 }
 
