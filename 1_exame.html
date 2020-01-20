@@ -114,8 +114,8 @@ font-size: 0.6em;
 
 div {font-size:0.962em; line-height:24px; }
 
-#app2 {max-width:400px;}
-.p {  max-width:400px;     display: flex; 
+#app2 {max-width:480px;}
+.p {  max-width:480px;     display: flex; 
   justify-content: center;
   align-items: center;
   color:white; background-image: url("red.svg");  min-height:50px; background-repeat: no-repeat; background-position: 18px; background-size: 50px;    padding:17px; padding-top:17px;    border-radius:100px; padding-left:70px;}
@@ -219,7 +219,7 @@ div {font-size:0.962em; line-height:24px; }
 
 <script>
 
-setTimeout(function(){ $("#content").fadeIn(400); }, 100);
+setTimeout(function(){ $("#content").fadeIn(480); }, 100);
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
@@ -235,7 +235,7 @@ if (soma == 1) {soma1 = "1 FALTA";}
 
 if (soma > 3) {
 
-$("#fail").fadeIn(400);
+$("#fail").fadeIn(480);
 
 $("#botoes").hide(0);
 $("#eliminatorias").hide(0);
@@ -243,7 +243,7 @@ $("#eliminatorias").hide(0);
 document.getElementById("faltas").style.backgroundColor = "#dd2208";
 
 soma1 = "ELIMINADO";
-        window.setInterval (BlinkIt, 400);
+        window.setInterval (BlinkIt, 480);
         var color = "#ffffff";
         function BlinkIt () {
             var blink = document.getElementById ("faltas");
@@ -268,45 +268,45 @@ location.href = "10.html";
 }
 
 function eliminatorias() {
-$("#eliminatorias").fadeIn(400);
+$("#eliminatorias").fadeIn(480);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(480);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 }
 
 function graves() {
-$("#graves").fadeIn(400);
+$("#graves").fadeIn(480);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(480);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 }
 
 function medias() {
-$("#medias").fadeIn(400);
+$("#medias").fadeIn(480);
 $("#eliminatorias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(480);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 }
 
 function leves() {
-$("#leves").fadeIn(400);
+$("#leves").fadeIn(480);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(480);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 }
@@ -319,8 +319,8 @@ $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
 $("#sobe").fadeOut(50);
-$("#botoes").fadeIn(400);
-$("#faltas").fadeIn(400);
+$("#botoes").fadeIn(480);
+$("#faltas").fadeIn(480);
 }
 
 

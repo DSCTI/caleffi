@@ -31,8 +31,8 @@ $("#content").fadeIn(400);
 })
 
 .fail(function(response) {
+$("#load").hide(0);
 localStorage.setItem(nome, aluno);
-$("#load").fadeOut(20);
 $("#content").fadeIn(400);
 
 
