@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
+<div id="content">
+<script src="jquery.min.js"></script>
 
 <script>
+
+$("#content").hide();
+
+setTimeout(function() {
+
+  $('#content').fadeIn(400);
+
+
+}, 100); 
+
 var splash = localStorage.getItem("splash");
 if (splash == "1") { } else { location.href = "splash.html"; }
+
 </script>
 
   <head>
@@ -14,8 +27,8 @@ if (splash == "1") { } else { location.href = "splash.html"; }
 * { font-family:Poppins Regular !important; }
 #erro {padding:20px; color:white; text-align:center;}
 body { margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); height:400px;}
-#app {width:80%; 
+#app2 { width:100%; background-color: #006895; height:400px;}
+#app {max-width:400px; 
   border-radius: 5px;
   padding: 20px;
 }
@@ -35,20 +48,37 @@ padding:8px;
 }
 
 .button1 {
- width: 35px;  height: 14px;
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 25px 10px 25px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size:1.4em;
+font-size:1.3em;
+min-width:100px;
+max-width:200px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+.button2 {
+  background-color: #deb200;
+  color: white;
+  padding: 10px 15px 10px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:1.1em;
+min-width:100px;
+max-width:200px;
+}
+
+
+ .button1:hover, .button2:hover {
+opacity:0.8;
+
 }
 
 .x {font-size:1.4em; color:silver; padding:3px; }
@@ -57,24 +87,24 @@ input[type=submit]:hover {
 
     <title>Autoescola Caleffi</title>
 <script src="jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
    
   </head>
   <body>
 <div id='app2' align='center'><div id='app'><center>
 <br><br><br>
-<img src='logo.svg' width='200'>
-<br><br><br>
-<img src="carteira-de-identidade.svg" width='80'><br>
+<img src='logo.svg' width='240'>
+<br><br>
+<img src="carteira-de-identidade.svg" width='80'><div style="font-size:1.6em; padding:0px; color:white;">ALUNO</div>
 
-<input type='number' placeholder='CPF do aluno' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
-<br>><br>
+<input type='number' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+<br><br>
 <span class="button1" value="Ok" onclick="sessionVariable1();" />Ok</span>
 <br><br><br>
 
-<a onclick="sessionVariable2();" /><font color='white'><B>TRANSMITIR AULAS</B></a></font>
+<center><div class='button2' id='button1' onclick="sessionVariable();" >TRANSMITIR AULAS</div>
 
-
+<BR><BR><img src="dscti.svg" width='40'><br><br>
 </div></div>
   </body>
 
@@ -85,19 +115,12 @@ input[type=submit]:hover {
 
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
-
-var n     = cpf1.length;
-if (n == 11) {
 localStorage.setItem("cpf", cpf1);
-window.location.href = "instrutor.html"; } else {
-document.getElementById("erro").innerHTML = "<small>CPF INVÁLIDO!</small>";
+if (cpf1 > 0) {
 
- }
+window.location.href = "instrutor.html";   }
 
 }
-
-
-
 
 function sessionVariable2() {
 
@@ -113,7 +136,16 @@ document.getElementById('cpf').value = "";
 
 </script>
 <p id="erro"></p>
-<br>
-<br><center>
-<img src="dscti.svg" width='40'><br><br>
+
+
 </html>
+
+<script>
+
+function sessionVariable() {
+
+window.location.href = "pendentes.html";
+
+}
+
+</script>

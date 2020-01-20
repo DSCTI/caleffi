@@ -1,114 +1,272 @@
 <!DOCTYPE html>
 <html>
   <head>
+<script src="jquery.min.js"></script>
+
+<script>
+
+var aluno = localStorage.getItem("cpf"); 
+
+var nocoes = aluno + "-nocoes";
+var nocoes = localStorage.getItem(nocoes); 
+if (nocoes == null) {location.href = "nocoes.html"; }
+
+var plano = aluno + "-" + "plano";
+var plano  = localStorage.getItem(plano);
+if (plano == null) { location.href = "plano.html"; }
+
+var name = aluno + "-nome";
+var name = localStorage.getItem(name); 
+
+</script>
+
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <style>
 *{ font-family:Poppins Regular !important; }
 body { margin:0px;  background-color:#006996; font-family:arial;  font-family:arial; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); height:400px;}
-#app {width:80%; 
+#app2 { width:100%; background-color: #006895;}
+#app {max-width:400px; width:80%; 
   border-radius: 5px;
   padding: 20px;
 }
 
 
 input[type=phone], select { font-family:Poppins Regular;
-  width: 200px;
+  width: 235px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-font-size:1.2em;
+font-size:1.1em;
 background-color:white !important;
 }
 
+#attention {margin-top:15px;line-height:22px; padding:16px; text-align:center; font-size:1em; color: #1b1b1b; background-color:#fffb82; border-radius:10px;}
+
 .button1 {
-  width: 160px;  height: 20px;
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 25px 10px 25px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size:1.1em;
+font-size:1.3em;
+min-width:100px;
+max-width:200px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+ .button1:hover {
+opacity:0.8;
+
 }
 
 </style>
 
     <title>Autoescola Caleffi</title>
-<script src="jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
   </head>
+
+
+
+
   <body>
 <div id='app2' align='center'><div id='app'><center>
-<br><br><br>
 
-<img src="calendario.svg" width='70' style="padding-bottom:1px;"><br>
 
-<select id='select'>
-  <option value="1">1ª SIMULADOR</option>
-  <option value="2">2ª SIMULADOR</option>
-  <option value="3">3ª SIMULADOR</option>
-  <option value="4">4ª SIMULADOR</option>
-  <option value="5">5ª SIMULADOR</option>
-  <option value="5">-</option>
-  <option value="1">1ª PRÁTICA</option>
-  <option value="2">2ª PRÁTICA</option>
-  <option value="3">3ª PRÁTICA</option>
-  <option value="4">4ª PRÁTICA</option>
-  <option value="5">5ª PRÁTICA BALIZA</option>
-  <option value="6">6ª PRÁTICA</option>
-  <option value="7">7ª PRÁTICA</option>
-  <option value="8">8ª PRÁTICA</option>
-  <option value="9">9ª PRÁTICA</option>
-  <option value="10">10ª PRÁTICA EXAME</option>
-  <option value="11">11ª PRÁTICA</option>
-  <option value="12">12ª PRÁTICA</option>
-  <option value="13">13ª PRÁTICA EXAME</option>
-  <option value="14">14ª PRÁTICA</option>
-  <option value="15">15ª PRÁTICA EXAME</option>
-  <option value="16">16ª PRÁTICA</option>
-  <option value="17">17ª PRÁTICA</option>
-  <option value="18">18ª PRÁTICA EXAME</option>
-  <option value="19">19ª PRÁTICA</option>
-  <option value="20">20ª PRÁTICA</option>
-</select><br><br>
-<span class="button1" value="" onclick="sessionVariable();" />Ok</span>
 
-<br><br><br><div>
-<font color='white'><b><big>Aplicar a avaliação prática:</big><br></b><br>
-<b>10ª e 15ª aulas</b><br>(para alunos inscritos em 15 aulas)<br><br>
-<b>13ª e 18ª aulas</b><br>(para alunos inscritos em 20 aulas)</font></div>
-<br><br><a href='index.html'><img src='logo.svg' width='120'></a><br></div></div>
 
 <br><br>
 
+<img src="calendario.svg" width='70' style="padding-bottom:1px;"><br>
+
+
+
+<div id='bn1'>
+
+<select id='select1'>
+  <option class="a0">INICIAR AULA</option>
+  <option class="a1">1ª PRÁTICA</option>
+  <option class="a2">2ª PRÁTICA</option>
+  <option class="a3">3ª PRÁTICA</option>
+  <option class="a4">4ª PRÁTICA</option>
+  <option class="a5">5ª PRÁTICA BALIZA</option>
+  <option class="a6">6ª PRÁTICA</option>
+  <option class="a7">7ª PRÁTICA</option>
+  <option class="a8">8ª PRÁTICA</option>
+  <option class="a9">9ª PRÁTICA</option>
+  <option class="a10">10ª PRÁTICA</option>
+  <option class="a11">11ª PRÁTICA</option>
+  <option class="a12">12ª PRÁTICA</option>
+  <option class="a13">13ª PRÁTICA EXAME</option>
+  <option class="a14">14ª PRÁTICA</option>
+  <option class="a15">15ª PRÁTICA</option>
+  <option class="a16">16ª PRÁTICA</option>
+  <option class="a17">17ª PRÁTICA</option>
+  <option class="a18">18ª PRÁTICA EXAME</option>
+  <option class="a19">19ª PRÁTICA</option>
+  <option class="a20">20ª PRÁTICA</option>
+  <option class="a21">1ª REFORÇO</option>
+  <option class="a22">2ª REFORÇO</option>
+  <option class="a23">3ª REFORÇO</option>
+  <option class="a24">4ª REFORÇO</option>
+  <option class="a23">5ª REFORÇO</option>
+  <option class="a26">6ª REFORÇO</option>
+  <option class="a27">7ª REFORÇO</option>
+  <option class="a28">8ª REFORÇO</option>
+  <option class="a29">9ª REFORÇO</option>
+  <option class="a30">10ª REFORÇO</option>
+
+</select><br><br>
+<span class="button1" onclick="sessionVariable1();" />Ok</span>
+
+</div>
+
+<div id='bn2'>
+
+<select id='select2'>
+  <option class="a0">INICIAR AULA</option>
+  <option class="a1">1ª SIMULADOR</option>
+  <option class="a2">2ª SIMULADOR</option>
+  <option class="a3">3ª SIMULADOR</option>
+  <option class="a4">4ª SIMULADOR</option>
+  <option class="a5">5ª SIMULADOR</option>
+  <option class="a1">1ª PRÁTICA</option>
+  <option class="a2">2ª PRÁTICA</option>
+  <option class="a3">3ª PRÁTICA</option>
+  <option class="a4">4ª PRÁTICA</option>
+  <option class="a5">5ª PRÁTICA BALIZA</option>
+  <option class="a6">6ª PRÁTICA</option>
+  <option class="a7">7ª PRÁTICA</option>
+  <option class="a8">8ª PRÁTICA</option>
+  <option class="a9">9ª PRÁTICA</option>
+  <option class="a10">10ª PRÁTICA EXAME</option>
+  <option class="a11">11ª PRÁTICA</option>
+  <option class="a12">12ª PRÁTICA</option>
+  <option class="a13">13ª PRÁTICA</option>
+  <option class="a14">14ª PRÁTICA</option>
+  <option class="a15">15ª PRÁTICA EXAME</option>
+  <option class="a21">1ª REFORÇO</option>
+  <option class="a22">2ª REFORÇO</option>
+  <option class="a23">3ª REFORÇO</option>
+  <option class="a24">4ª REFORÇO</option>
+  <option class="a23">5ª REFORÇO</option>
+  <option class="a26">6ª REFORÇO</option>
+  <option class="a27">7ª REFORÇO</option>
+  <option class="a28">8ª REFORÇO</option>
+  <option class="a29">9ª REFORÇO</option>
+  <option class="a30">10ª REFORÇO</option>
+</select>
+
+<br><br>
+<span class="button1" onclick="sessionVariable2();" />Ok</span>
+
+</div>
+
+<br>
+<div id="attention" style="display:none;"> <b>Atenção:</b> Você tem aulas pendentes de transmissão, a evolução do aluno está desatualizada. <b><a href='pendentes.html'><br>Toque aqui para transmitir.</a></b> (Necessita internet) </div>
+
+<br>
+
 <script>
 
+if (plano == 1) {
+var x = document.getElementById("bn1");
+x.style.display = "none";
+}
 
+if (plano == 2) {
+var x = document.getElementById("bn2");
+x.style.display = "none";
+}
 
-
-function sessionVariable() {
-
-var e = document.getElementById("select");
+function sessionVariable2() {
+var e = document.getElementById("select2");
 var value3 = e.options[e.selectedIndex].text;
 
-localStorage.setItem("aula", value3);
-
+if (value3 == "INICIAR AULA") {} else {
+window.localStorage.setItem("aula", value3);
 window.location.href = "1.html";
 
 }
 
-</script>
+}
 
+function sessionVariable1() {
+var e = document.getElementById("select1");
+var value3 = e.options[e.selectedIndex].text;
+
+if (value3 == "ESCOLHA A AULA") {} else {
+window.localStorage.setItem("aula", value3);
+window.location.href = "1.html";
+
+}
+
+}
+
+
+
+function sessionVariable3() {
+window.location.href = "start.html";
+
+}
+
+
+// handles the click event, sends the query
+
+var url = "https://grupolena.com.br/aulas.php?plano=" + plano + "&aluno=" + aluno;
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+  $.ajax(settings).done(function (response) {
+$("#result").hide();
+document.getElementById("result").innerHTML = response;
+$("#result").fadeIn(400);
+
+  })
+
+  $.ajax(settings).fail(function (response) {
+$("#result").fadeIn(400);
+$("#load").fadeOut(50);
+document.getElementById("result").innerHTML = "<font color='white'><small>Não foi possível conectar-se com o servidor.<br>Toque em recarregar para tentar novamente!<br>";
+
+  });
+
+
+var aluno = localStorage.getItem("cpf");
+var aula  = localStorage.getItem(aula);
+
+for (var i = 0; i < localStorage.length; i++) {
+var key = localStorage.key(i);
+var value = localStorage.getItem(key);
+var v = key.includes("pendente");
+
+if (v == true) {
+key = key.replace(' ','');
+window.localStorage.setItem("temp", key);
+$("#attention").fadeIn(400);
+
+}
+
+}
+
+
+</script>
+<div id="result"><br><img src="load.gif" width="80"></div>
 </html>
+<br>
+<br>
+
+<div style="position:fixed; z-index:5; top:0px; right:0px; padding:15px;"><a href="start.html"><img src="ciclo.svg" width="40"></a></div>
+<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>

@@ -1,7 +1,11 @@
 <!DOCclass html>
 <html>
-  <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+
+<head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<div id="content" style="display:none;">
+
 <style>.pergunta {margin-top:12px; margin-bottom:25px;}
 *{ font-family:Poppins Regular !important; }
 #aula  {margin-right:9px; font-weight:600; font-size: 1em;}
@@ -9,37 +13,7 @@
 #questao {margin-right:5px; font-weight:600; font-size: 1em;}
 
 body {margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
-
-.button4{
- width: 80%;  
-  background-color: #c2991d;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size: 0.6em;
-}
-
-.button5{
- width: 80%;  
-  background-color: #0087c1;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size: 0.6em;
-}
-
-.button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
-  opacity:0.8;
-}
+#app2 { width:100%; background-color: #006895; }
 
 .button3{
  width: 80%;  
@@ -55,37 +29,42 @@ font-size: 0.6em;
 }
 
 .button2{
- width: 80%;  
   background-color: #ff4343;
   color: white;
-  padding: 14px;
+  padding: 10px 25px 10px 25px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size: 0.6em;
+font-size: 1.0em;
+min-width:100px;
+
 }
 
-.button1{
- width: 80%;  
+.button1 {
+
   background-color: #4CAF50;
   color: white;
-  padding: 14px;
+  padding: 10px 25px 10px 25px;
   margin: 8px 0;
+  margin-bottom:15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size: 0.6em;
+font-size:1.0em;
+min-width:100px;
+
 }
 
-.submit:hover {
-  background-color: #45a049;
+ .button1:hover, .button2:hover {
+opacity:0.8;
+
 }
 
-.quadro {padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+.quadro {max-width:400px; padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 { max-width:400px; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
 
@@ -99,7 +78,7 @@ font-size: 0.6em;
 <div id='app2' align='center'><div id='app'><center>
 <br><br><br>
 
-<img src="reveja.svg" width='80'>
+<img src="reveja.svg" width='90'>
 
 <div class='quadro'>
 <div class='pergunta'>O aluno já tinha noções de direção?<br><SMALL>(antes de começar o CFC)</SMALL></div>
@@ -107,22 +86,20 @@ font-size: 0.6em;
 <div class="button1" value="" onclick="sessionVariable1();" />SIM</div>
 <div class="button2" value="" onclick="sessionVariable2();" />NÃO</div>
 
-
 </div>
 <br><br>
-<a href='index.html'><img src='logo.svg' width='120'></a>
+
 </div></div>
   </body>
 
 <script>
-
 
 function sessionVariable1() {
 var aluno = localStorage.getItem("cpf");
 var id = "1";
 var id2 = aluno + "-nocoes";
 localStorage.setItem(id2, id);
-location.href = "1.html";
+location.href = "start.html";
 }
 
 function sessionVariable2() {
@@ -130,9 +107,59 @@ var aluno = localStorage.getItem("cpf");
 var id = "0";
 var id2 = aluno + "-nocoes";
 localStorage.setItem(id2, id);
-location.href = "1.html";
+location.href = "start.html";
 }
 
 </script>
 
 </html>
+
+
+<script src="jquery.min.js"></script>
+
+<script>
+
+var aluno = localStorage.getItem("cpf");
+
+var url = "https://grupolena.com.br/nocoes.php?aluno=" + aluno;  
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+  $.ajax(settings).done(function (response) {
+
+if (response > 0) {
+
+var aluno = localStorage.getItem("cpf");
+var nocoes = aluno + "-nocoes"; 
+localStorage.setItem(nocoes, response);
+location.href = "start.html";
+
+ }  else { 
+
+
+$("#content").fadeIn(400);
+$("#load").fadeOut(50);
+
+
+}
+
+  })
+
+
+  $.ajax(settings).fail(function (response) {
+$("#content").fadeIn(400);
+$("#load").fadeOut(50);
+
+  });
+
+</script>
+
+</div></div></div><div id="load"><center><br><br><br><br><img src="load.gif" width="80"></center></div>
+
+<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>

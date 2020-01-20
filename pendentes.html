@@ -9,44 +9,34 @@
 #questao {margin-right:1px; font-weight:600; font-size: 1em;}
 
 body { margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+#app2 { width:100%; background-color: #006895; }
 
 .obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
 
-.button2 {
- width: 80%;  
-  background-color: GRAY;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size: 0.6em;
-}
-
-
-#result { color:white; font-size:0.8em; padding:5px;}
 .button1 {
- width: 80%;  
+  width:200px;
   background-color: #4CAF50;
   color: white;
-  padding: 14px;
+  padding: 12px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size: 0.6em;
+font-size:0.6em;
 }
+
 
 input:hover {
-  background-color: #45a049;
+  opacity:0.8;
 }
 
-.quadro {padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+#result { color:white; font-size:0.8em; padding:5px;}
+
+
+
+.quadro {max-width:400px; padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 { max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
 
@@ -56,25 +46,11 @@ input:hover {
   <body>
 
 
-
-<div id='app2' align='center'><div id='app'><center>
-<br>
-<br><br>
-<img src="comecar.svg" width='80'>
-
-<div class='quadro'>
-
-<font color=white>Nenhuma aula pendente de transmissão! </font><br><br><a href='index.html'><font color=white>VOLTAR!</font></a>
-</div>
-<br><br>
-<a href='index.html'><img src='logo.svg' width='120'></a>
-</div></div>
-  </body>
-
-
-</html>
-
-
+<script>
+function sessionVariable1() {
+location.href = "index.html";
+}
+</script>
 
 
 <html>
@@ -82,22 +58,29 @@ input:hover {
 
 
     <title>Autoescola Caleffi</title>
-    
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  
 
-    <script type="text/javascript" charset="utf-8">
+<div id="content" style="display:none;">
+<div id='app2' align='center'><div id='app'><center>
+<br>
+<br><br>
+<img src="comecar.svg" width='90'>
 
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+<div class='quadro'>
 
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var value = window.localStorage.getItem("cpf");
-        document.getElementById('cpf').value = value;
-    }
+<font color=white>Concluído, nenhuma aula pendente de transmissão! </font><br><br>
 
+<big><div class="button1" onclick="sessionVariable1();">VOLTAR</div></big>
+
+</div>
+<br><br>
+<a href='index.html'></a>
+</div></div>
+  </body>
+
+<script>
+
+$("#content").fadeIn(400);
 
 for (var i = 0; i < localStorage.length; i++) {
 var key = localStorage.key(i);
@@ -114,3 +97,4 @@ window.location.href = "pendentes1.html";
 }
 
 </script>
+

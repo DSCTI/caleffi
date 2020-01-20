@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-<META http-equiv="refresh" content="4;URL=index.html"> 
+
 
 <style>
-
-body { margin:0px;  background-color:#006996; 
-
+body {margin:0px;  background-color:#006996; }
+.body { margin:0px; 
+width:100%; height:100%;
  background: url(splash.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -23,13 +23,36 @@ body { margin:0px;  background-color:#006996;
 </style>
 
     <title>Autoescola Caleffi</title>
-<body>
+<body> <div class="body">
+
+<script src="jquery.min.js"></script>
+
+
+</div>
+</body>
 
 
 <script>
 
+
+$(".body").hide();
+
+setTimeout(function() {
+
+  $('.body').fadeIn(400);
+
+
+}, 0); 
+
+
+
+setTimeout(function() {
+
+  $('.body').fadeOut(400);
+ location.href = "index.html";
+
+}, 3000); 
+
 localStorage.setItem("splash", "1");
 
 </script>
-
-</body>

@@ -11,7 +11,7 @@
 #questao {margin-right:1px; font-weight:600; font-size: 1em;}
 
 body { margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+#app2 { width:100%; background-color: #006895; }
 
 .obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
 
@@ -20,7 +20,6 @@ body { margin:0px;  background-color:#006996; }
   background-color: GRAY;
   color: white;
   padding: 14px;
-  margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -47,14 +46,12 @@ font-size: 0.6em;
   opacity:0.8;
 }
 
-.quadro {padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+.quadro {max-width:400px; padding:22px; font-size:1.5em;  border-radius:12px; }
+.quadro1 { max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
 
     <title>Autoescola Caleffi</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   
   </head>
   <body>
@@ -64,17 +61,21 @@ font-size: 0.6em;
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
-<img src="telegrama.svg" width='80'><br>
-<span class='pergunta'><br><big><font color=white><b><span id='aluno'></span> - <span id='aula'></span></b></big></font></a><br>
+<img src="telegrama.svg" width='90'><br>
+<span class='pergunta'><br><big><font color=white><b><span id='aluno'></span> - <span id='aula'></span></b></big></font></a>
 <div class='quadro'>
 
-<div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir!</big></big></div><div id='result'></div>
+<div id='result'></div>
+<br>
 
-<p class='obs' id='button3'  ><font color=white><small></p></font>
 
-</div>
 
-<a href='index.html'><img src='logo.svg' width='120'></a>
+<div class="button2" id='button' onclick="cancelar();" /><font color='white'><big><big>Cancelar</big></big></div>
+
+<br><br>
+
+
+<a href='index.html'></a>
 </div></div>
   </body>
 
@@ -84,11 +85,20 @@ var temp = localStorage.getItem("temp");
 temp = temp.replace(' ','');
 var aluno = temp.split("-", 1);
 var aula = temp.split("-", 2);
+
 var aula = aula[1];
 var aula1 = aula.split("ª", 1);
+var aula2 = aula.split("ª", 2);
 
-document.getElementById("aula").innerHTML = aula1 + "ª AULA";
-document.getElementById("aluno").innerHTML = aluno;
+var nome = aluno + "-nome";
+var nome = localStorage.getItem(nome);
+
+var name = aula2[1];
+name = name.replace('EXAME',' EXAME');
+name = name.replace('BALIZA',' BALIZA');
+
+document.getElementById("aula").innerHTML = aula1 + "ª " + name;
+document.getElementById("aluno").innerHTML = nome;
 
 var res = aluno + "-" + aula + "-" + "pendente";
 
@@ -99,7 +109,6 @@ resultado = resultado.replace('Á','A');
 
 var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
 
-function agora() {
 
 document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
 	
@@ -118,7 +127,7 @@ function myTimer() {
 var x = document.getElementById("result").textContent;
    if (x.includes("Aguarde")) {
 localStorage.removeItem(res);
-location.href = "sucesso2.html";
+location.href = "pendentes.html";
 
 } 
 }
@@ -126,7 +135,10 @@ location.href = "sucesso2.html";
 var myVar = setInterval(myTimer, 2000);
 var myVar = setInterval(myTimer2, 2000);
 
+function cancelar() {
+location.href = "index.html";
 }
+
 
 </script>
 </html>

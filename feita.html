@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*{ font-family:Poppins Regular !important; }
+
+body { margin:0px;  background-color:#006996; }
+#app2 {width:100%; background-color: #006895; }
+
+* {text-decoration:none;}
+
+.button1 {
+
+  width: 80%;  
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button2 {
+  width: 80%;  
+  background-color: #ee6215;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+margin-top:15px;
+}
+
+
+input:hover {
+  opacity:0.8;
+}
+
+.quadro {padding:22px; max-width:400px;  font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 { max-width:400px;  max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+
+
+
+
+
+
+  
+  </head>
+  <body>
+
+
+
+<div id='app2' align='center'><div id='app'><center>
+<br>
+<br><br>
+<img src="comecar.svg" width='90'>
+
+<div class='quadro'>
+
+
+
+<font color=white>Aula <font color=#EBC000> 
+
+
+
+ <b><span id="aula"></span></b> <font color=white>já foi feita e transmitida! </font><br><br>
+<big>
+<div class='button1' onclick="sessionVariable1();"><font color=white>REFAZER</font></div>
+<div class='button2' onclick="sessionVariable2();"><font color=white>CANCELAR</font></div>
+</div>
+<br><br>
+
+</div></div>
+  </body>
+
+
+<script>
+
+var aula = localStorage.getItem("aula");
+document.getElementById("aula").innerHTML = aula;
+
+function sessionVariable1() {
+localStorage.setItem("feita", "1");
+if (aula.includes("EXAME")) { localStorage.setItem("feita", "0"); location.href = "1_exame.html"; } 
+else {
+if (aula.includes("BALIZA")) { location.href = "5.html"; }  else {
+location.href = "1.html"; 
+} }
+
+}
+function sessionVariable2() {
+location.href = "start.html";
+}
+
+</script>
+
+</html>
+
+

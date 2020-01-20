@@ -1,0 +1,373 @@
+<!DOCclass html>
+<html>
+  <head>
+
+<script src="jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+
+
+
+.quadro1 { height:20px;  padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+
+
+*{ font-family:Poppins Regular !important; }
+#aula  {margin-right:9px; font-weight:600; font-size: 1em;}
+#aluno {margin-right:20px; font-weight:600; font-size: 1em;}
+#questao {margin-right:5px; font-weight:600; font-size: 1em;}
+
+body {  margin:0px;  background-color:#373737; }
+
+.button4{
+ width: 80%;  
+  background-color: #dd2208;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button5{
+ width: 80%;  
+  background-color: #0087c1;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
+  opacity:0.8;
+}
+
+.button3{
+ width: 80%;  
+  background-color: #db3f2a;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button2{
+ width: 80%;  
+  background-color: #dc5a48;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button1{
+ width: 80%;  
+  background-color: #dd7a6c;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button5{
+ width: 80%;  
+  background-color: #4caf50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.title { color:#ffcc00; font-size:1.2em; margin:10px; }
+
+.mais:hover {opacity:0.6;}
+.menos:hover {opacity:0.6;}
+
+.p {margin-bottom:15px; background-color:white; border-radius:8px; padding:15px; background-color:#2d2d2d; color:white; }
+.p:hover {opacity:0.8; background-color:#e9503b; color:white;}
+
+div {font-size:0.962em; line-height:24px; }
+
+#app2 {max-width:400px;}
+.p {  max-width:400px;     display: flex; 
+  justify-content: center;
+  align-items: center;
+  color:white; background-image: url("red.svg");  min-height:50px; background-repeat: no-repeat; background-position: 18px; background-size: 50px;    padding:17px; padding-top:17px;    border-radius:100px; padding-left:70px;}
+
+#faltas {font-family: 'Orbitron', sans-serif !important; color:#202020; font-weight:800; border-radius:15px; font-size:2.7em; padding:35px; padding-right:12px; padding-left:12px; background-color:#ffcc00; max-width:300px; }
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+
+   
+  </head>
+  <body>
+
+
+<div id="content" style="display:none;" align='center'>
+
+<div class='quadro1'><SMALL><span id='aula'></span>
+</script><SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
+<div id='app2' align='center'><div id='app'><center></SMALL>
+
+
+
+
+<br><center><img id ="fail" src='anxiety.svg' width='100' style="padding-top:20px; display:none;"></center>
+<br><div id="eliminatorias" class="title"><span><b><big>FALTAS ELIMINATÓRIAS</big></b></span><br><br>
+<div id="1" class="p"><span>Desobedecer à sinalização semafórica e de parada obrigatória.</span></div>
+<div id="2" class="p"><span>Avançar sobre o meio-fio.</span></div>
+<div id="3" class="p"><span>Não colocar o veículo na área balizada em, no máximo, três tentativas, no tempo estabelecido.</span></div>
+<div id="4" class="p"><span>Avançar sobre o balizamento demarcado quando do estacionamento do veículo na vaga.</span></div>
+<div id="5" class="p"><span>Transitarem contra mão de direção.</span></div>
+<div id="6" class="p"><span>Não completar a realização de todas as etapas do exame.</span></div>
+<div id="7" class="p"><span>Avançar a via preferencial.</span></div>
+<div id="8" class="p"><span>Provocar acidente durante a realização do exame.</span></div>
+<div id="9" class="p"><span>Exceder a velocidade regulamentada para a via.</span></div>
+<div id="10" class="p"><span>Cometer qualquer outra infração de trânsito de natureza gravíssima.</span></div>
+</div>
+
+<div id="graves" class="title"><span><b><big>FALTAS GRAVES (3 PONTOS)</big></b></span><br><br>
+<div id="11" class="p"><span>Desobedecer à sinalização da via ou ao agente da autoridade de trânsito.</span></div>
+<div id="12" class="p"><span>Não observar as regras de ultrapassagem ou de mudança de direção.</span></div>
+<div id="13" class="p"><span>Não dar preferência de passagem ao pedestre que estiver atravessando a via transversal mesmo que ocorra sinal verde para o veículo.</span></div>
+<div id="14" class="p"><span>Manter a porta do veículo aberta ou semi aberta durante o percurso do exame ou parte dele.</span></div>
+<div id="15" class="p"><span>Não sinalizar com antecedência a manobra pretendida ou sinalizá-la incorretamente.</span></div>
+<div id="16" class="p"><span>Não usar devidamente o cinto de segurança.</span></div>
+<div id="17" class="p"><span>Perder o controle da direção do veículo em movimento.</span></div>
+<div id="18" class="p"><span>Cometer qualquer outra infração de trânsito de natureza grave.</span></div>
+</div>
+
+<div id="medias" class="title"><span><b><big>FALTAS MÉDIAS (2 PONTOS)</big></b></span><br><br>
+<div id="19" class="p"><span>Executar o percurso da prova, no todo ou parte dele, sem estar com o freio de mão inteiramente livre.</span></div>
+<div id="20" class="p"><span>Trafegar em velocidade inadequada para as condições adversas do local, da circulação, do veículo ou do clima.</span></div>
+<div id="21" class="p"><span>Interromper o funcionamento do motor, sem justa razão, após o início do exame.</span></div>
+<div id="22" class="p"><span>Fazer a conversão incorretamente.</span></div>
+<div id="23" class="p"><span>Usar a buzina sem necessidade ou em local proibido.</span></div>
+<div id="24" class="p"><span>Desengrenar o veículo nos declives.</span></div>
+<div id="25" class="p"><span>Colocar o veículo em movimento, sem observar as cautelas necessárias.</span></div>
+<div id="26" class="p"><span>Usar o pedal de embreagem, antes de usar o pedal de freio nas frenagens.</span></div>
+<div id="27" class="p"><span>Entrar nas curvas com a engrenagem de tração do veículo em ponto neutro.</span></div>
+<div id="28" class="p"><span>Engrenar ou utilizar as marchas de maneira incorreta durante o percurso.</span></div>
+<div id="29" class="p"><span>Cometer qualquer outra infração de trânsito de natureza média.</span></div>
+</div>
+
+<div id="leves" class="title"><span><b><big>FALTAS LEVES (1 PONTO)</big></b></span><br><br>
+<div id="30" class="p"><span>Provocar movimentos irregulares no veículo sem motivo justificado.</span></div>
+<div id="31" class="p"><span>Ajustar incorretamente o banco de veículo destinado ao condutor.</span></div>
+<div id="32" class="p"><span>Não ajustar devidamente os espelhos retrovisores.</span></div>
+<div id="33" class="p"><span>Apoiar o pé no pedal da embreagem com o veículo engrenado e em movimento.</span></div>
+<div id="34" class="p"><span>Utilizar ou interpretar incorretamente os instrumentos do painel do veículo.</span></div>
+<div id="35" class="p"><span>Dar partida ao veículo com a engrenagem de tração ligada.</span></div>
+<div id="36" class="p"><span>Tentar movimentar o veículo com a engrenagem de tração em ponto neutra.</span></div>
+<div id="37" class="p"><span>Cometer qualquer outra infração de natureza leve.</span></div>
+</div>
+
+
+<br><div id="faltas"><span id="faltas1"></span></div>
+
+
+  </body>
+
+<center><big><big><big><big><button id="sobe" class="button5" onclick="sobe();">VOLTAR</button>
+<big><br><br>
+<div id="botoes">
+<center><button onclick="eliminatorias();" id="eliminatorias" class="button4">FALTAS ELIMINATÓRIAS</button>
+<center><button onclick="graves();" id="graves" class="button3">FALTAS GRAVES</button>
+<center><button onclick="medias();" id="medias" class="button2">FALTAS MÉDIAS</button>
+<center><button onclick="leves();" id="leves" class="button1">FALTAS LEVES</button>
+
+<br></div></div>
+<big>
+<button id="concluir" class="button5" onclick="concluir();">CONTINUAR</button><br>
+</big>
+
+</big></big></big></big></big></big>
+
+
+
+<center></center>
+
+
+
+<script>
+
+setTimeout(function(){ $("#content").fadeIn(400); }, 100);
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+document.getElementById("aluno").innerHTML= nome; 
+
+var soma = aluno + "-soma"; 
+var soma = localStorage.getItem(soma); 
+var soma2 = aluno + "-soma"; 
+
+if (soma == null) {soma1 = "0 FALTAS";} else {soma1 = soma + " FALTAS";}
+if (soma == 1) {soma1 = "1 FALTA";}
+
+if (soma > 3) {
+
+$("#fail").fadeIn(400);
+
+$("#botoes").hide(0);
+$("#eliminatorias").hide(0);
+
+document.getElementById("faltas").style.backgroundColor = "#dd2208";
+
+soma1 = "ELIMINADO";
+        window.setInterval (BlinkIt, 400);
+        var color = "#ffffff";
+        function BlinkIt () {
+            var blink = document.getElementById ("faltas");
+            color = (color == "#ffffff")? "#000000" : "#ffffff";
+            blink.style.color = color; 
+        }
+
+}
+
+
+
+document.getElementById("faltas").innerHTML= soma1; 
+
+$("#eliminatorias").hide(0);
+$("#medias").hide(0);
+$("#graves").hide(0);
+$("#leves").hide(0);
+$("#sobe").hide(0);
+
+function concluir() {
+location.href = "10.html";
+}
+
+function eliminatorias() {
+$("#eliminatorias").fadeIn(400);
+$("#medias").hide(0);
+$("#graves").hide(0);
+$("#leves").hide(0);
+$("#botoes").hide(0);
+$("#sobe").fadeIn(400);
+$("#faltas").hide(0);
+$("#concluir").hide(0);
+}
+
+function graves() {
+$("#graves").fadeIn(400);
+$("#eliminatorias").hide(0);
+$("#medias").hide(0);
+$("#leves").hide(0);
+$("#botoes").hide(0);
+$("#sobe").fadeIn(400);
+$("#faltas").hide(0);
+$("#concluir").hide(0);
+}
+
+function medias() {
+$("#medias").fadeIn(400);
+$("#eliminatorias").hide(0);
+$("#graves").hide(0);
+$("#leves").hide(0);
+$("#botoes").hide(0);
+$("#sobe").fadeIn(400);
+$("#faltas").hide(0);
+$("#concluir").hide(0);
+}
+
+function leves() {
+$("#leves").fadeIn(400);
+$("#eliminatorias").hide(0);
+$("#medias").hide(0);
+$("#graves").hide(0);
+$("#botoes").hide(0);
+$("#sobe").fadeIn(400);
+$("#faltas").hide(0);
+$("#concluir").hide(0);
+}
+
+function sobe() {
+$("#concluir").hide(0);
+$("#leves").hide(0);
+$("#eliminatorias").hide(0);
+$("#medias").hide(0);
+$("#graves").hide(0);
+$("#botoes").hide(0);
+$("#sobe").fadeOut(50);
+$("#botoes").fadeIn(400);
+$("#faltas").fadeIn(400);
+}
+
+
+
+document.getElementById("1").addEventListener("click", function()  { var exame = aluno + "-1exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("2").addEventListener("click", function()  { var exame = aluno + "-2exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("3").addEventListener("click", function()  { var exame = aluno + "-3exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("4").addEventListener("click", function()  { var exame = aluno + "-4exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("5").addEventListener("click", function()  { var exame = aluno + "-5exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("6").addEventListener("click", function()  { var exame = aluno + "-6exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("7").addEventListener("click", function()  { var exame = aluno + "-7exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("8").addEventListener("click", function()  { var exame = aluno + "-8exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("9").addEventListener("click", function()  { var exame = aluno + "-9exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("10").addEventListener("click", function() { var exame = aluno + "-10exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  var obj = document.createElement("audio");  obj.src = "warning.mp3";   obj.play(); location.href = "1_exame.html"; });
+document.getElementById("11").addEventListener("click", function() { var exame = aluno + "-11exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("12").addEventListener("click", function() { var exame = aluno + "-12exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("13").addEventListener("click", function() { var exame = aluno + "-13exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("14").addEventListener("click", function() { var exame = aluno + "-14exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("15").addEventListener("click", function() { var exame = aluno + "-15exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("16").addEventListener("click", function() { var exame = aluno + "-16exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("17").addEventListener("click", function() { var exame = aluno + "-17exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("18").addEventListener("click", function() { var exame = aluno + "-18exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("19").addEventListener("click", function() { var exame = aluno + "-19exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("20").addEventListener("click", function() { var exame = aluno + "-20exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("21").addEventListener("click", function() { var exame = aluno + "-21exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("22").addEventListener("click", function() { var exame = aluno + "-22exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("23").addEventListener("click", function() { var exame = aluno + "-23exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("24").addEventListener("click", function() { var exame = aluno + "-24exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("25").addEventListener("click", function() { var exame = aluno + "-25exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("26").addEventListener("click", function() { var exame = aluno + "-26exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("27").addEventListener("click", function() { var exame = aluno + "-27exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("28").addEventListener("click", function() { var exame = aluno + "-28exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("29").addEventListener("click", function() { var exame = aluno + "-29exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 2 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("30").addEventListener("click", function() { var exame = aluno + "-30exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("31").addEventListener("click", function() { var exame = aluno + "-31exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("32").addEventListener("click", function() { var exame = aluno + "-32exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("33").addEventListener("click", function() { var exame = aluno + "-33exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("34").addEventListener("click", function() { var exame = aluno + "-34exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("35").addEventListener("click", function() { var exame = aluno + "-35exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("36").addEventListener("click", function() { var exame = aluno + "-36exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+document.getElementById("37").addEventListener("click", function() { var exame = aluno + "-37exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 1 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+var aula = localStorage.getItem("aula"); 
+
+</script>
+
+</div>

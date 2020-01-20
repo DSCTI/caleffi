@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+<script src="jquery.min.js"></script>
+
+
+<script>
+
+$( document ).ready(function() {
+$("#load").hide();
+$("#content").hide();
+$("#load").fadeIn(400);
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome";
+
+var url = "https://grupolena.com.br/aluno.php?aluno=" + aluno;  
+
+ $.ajax({
+    url: url, type: 'GET',
+   
+}).done(function(response) {
+
+if (response == "sem") { window.location.href = "sem.html"; }
+
+localStorage.setItem(nome, response);
+$("#load").fadeOut(20);
+$("#content").fadeIn(400);
+
+
+})
+
+.fail(function(response) {
+localStorage.setItem(nome, aluno);
+$("#load").fadeOut(20);
+$("#content").fadeIn(400);
+
+
+});
+
+});
+
+</script>
+
+
+
+
+
+
+
+<div id="content" style="display:none;">
+
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/><style>
 *{ font-family:Poppins Regular !important; }
 .x {font-size:1.5em; color:silver; padding:3px; }
 #erro {padding:20px; color:white; text-align:center;}
 body { margin:0px;  background-color:#006996;  font-family:arial; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); height:400px;}
-#app {width:80%; 
+#app2 { width:100%; background-color: #006895;}
+#app {max-width:400px; 
   border-radius: 5px;
   padding: 20px;
 }
@@ -22,42 +71,43 @@ input[type=phone], select {font-family:Poppins Regular;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+text-align:center;
 font-size:1.2em;
 background-color:white !important;
 }
 
 .button1 {
- width: 35px;  height: 14px;
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 25px 10px 25px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size:1.4em;
+font-size:1.3em;
+min-width:100px;
+max-width:200px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+ .button1:hover {
+opacity:0.8;
+
 }
 
 </style>
 
     <title>Autoescola Caleffi</title>
-<script src="jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
   </head>
   <body>
 <div id='app2' align='center'><div id='app'><center>
 <br><br><br>
 
-<img src="carteira-de-identidade2.svg" width='90'>
-<br>
+<img src="carteira-de-identidade2.svg" width='90'><div style="font-size:1.6em; padding:2px; padding-top:5px; color:white;">INSTRUTOR</div>
 
-<input type='phone' placeholder='CPF do instrutor' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+
+<input type='phone' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
 <br>
 	
 <select id='select'>
@@ -77,19 +127,20 @@ document.write(veiculo); }
 </select><br> 
 
 <br>
-<span class="button1" value="" onclick="sessionVariable();" />Ok</span>
-<p id="erro"></p><a href='index.html'><img src='logo.svg' width='120'></a><br>
+<span class="button1" onclick="sessionVariable();" />Ok</span>
+<p id="erro"></p><a href='index.html'></a><br>
 </div></div>
   </body>
 
 <script>
 
-     var value = localStorage.getItem("instrutor");
-     document.getElementById('cpf').value = value;
+
+
+var value = localStorage.getItem("instrutor");
+document.getElementById('cpf').value = value;
 
 function sessionVariable() {
 var instrutor1 = document.getElementById("cpf").value;
-
 
 var n     = instrutor1.length;
 if (n == 11) {
@@ -142,3 +193,8 @@ document.getElementById('placa').value = "";
 </script>
 
 </html>
+
+</div></div></div></div><div id="load"><br><br><br><center><img src="load.gif" width="80"></center></div>
+
+
+<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>

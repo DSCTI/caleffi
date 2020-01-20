@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+<style>
+*{ font-family:Poppins Regular !important; }
+body { margin:0px;  background-color:#006996; font-family:arial;  font-family:arial; }
+
+#app {max-width:400px; 
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.button4{
+  background-color: #eea507;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:0.7em;
+min-width:100px;
+
+}
+
+
+
+.button1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:0.7em;
+min-width:100px;
+margin-bottom:19px;
+}
+
+ .button1:hover, .button4:hover {
+opacity:0.8;
+
+}
+
+
+</style>
+
+    <title>Autoescola Caleffi</title>
+
+
+
+  </head>
+  <body>
+
+<div id="content" style="display:none;">
+
+
+<div id='app2' align='center'><div id='app'><center>
+<br><br><br>
+
+
+
+<img src="calendario.svg" width='70' style="padding-bottom:9px;"><br>
+<BIG><BIG><font color='white'>PLANO DE AULAS<br><br><BIG><BIG>
+<div class="button1" value="" onclick="sessionVariable1();" />COM 5 SIMULADOR</div>
+<div class="button4" value="" onclick="sessionVariable2();" />SEM SIMULADOR</div><br>
+</BIG></BIG></BIG></BIG>
+
+<div>
+
+
+<script>
+
+function sessionVariable1() {
+var aluno = localStorage.getItem("cpf");
+var id = "1";
+var id2 = aluno + "-plano";
+localStorage.setItem(id2, id);
+location.href = "start.html";
+}
+
+function sessionVariable2() {
+var aluno = localStorage.getItem("cpf");
+var id = "2";
+var id2 = aluno + "-plano";
+localStorage.setItem(id2, id);
+location.href = "start.html";
+}
+
+</script>
+
+</html>
+
+<script src="jquery.min.js"></script>
+
+<script>
+
+var aluno = localStorage.getItem("cpf");
+
+var url = "https://grupolena.com.br/plano.php?aluno=" + aluno;  
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+  $.ajax(settings).done(function (response) {
+
+if (response > 0) {
+
+var aluno = localStorage.getItem("cpf");
+var plano = aluno + "-plano"; 
+localStorage.setItem(plano, response);
+location.href = "start.html";
+
+ } else { 
+
+
+$("#content").fadeIn(400);
+$("#load").fadeOut(50);
+
+
+}
+
+  })
+
+
+$.ajax(settings).fail(function (response) {
+$("#content").fadeIn(400);
+$("#load").fadeOut(50);
+
+  });
+
+
+
+
+</script>
+
+</div></div></div></div></div><br><br><br><br><div id="load"><center><img src="load.gif" width="80"></center></div>
+
+<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>

@@ -16,7 +16,7 @@
 <preference name="exit-on-suspend" value="false" />
 <preference name="auto-hide-splash-screen" value="true" />
 <preference name="disable-cursor" value="false" />
-
+<preference name="SplashScreen" value="none"/>
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />

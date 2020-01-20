@@ -1,17 +1,9 @@
 <!DOCclass html>
 <html>
-  <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+<head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
-
-<script>
-
-var cpf = localStorage.getItem("cpf");
-var nocoes = cpf + "-" + "nocoes";
-var nocoes  = localStorage.getItem(nocoes);
-if (nocoes == null) { location.href = "11.html"; }
-</script>
+<div id="load"><center><br><br><br><br><img src="load.gif" width="80"></center></div>
+<script src="jquery.min.js"></script>
 
 <style>
 .pergunta {margin-top:12px; margin-bottom:25px;}
@@ -21,8 +13,7 @@ if (nocoes == null) { location.href = "11.html"; }
 #questao {margin-right:5px; font-weight:600; font-size: 1em;}
 
 body { margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
-
+#app2 { width:100%; background-color: #006895; }
 .button4{
  width: 80%;  
   background-color: #c2991d;
@@ -52,6 +43,7 @@ font-size: 0.6em;
 .button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
   opacity:0.8;
 }
+
 
 .button3{
  width: 80%;  
@@ -92,34 +84,29 @@ text-align:center;
 font-size: 0.6em;
 }
 
-.submit:hover {
-  background-color: #45a049;
-}
 
-.quadro {padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+.quadro {max-width:400px; padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
+.quadro1 { height:20px; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
 
     <title>Autoescola Caleffi</title>
 
-   
-    
   </head>
   <body>
-
-<div class='quadro1'><SMALL> <span id='aula'></span>
-</script> <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
+<div id='content' style="display: none;">
+<div class='quadro1'><SMALL><span id='aula'></span>
+</script><SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
 <div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
 
-<img src="espelho-retrovisor.svg" width='80'>
+<img src="espelho-retrovisor.svg" width='90'>
 
 <div class='quadro'>
 <div class='pergunta'>Uso da seta e espelho</div>
 
 
-<div class="button1" value="" onclick="sessionVariable1();" />BOM</div>
+<big><div class="button1" value="" onclick="sessionVariable1();" />BOM</div>
 <div class="button4" value="" onclick="sessionVariable4();" />REGULAR</div>
 <div class="button2" value="" onclick="sessionVariable2();" />INSATISFATÓRIO</div>
 <div class="button5" value="" onclick="sessionVariable5();" />APTO</div>
@@ -127,18 +114,22 @@ font-size: 0.6em;
 
 </div>
 <br><br>
-<a href='index.html'><img src='logo.svg' width='120'></a>
+
 </div></div>
   </body>
 
 
-
 <script>
-var value1 = localStorage.getItem("cpf"); 
-document.getElementById("aluno").innerHTML= value1; 
+
+$('#content').hide(0);
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+
+document.getElementById("aluno").innerHTML= nome; 
 var value1 = localStorage.getItem("aula"); 
 document.getElementById("aula").innerHTML= value1; 
-
 
 var value1 = localStorage.getItem("cpf"); 
 document.getElementById('aluno').value = value1;
@@ -192,6 +183,82 @@ var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);
 location.href = "2.html";
 }
 
+if (feita == "1") {
+  $('#content').fadeIn(400);
+  $('#load').fadeOut(50);
+  localStorage.setItem("feita", "0");
+}
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+
+var aula = localStorage.getItem("aula"); 
+var plano1 = aluno + "-plano"; 
+var plano = localStorage.getItem(plano1); 
+
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace('Ç','C');
+aula = aula.replace(' ',''); 
+
+//var url = "https://grupolena.com.br/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+//  var settings = {
+//    "async": true,
+//    "crossDomain": true,
+//    "url": url,
+//    "method": "GET",
+//    "processData": false,
+//    "contentType": false
+//  }
+
+//$.ajax(settings).done(function (response) {
+
+//if (response == "restrito") { location.href = "restrito.html"; } 
+
+//});
+
+
+var feita = localStorage.getItem("feita"); 
+
+if (feita == "1") { $('#load').fadeOut(50); $('#content').fadeIn(400); localStorage.setItem("feita", "0"); }
+
+if (feita != "1") {
+
+var url = "https://grupolena.com.br/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) {
+
+if (response == "feita") { location.href = "feita.html"; } else {
+
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; } 
+if (aula.includes("BALIZA")) { location.href = "5.html"; }
+
+$('#load').fadeOut(50);  $('#content').fadeIn(400); }
+
+})
+
+.fail(function(response) {
+
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
+if (aula.includes("BALIZA")) { location.href = "5.html"; }
+
+  $('#content').fadeIn(400);
+  $('#load').fadeOut(50);
+
+});
+
+}
+
 </script>
 
-</html>
+<div style="position:fixed; z-index:5; bottom:0px; width:100%; padding-bottom:18px;"><center><a href="javascript:history.back()"><img src="voltar.svg" width="40"></a></center></div>

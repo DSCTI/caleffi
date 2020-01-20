@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html><script src="jquery.min.js"></script>
+<html>
+<script src="jquery.min.js"></script>
+
+<script type="text/javascript">
+        document.addEventListener("backbutton", function() {
+            event.preventDefault();
+        }, false);
+    </script>
+
   <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
@@ -9,7 +17,7 @@
 #questao {margin-right:1px; font-weight:600; font-size: 1em;}
 
 body { margin:0px;  background-color:#006996; }
-#app2 { width:100%; background-image: linear-gradient(#024a68, #006895); }
+#app2 { width:100%; background-color: #006895; }
 
 .obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
 
@@ -39,14 +47,15 @@ font-size: 0.6em;
   cursor: pointer;
 text-align:center;
 font-size: 0.6em;
+margin-bottom:15px;
 }
 
 .button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
   opacity:0.8;
 }
 
-.quadro {padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 {width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
+.quadro {max-width:400px; padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:10px;}
+.quadro1 { max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
 
@@ -62,32 +71,31 @@ font-size: 0.6em;
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
-<img src="comecar.svg" width='80'><br>
-<span class='pergunta'><br><big><font color=white><b><span id='aula'></span> CONCLUÍDA!</b></big></font></a><br>
+<img src="comecar.svg" width='90'><br>
+<span class='pergunta'><br><big><font color=white><b><span id='aula'></span>AULA CONCLUÍDA!</b></big></font></a>
 <div class='quadro'>
 
-<div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir agora</big></big></div><div id='result'></div>
-<div class="button2" id='button2' onclick="depois();" /><font color='white'><big><big>Depois</big></big></div>
-<p class='obs' id='button3'  ><font color=white><small>Não esqueça de transmitir a aula quando estiver conectado!</p></font>
+<div class="button1" id='button' onclick="agora();" /><font color='white'><big><big>Transmitir</big></big></div>
+<div class="button2" id='button2' onclick="recomeco();" /><font color='white'><big><big>Refazer essa aula</big></big></div>
 
+<div class='obs1' id='button1' onclick="depois();" ><font color=white><BR><SMALL>TRANSMITIR DEPOIS</font><BR></div>
+<BR>
 </div>
 
-<a href='index.html'><img src='logo.svg' width='120'></a>
+
 </div></div>
   </body>
 
 <script>
 
-
-
-var aula = localStorage.getItem("aula");
-document.getElementById("aula").innerHTML = aula;
-
 var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
-var aula = localStorage.getItem("aula");
-var aluno = localStorage.getItem("cpf");
 var instrutor = localStorage.getItem("instrutor");
+var aluno = localStorage.getItem("cpf");
+var aula = localStorage.getItem("aula");
+
+var soma2 = aluno + "-soma"; 
+localStorage.setItem(soma2, "0");
 
 var data = new Date();
 var dia     = data.getDate();           // 1-31
@@ -104,90 +112,131 @@ var tz      = data.getTimezoneOffset(); // em minutos
 var data1 = dia + '/' + (mes+1) + '/' + ano4;
 var hora1 = hora + ':' + min + ':' + seg;
 
-
 var nocoes = aluno + "-nocoes";
 var nocoes  = localStorage.getItem(nocoes);
 
-var p1 = aluno + "-" + aula + "-" + "1";  var pergunta1  = localStorage.getItem(p1);
-var p2 = aluno + "-" + aula + "-" + "2";  var pergunta2  = localStorage.getItem(p2);
-var p3 = aluno + "-" + aula + "-" + "3";  var pergunta3  = localStorage.getItem(p3);
-var p4 = aluno + "-" + aula + "-" + "4";  var pergunta4  = localStorage.getItem(p4);
-var p5 = aluno + "-" + aula + "-" + "5";  var pergunta5  = localStorage.getItem(p5);
-var p6 = aluno + "-" + aula + "-" + "6";  var pergunta6  = localStorage.getItem(p6);
-var p7 = aluno + "-" + aula + "-" + "7";  var pergunta7  = localStorage.getItem(p7);
-var p8 = aluno + "-" + aula + "-" + "8";  var pergunta8  = localStorage.getItem(p8);
-var p9 = aluno + "-" + aula + "-" + "9";  var pergunta9  = localStorage.getItem(p9);
-var p10 = aluno + "-" + aula + "-" + "10"; var pergunta10 = localStorage.getItem(p10);
+var plano = aluno + "-plano";
+var plano  = localStorage.getItem(plano);
+
+
+var p1 = aluno + "-" + aula + "-" + "1";  var pergunta1  = localStorage.getItem(p1);   if (pergunta1 == null)  {var pergunta1 = "0";}
+var p2 = aluno + "-" + aula + "-" + "2";  var pergunta2  = localStorage.getItem(p2);   if (pergunta2 == null)  {var pergunta2 = "0";}
+var p3 = aluno + "-" + aula + "-" + "3";  var pergunta3  = localStorage.getItem(p3);   if (pergunta3 == null)  {var pergunta3 = "0";}
+var p4 = aluno + "-" + aula + "-" + "4";  var pergunta4  = localStorage.getItem(p4);   if (pergunta4 == null)  {var pergunta4 = "0";}
+var p5 = aluno + "-" + aula + "-" + "5";  var pergunta5  = localStorage.getItem(p5);   if (pergunta5 == null)  {var pergunta5 = "0";}
+var p6 = aluno + "-" + aula + "-" + "6";  var pergunta6  = localStorage.getItem(p6);   if (pergunta6 == null)  {var pergunta6 = "0";}
+var p7 = aluno + "-" + aula + "-" + "7";  var pergunta7  = localStorage.getItem(p7);   if (pergunta7 == null)  {var pergunta7 = "0";}
+var p8 = aluno + "-" + aula + "-" + "8";  var pergunta8  = localStorage.getItem(p8);   if (pergunta8 == null)  {var pergunta8 = "0";}
+var p9 = aluno + "-" + aula + "-" + "9";  var pergunta9  = localStorage.getItem(p9);   if (pergunta9 == null)  {var pergunta9 = "0";}
+var p10 = aluno + "-" + aula + "-" + "10"; var pergunta10 = localStorage.getItem(p10); if (pergunta10 == null) {var pergunta10 = "0";}
 
 aula = aula.replace(' ','');
 
+var e1 = aluno + "-1exame"; var e1 = localStorage.getItem(e1); if (e1 == null) { var e1 = "0";} 
+var e2 = aluno + "-2exame"; var e2 = localStorage.getItem(e2); if (e2 == null) { var e2 = "0";} 
+var e3 = aluno + "-3exame"; var e3 = localStorage.getItem(e3); if (e3 == null) { var e3 = "0";}  
+var e4 = aluno + "-4exame"; var e4 = localStorage.getItem(e4); if (e4 == null) { var e4 = "0";} 
+var e5 = aluno + "-5exame"; var e5 = localStorage.getItem(e5); if (e5 == null) { var e5 = "0";} 
+var e6 = aluno + "-6exame"; var e6 = localStorage.getItem(e6); if (e6 == null) { var e6 = "0";}  
+var e7 = aluno + "-7exame"; var e7 = localStorage.getItem(e7); if (e7 == null) { var e7 = "0";}  
+var e8 = aluno + "-8exame"; var e8 = localStorage.getItem(e8); if (e8 == null) { var e8 = "0";}  
+var e9 = aluno + "-9exame"; var e9 = localStorage.getItem(e9); if (e9 == null) { var e9 = "0";}  
+var e10 = aluno + "-10exame"; var e10 = localStorage.getItem(e10); if (e10 == null) { var e10 = "0";}  
+var e11 = aluno + "-11exame"; var e11 = localStorage.getItem(e11); if (e11 == null) { var e11 = "0";}  
+var e12 = aluno + "-12exame"; var e12 = localStorage.getItem(e12); if (e12 == null) { var e12 = "0";}  
+var e13 = aluno + "-13exame"; var e13 = localStorage.getItem(e13); if (e13 == null) { var e13 = "0";}  
+var e14 = aluno + "-14exame"; var e14 = localStorage.getItem(e14); if (e14 == null) { var e14 = "0";}  
+var e15 = aluno + "-15exame"; var e15 = localStorage.getItem(e15); if (e15 == null) { var e15 = "0";}  
+var e16 = aluno + "-16exame"; var e16 = localStorage.getItem(e16); if (e16 == null) { var e16 = "0";}  
+var e17 = aluno + "-17exame"; var e17 = localStorage.getItem(e17); if (e17 == null) { var e17 = "0";}  
+var e18 = aluno + "-18exame"; var e18 = localStorage.getItem(e18); if (e18 == null) { var e18 = "0";}  
+var e19 = aluno + "-19exame"; var e19 = localStorage.getItem(e19); if (e19 == null) { var e19 = "0";}  
+var e20 = aluno + "-20exame"; var e20 = localStorage.getItem(e20); if (e20 == null) { var e20 = "0";}  
+var e21 = aluno + "-21exame"; var e21 = localStorage.getItem(e21); if (e21 == null) { var e21 = "0";}  
+var e22 = aluno + "-22exame"; var e22 = localStorage.getItem(e22); if (e22 == null) { var e22 = "0";}  
+var e23 = aluno + "-23exame"; var e23 = localStorage.getItem(e23); if (e23 == null) { var e23 = "0";}  
+var e24 = aluno + "-24exame"; var e24 = localStorage.getItem(e24); if (e24 == null) { var e24 = "0";}  
+var e25 = aluno + "-25exame"; var e25 = localStorage.getItem(e25); if (e25 == null) { var e25 = "0";}  
+var e26 = aluno + "-26exame"; var e26 = localStorage.getItem(e26); if (e26 == null) { var e26 = "0";}  
+var e27 = aluno + "-27exame"; var e27 = localStorage.getItem(e27); if (e27 == null) { var e27 = "0";}  
+var e28 = aluno + "-28exame"; var e28 = localStorage.getItem(e28); if (e28 == null) { var e28 = "0";}  
+var e29 = aluno + "-29exame"; var e29 = localStorage.getItem(e29); if (e29 == null) { var e29 = "0";}  
+var e30 = aluno + "-30exame"; var e30 = localStorage.getItem(e30); if (e30 == null) { var e30 = "0";}  
+var e31 = aluno + "-31exame"; var e31 = localStorage.getItem(e31); if (e31 == null) { var e31 = "0";}  
+var e32 = aluno + "-32exame"; var e32 = localStorage.getItem(e32); if (e32 == null) { var e32 = "0";}  
+var e33 = aluno + "-33exame"; var e33 = localStorage.getItem(e33); if (e33 == null) { var e33 = "0";}  
+var e34 = aluno + "-34exame"; var e34 = localStorage.getItem(e34); if (e34 == null) { var e34 = "0";}  
+var e35 = aluno + "-35exame"; var e35 = localStorage.getItem(e35); if (e35 == null) { var e35 = "0";}  
+var e36 = aluno + "-36exame"; var e36 = localStorage.getItem(e36); if (e36 == null) { var e36 = "0";}  
+var e37 = aluno + "-37exame"; var e37 = localStorage.getItem(e37); if (e37 == null) { var e37 = "0";}  
+
+var exame = e1 + "-" + e2 + "-" + e3 + "-" + e4 + "-" + e5 + "-" + e6 + "-" + e7 + "-" + e8 + "-" + e9 + "-" + e10 + "-" + e11 + "-" + e12 + "-" + e13 + "-" + e14 + "-" + e15 + "-" + e16 + "-" + e17 + "-" + e18 + "-" + e19 + "-" + e20 + "-" + e21 + "-" + e22 + "-" + e23 + "-" + e24 + "-" + e25 + "-" + e26 + "-" + e27 + "-" + e28 + "-" + e29 + "-" + e30 + "-" + e31 + "-" + e32 + "-" + e33 + "-" + e34 + "-" + e35 + "-" + e36 + "-" + e37; 
+
 var veiculo = localStorage.getItem("veiculo"); 
-var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + veiculo + "-" + nocoes;
+var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + veiculo + "-" + nocoes + "-" + plano + "-" + exame;
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
 resultado = resultado.replace(' ','aas');
+resultado = resultado.replace('Ç','C');
 
 var res = aluno + "-" + aula + "-" + "pendente";
-res = res.replace(' ','');
+
+res = res.replace(' ',''); 
+
 localStorage.setItem(res, resultado);
 
 
-
-
+localStorage.setItem(soma2, "0");
+var exame = aluno + "-1exame"; localStorage.setItem(exame, "0");  
+var exame = aluno + "-2exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-3exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-4exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-5exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-6exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-7exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-8exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-9exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-10exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-11exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-12exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-13exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-14exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-15exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-16exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-17exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-18exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-19exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-20exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-21exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-22exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-23exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-24exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-25exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-26exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-27exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-28exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-29exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-30exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-31exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-32exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-33exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-34exame"; localStorage.setItem(exame, "0");
+var exame = aluno + "-35exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-36exame"; localStorage.setItem(exame, "0"); 
+var exame = aluno + "-37exame"; localStorage.setItem(exame, "0"); 
 
 function agora() {
-
-document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
-
-
-function myTimer2() {
-
-
-var url = "https://grupolena.com.br/recebe.php?dados=" + resultado;
-
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": url,
-    "method": "GET",
-    "processData": false,
-    "contentType": false
-  }
-
-  $.ajax(settings).done(function (response) {
- 
-    document.getElementById('result').innerHTML = 'Aguarde...';
-location.href = "sucesso.html";
-  });
-
-
-
-
+location.href = "pendentes.html";
 }
-
-function myTimer() {
-var x = document.getElementById("result").textContent;
-   if (x.includes("Aguarde")) {
-localStorage.removeItem(res);
-location.href = "sucesso.html";
-
-} else {}
-}
-
-var myVar = setInterval(myTimer, 2000);
-var myVar = setInterval(myTimer2, 2000);
-
-}
-
-
 
 function depois() {
 location.href = "index.html";
 }
 
-
-
+function recomeco() {
+location.href = "1.html";
+}
 
 </script>
 </html>
