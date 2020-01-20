@@ -31,7 +31,7 @@ $("#content").fadeIn(400);
 })
 
 .fail(function(response) {
-$("#load").hide(0);
+$("#load").fadeOut(50);
 localStorage.setItem(nome, aluno);
 $("#content").fadeIn(400);
 
@@ -42,7 +42,7 @@ $("#content").fadeIn(400);
 
 </script>
 
-
+<div id="load"><br><br><br><center><img src="load.gif" width="80"></center></div>
 
 
 
@@ -168,7 +168,8 @@ var hora1 = hora + ':' + min + ':' + seg;
 localStorage.setItem("start-data", data1);
 localStorage.setItem("start-hora", hora1);
 
-location.href = "start.html";
+if (veiculo == "PLACA") { } else {
+location.href = "start.html"; }
 
  } else {
 
@@ -184,17 +185,12 @@ var cpf1 = document.getElementById("cpf").value;
 document.getElementById('cpf').value = "";
 }
 
-function x2() {
-var placa = document.getElementById("placa").value;
-document.getElementById('placa').value = "";
-}
-
 
 </script>
 
 </html>
 
-</div></div></div></div><div id="load"><br><br><br><center><img src="load.gif" width="80"></center></div>
+</div></div></div></div>
 
 
 <div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>

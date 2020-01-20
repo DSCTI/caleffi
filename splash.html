@@ -49,9 +49,16 @@ setTimeout(function() {
 setTimeout(function() {
 
   $('.body').fadeOut(400);
- location.href = "index.html";
+
 
 }, 3000); 
+
+setTimeout(function() {
+
+
+ window.location.href = "index.html";
+
+}, 3600)
 
 localStorage.setItem("splash", "1");
 
