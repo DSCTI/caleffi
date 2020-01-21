@@ -17,15 +17,13 @@
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
 
-<plugin name="InAppBrowser"/>
+<plugin name="cordova-plugin-inappbrowser" source="npm">
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
 <icon src="icons/android/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
 <icon src="icons/android/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
 <icon src="icons/android/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
-
-
 
 <access origin="*" />
 <plugin name="cordova-plugin-whitelist" version="1" />
