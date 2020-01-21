@@ -12,8 +12,8 @@
         e = e ||  window.event;
         var element = e.target || e.srcElement;
 
-        if (element.tagName == 'A') {
-            window.open(element.href, "_blank", "location=yes");
+        if (element.tagName == 'a') {
+            window.open(element.href, "_system", "location=yes");
             return false;
         }
     }; }
