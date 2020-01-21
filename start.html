@@ -3,8 +3,23 @@
   <head>
 <script src="jquery.min.js"></script>
 
+
+
+
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
     <script type="text/javascript" charset="utf-8">
+
+  
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+  
+    function onDeviceReady() {
+
+alert ("ok");
+
+
+}
 
 
 
@@ -274,30 +289,3 @@ $("#attention").fadeIn(500);
 
 
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>InAppBrowser.close Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-
-alert ("ok");
-window.open('http://myloginapp.com', '_blank', 'location=no');
-
-}
-
-    </script>
-  </head>
-  <body>
-  </body>
-</html>
