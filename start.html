@@ -281,4 +281,7 @@ $("#attention").fadeIn(500);
 <div style="position:fixed; z-index:5; top:0px; right:0px; padding:15px;"><a href="start.html"><img src="ciclo.svg" width="40"></a></div>
 <div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="index.html"><img src="voltar.svg" width="40"></a></div>
 
-<iframe src="https://www.w3schools.com"></iframe>
+
+<ion-content>
+  <iframe *ngIf="https://www.w3schools.com" [src]="https://www.w3schools.com" width="100%" height="100%" frameborder="0" ></iframe>
+</ion-content>
