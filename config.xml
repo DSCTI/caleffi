@@ -17,7 +17,7 @@
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
 
-<plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.1.0"/>
+<plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
