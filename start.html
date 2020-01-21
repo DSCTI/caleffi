@@ -7,10 +7,16 @@
     <script type="text/javascript" charset="utf-8">
 
     document.addEventListener("deviceready", onDeviceReady, false);
- 
-    </script>
+  function onDeviceReady() {
+    document.onclick = function (e) {
+        e = e ||  window.event;
+        var element = e.target || e.srcElement;
 
-<script>
+        if (element.tagName == 'A') {
+            window.open(element.href, "_blank", "location=yes");
+            return false;
+        }
+    }; }
 
 var aluno = localStorage.getItem("cpf"); 
 
