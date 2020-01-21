@@ -2,12 +2,11 @@
 
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.caleffi.dscti" version="1.0.0">
 
-<name>Instrutores</name>
-
+<name>Caleffi Instrutores</name>
 
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
-<preference name="webviewbounce" value="false" />
-<preference name="DisallowOverscroll" value="true" />
+<preference name="webviewbounce" value="true" />
+<preference name="DisallowOverscroll" value="false" />
 <preference name="orientation" value="portrait" />
 <preference name="target-device" value="universal" />
 <preference name="fullscreen" value="false" />
@@ -17,6 +16,8 @@
 <preference name="auto-hide-splash-screen" value="true" />
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
+
+<plugin name="cordova-plugin-inappbrowser" source="npm">
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
