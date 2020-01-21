@@ -88,6 +88,8 @@ font-size: 0.6em;
 .quadro {max-width:400px; padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
 .quadro1 { height:20px; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
+#anterior, #anterior2 {padding:14px; background-color:#fffa75; wifdth:100%; text-align:center; font-size:1.1em;}
+
 </style>
 
     <title>Autoescola Caleffi</title>
@@ -97,6 +99,11 @@ font-size: 0.6em;
 <div id='content' style="display: none;">
 <div class='quadro1'><SMALL><span id='aula'></span>
 </script><SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
+
+<div id='anterior'  style="display:none;"><b>Atenção! Alguma aula anterior não foi feita e transmitida!</b></div>
+<div id='anterior2' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
+
+
 <div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
 
@@ -203,22 +210,27 @@ aula = aula.replace('Á','A');
 aula = aula.replace('Ç','C');
 aula = aula.replace(' ',''); 
 
-//var url = "https://grupolena.com.br/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
-//  var settings = {
-//    "async": true,
-//    "crossDomain": true,
-//    "url": url,
-//    "method": "GET",
-//    "processData": false,
-//    "contentType": false
-//  }
+var url = "https://grupolena.com.br/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
 
-//$.ajax(settings).done(function (response) {
+$.ajax(settings).done(function (response) {
 
-//if (response == "restrito") { location.href = "restrito.html"; } 
+if (response == "restrito") {   $('#anterior').fadeIn(200); } 
 
-//});
+})
 
+.fail(function(response) {
+
+ $('#anterior2').fadeIn(200);
+
+});
 
 var feita = localStorage.getItem("feita"); 
 

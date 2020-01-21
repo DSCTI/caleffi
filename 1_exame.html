@@ -114,14 +114,15 @@ font-size: 0.6em;
 
 div {font-size:0.962em; line-height:24px; }
 
-#app2 {max-width:480px;}
-.p {  max-width:480px;     display: flex; 
+#app2 {max-width:400px;}
+.p {  max-width:400px;     display: flex; 
   justify-content: center;
   align-items: center;
   color:white; background-image: url("red.svg");  min-height:50px; background-repeat: no-repeat; background-position: 18px; background-size: 50px;    padding:17px; padding-top:17px;    border-radius:100px; padding-left:70px;}
 
 #faltas {font-family: 'Orbitron', sans-serif !important; color:#202020; font-weight:800; border-radius:15px; font-size:2.7em; padding:35px; padding-right:12px; padding-left:12px; background-color:#ffcc00; max-width:300px; }
 
+#anterior, #anterior2 {padding:14px; background-color:#fffa75; wifdth:100%; text-align:center; font-size:1.1em;}
 </style>
 
     <title>Autoescola Caleffi</title>
@@ -138,6 +139,8 @@ div {font-size:0.962em; line-height:24px; }
 <div id='app2' align='center'><div id='app'><center></SMALL>
 
 
+<div id='anterior'  style="display:none;"><b>Atenção! Alguma aula anterior não foi feita e transmitida!</b></div>
+<div id='anterior2' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
 
 
 <br><center><img id ="fail" src='anxiety.svg' width='100' style="padding-top:20px; display:none;"></center>
@@ -191,11 +194,11 @@ div {font-size:0.962em; line-height:24px; }
 </div>
 
 
-<br><div id="faltas"><span id="faltas1"></span></div>
 
 
   </body>
 
+<div id="faltas" style="margin-top:8px;"><span id="faltas1"></span></div>
 <center><big><big><big><big><button id="sobe" class="button5" onclick="sobe();">VOLTAR</button>
 <big><br><br>
 <div id="botoes">
@@ -219,7 +222,43 @@ div {font-size:0.962em; line-height:24px; }
 
 <script>
 
-setTimeout(function(){ $("#content").fadeIn(480); }, 100);
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+
+var aula = localStorage.getItem("aula"); 
+var plano1 = aluno + "-plano"; 
+var plano = localStorage.getItem(plano1); 
+
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace('Ç','C');
+aula = aula.replace(' ',''); 
+
+var url = "https://grupolena.com.br/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) {
+
+if (response == "restrito") {   $('#anterior').fadeIn(200); } 
+
+})
+
+.fail(function(response) {
+
+ $('#anterior2').fadeIn(200);
+
+});
+
+setTimeout(function(){ $("#content").fadeIn(400); }, 100);
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
@@ -235,7 +274,7 @@ if (soma == 1) {soma1 = "1 FALTA";}
 
 if (soma > 3) {
 
-$("#fail").fadeIn(480);
+$("#fail").fadeIn(400);
 
 $("#botoes").hide(0);
 $("#eliminatorias").hide(0);
@@ -243,7 +282,7 @@ $("#eliminatorias").hide(0);
 document.getElementById("faltas").style.backgroundColor = "#dd2208";
 
 soma1 = "ELIMINADO";
-        window.setInterval (BlinkIt, 480);
+        window.setInterval (BlinkIt, 400);
         var color = "#ffffff";
         function BlinkIt () {
             var blink = document.getElementById ("faltas");
@@ -268,47 +307,51 @@ location.href = "10.html";
 }
 
 function eliminatorias() {
-$("#eliminatorias").fadeIn(480);
+$("#eliminatorias").fadeIn(400);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(480);
+$("#sobe").fadeIn(400);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
+$("#back").hide(0);
 }
 
 function graves() {
-$("#graves").fadeIn(480);
+$("#graves").fadeIn(400);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(480);
+$("#sobe").fadeIn(400);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
+$("#back").hide(0);
 }
 
 function medias() {
-$("#medias").fadeIn(480);
+$("#medias").fadeIn(400);
 $("#eliminatorias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(480);
+$("#sobe").fadeIn(400);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
+$("#back").hide(0);
 }
 
 function leves() {
-$("#leves").fadeIn(480);
+$("#leves").fadeIn(400);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(480);
+$("#sobe").fadeIn(400);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
+$("#back").hide(0);
 }
 
 function sobe() {
@@ -319,8 +362,9 @@ $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
 $("#sobe").fadeOut(50);
-$("#botoes").fadeIn(480);
-$("#faltas").fadeIn(480);
+$("#botoes").fadeIn(400);
+$("#faltas").fadeIn(400);
+$("#back").fadeIn(200);
 }
 
 
@@ -371,3 +415,7 @@ var aula = localStorage.getItem("aula");
 </script>
 
 </div>
+
+
+<div id="back" style="position:fixed; z-index:5; bottom:0px; width:100%; padding-bottom:18px;"><center><a href="javascript:history.back()"><img src="voltar.svg" width="40"></a></center></div>
+
