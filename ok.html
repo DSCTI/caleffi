@@ -124,7 +124,7 @@ countdownTimer();
 
 <script>
 
-var faltas = localStorage.getItem("faltas");
+var faltas = localStorage.getItem("exame");
 var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
@@ -154,7 +154,6 @@ var nocoes  = localStorage.getItem(nocoes);
 
 var plano = aluno + "-plano";
 var plano  = localStorage.getItem(plano);
-
 
 var p1 = aluno + "-" + aula + "-" + "1";  var pergunta1  = localStorage.getItem(p1);   if (pergunta1 == null)  {var pergunta1 = "0";}
 var p2 = aluno + "-" + aula + "-" + "2";  var pergunta2  = localStorage.getItem(p2);   if (pergunta2 == null)  {var pergunta2 = "0";}
