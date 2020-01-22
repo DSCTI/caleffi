@@ -253,7 +253,7 @@ $.ajax(settings).done(function (response) {
 if (response == "feita") { location.href = "feita.html"; } else {
 
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } 
-if (aula.includes("BALIZA")) { location.href = "5.html"; }
+
 
 $('#load').fadeOut(50);  $('#content').fadeIn(400); }
 
@@ -262,7 +262,7 @@ $('#load').fadeOut(50);  $('#content').fadeIn(400); }
 .fail(function(response) {
 
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
-if (aula.includes("BALIZA")) { location.href = "5.html"; }
+
 
   $('#content').fadeIn(400);
   $('#load').fadeOut(50);
