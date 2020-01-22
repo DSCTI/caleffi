@@ -276,6 +276,8 @@ var soma2 = aluno + "-soma";
 if (soma == null) {soma1 = "0 FALTAS";} else {soma1 = soma + " FALTAS";}
 if (soma == 1) {soma1 = "1 FALTA";}
 
+localStorage.setItem(soma, soma);
+
 if (soma > 3) {
 
 $("#fail").fadeIn(400);
@@ -421,5 +423,5 @@ var aula = localStorage.getItem("aula");
 </div>
 
 
-<div id="back" style="position:fixed; z-index:5; bottom:0px; width:100%; padding-bottom:18px;"><center><a href="javascript:history.back()"><img src="voltar.svg" width="50"></a></center></div>
+<div id="back" style="position:fixed; z-index:5; bottom:0px; width:100%; padding-bottom:18px;"><center><a href="javascript:history.back()"><img src="voltar.svg" width="40"></a></center></div>
 
