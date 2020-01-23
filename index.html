@@ -111,7 +111,7 @@ opacity:0.8;
 #fotos > *
 {
 
-background: url(no.png);
+background: url(no.jpg);
   background-repeat: no-repeat;
   background-size: 110px 110px;
 background-size: 110px 110px;
@@ -164,27 +164,22 @@ border:1px solid sivler;
 
 <script>
 
-  var value1 = localStorage.getItem("cpf");
-  document.getElementById('cpf').value = value1;
+var value1 = localStorage.getItem("cpf");
+document.getElementById('cpf').value = value1;
 
+var imageUrl = "https://dscti.com.br/app/fotos/" + value1 + ".jpg";
 
-   var imageUrl = "https://dscti.com.br/app/fotos/" + value1 + ".jpg";
-
-
-
+if ( value1 == null ) {} else {
 $('#fotos').hide();
 document.getElementById('fotos').innerHTML= "<img src=" + imageUrl + ">";
-$('#fotos').fadeIn(120); 
-
-
-
+$('#fotos').fadeIn(120); 	}
 
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
 localStorage.setItem("cpf", cpf1);
 if (cpf1 > 0) {
 $('#botao').fadeOut(120); 
-setTimeout(function(){$('#load').fadeIn(120); }, 110);
+setTimeout(function(){$('#load').fadeIn(90); }, 100);
 document.getElementById('fotos').innerHTML= "<img src=" + imageUrl + ">";
 
 setTimeout(function(){ 
