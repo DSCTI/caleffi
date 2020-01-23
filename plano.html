@@ -70,7 +70,7 @@ opacity:0.8;
   </head>
   <body>
 
-<div id="content" style="display:none;">
+
 
 
 <div id='app2' align='center'><div id='app'><center>
@@ -88,12 +88,6 @@ opacity:0.8;
 
 
 <script>
-
-setTimeout(function() {
-
-  $('#content').fadeIn(200);
-
-}, 240); 
 
 function sessionVariable1() {
 var aluno = localStorage.getItem("cpf");
@@ -142,19 +136,14 @@ location.href = "start.html";
 
  } else { 
 
-
-$("#content").fadeIn(200);
-$("#load").fadeOut(50);
-
+$('#load').fadeOut(50); $('#content').fadeIn(150); 
 
 }
 
   })
+  $.ajax(settings).fail(function (response) {
 
-
-$.ajax(settings).fail(function (response) {
-$("#content").fadeIn(200);
-$("#load").fadeOut(50);
+$('#load').fadeOut(50); $('#content').fadeIn(150); 
 
   });
 

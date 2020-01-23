@@ -20,7 +20,11 @@
 
 var aluno = localStorage.getItem("cpf");
 
-// handles the click event, sends the query
+var plano = aluno + "-" + "plano"; 
+var plano = localStorage.getItem(plano);
+
+
+if (plano == "0" || plano == null) {
 
 var url = "https://dscti.com.br/app/plano.php?aluno=" + aluno;
 
@@ -34,15 +38,19 @@ var url = "https://dscti.com.br/app/plano.php?aluno=" + aluno;
   }
 
   $.ajax(settings).done(function (response) {
+
+
 var plano = aluno + "-" + "plano"; 
-if (response == null) {} else {localStorage.setItem(plano, response); }
+if (response == null || response == "0") {window.location.href = "plano.html"; } else { localStorage.setItem(plano, response); }
 
   })
 
   $.ajax(settings).fail(function (response) {
-
+window.location.href = "plano.html";
   });
  
+
+}
 
 var nocoes = aluno + "-nocoes";
 var nocoes = localStorage.getItem(nocoes); 
