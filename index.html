@@ -22,7 +22,6 @@ setTimeout(function() {
 
   $('#content').fadeIn(220);
 
-
 }, 300); 
 
 var splash = localStorage.getItem("splash");
@@ -169,19 +168,56 @@ border-radius:100px;
 
 <script>
 
-
 var aluno = localStorage.getItem("cpf");
-
 var value1 = localStorage.getItem("cpf");
 document.getElementById('cpf').value = value1;
+var cpf1 = document.getElementById("cpf").value;
 
-var imageUrl = "https://dscti.com.br/app/fotos/" + value1 + ".jpg";
-
-  var url = "url('"+ imageUrl +"')";
-
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')";
 document.getElementById("fotos").style.backgroundImage = url;
 
-    
+
+
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+
+}, 5500); 
+
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+
+}, 10500); 
+
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+
+}, 15500); 
+
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+
+}, 20500); 
+   
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+
+}, 25500); 
 
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
@@ -191,17 +227,15 @@ $('#botao').fadeOut(120);
 
 localStorage.setItem("cpf", cpf1);
 
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')";
-document.getElementById("fotos").style.backgroundImage = url;
-
-
 setTimeout(function(){$('#load').fadeIn(90); }, 100);
 
-
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
 
 setTimeout(function(){ 
-window.location.href = "instrutor.html"; }, 4000);
+window.location.href = "instrutor.html"; }, 2000);
 
 } }
 
@@ -213,7 +247,6 @@ window.location.href = "pendentes.html";
 
 
 function x() {
-var cpf1 = document.getElementById("cpf").value;
 document.getElementById('cpf').value = "";
 document.getElementById("fotos").style.backgroundImage = "";
 }
