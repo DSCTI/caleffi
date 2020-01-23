@@ -273,10 +273,9 @@ var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno 
 
 $.ajax(settings).done(function (response) {
 
-if (response == "feita") { location.href = "feita.html"; } else {
+if (response == "feita") { location.href = "feita.html"; }  else {
 
-if (aula.includes("EXAME")) { location.href = "1_exame.html"; } 
-
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
 
 $('#load').fadeOut(50); 
 
@@ -288,19 +287,17 @@ $('#content').fadeIn(100);
 })
 
 .fail(function(response) {
-
-if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
-
 $('#load').fadeOut(50); 
 setTimeout(function() {
 $('#content').fadeIn(100); 
 }, 50); 
 
-
-
 });
 
 }
+
+
+
 
 </script>
 
