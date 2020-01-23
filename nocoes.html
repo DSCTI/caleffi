@@ -6,7 +6,18 @@
 
 <div id="content" style="display:none;">
 
-<style>.pergunta {margin-top:12px; margin-bottom:25px;}
+<style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.pergunta {margin-top:12px; margin-bottom:25px;}
 *{ font-family:Poppins Regular !important; }
 #aula  {margin-right:9px; font-weight:600; font-size: 1em;}
 #aluno {margin-right:20px; font-weight:600; font-size: 1em;}
@@ -121,7 +132,7 @@ location.href = "start.html";
 
 var aluno = localStorage.getItem("cpf");
 
-var url = "https://grupocaleffi.com.br/app/nocoes.php?aluno=" + aluno;  
+var url = "https://dscti.com.br/app/nocoes.php?aluno=" + aluno;  
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -143,7 +154,7 @@ location.href = "start.html";
  }  else { 
 
 
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 $("#load").fadeOut(50);
 
 
@@ -153,7 +164,7 @@ $("#load").fadeOut(50);
 
 
   $.ajax(settings).fail(function (response) {
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 $("#load").fadeOut(50);
 
   });

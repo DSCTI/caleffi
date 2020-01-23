@@ -9,12 +9,12 @@
 $( document ).ready(function() {
 $("#load").hide();
 $("#content").hide();
-$("#load").fadeIn(400);
+$("#load").fadeIn(200);
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome";
 
-var url = "https://grupocaleffi.com.br/app/aluno.php?aluno=" + aluno;  
+var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
 
  $.ajax({
     url: url, type: 'GET',
@@ -25,7 +25,7 @@ if (response == "sem") { window.location.href = "sem.html"; }
 
 localStorage.setItem(nome, response);
 $("#load").fadeOut(20);
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 
 
 })
@@ -33,7 +33,7 @@ $("#content").fadeIn(400);
 .fail(function(response) {
 $("#load").fadeOut(50);
 localStorage.setItem(nome, aluno);
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 
 
 });
@@ -52,6 +52,17 @@ $("#content").fadeIn(400);
 
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/><style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 *{ font-family:Poppins Regular !important; }
 .x {font-size:1.5em; color:silver; padding:3px; }
 #erro {padding:20px; color:white; text-align:center;}
@@ -62,7 +73,7 @@ body { margin:0px;  background-color:#132e54;  font-family:arial; }
   padding: 20px;
 }
 
-#cpf {margin-left:36px;}
+
 
 input[type=phone], select {font-family:Poppins Regular;
   width: 200px;
@@ -102,15 +113,16 @@ opacity:0.8;
     
   </head>
   <body>
+<div style=" padding-left:30px;" align=center>
+<div style="  max-width:313px;  " align=center>
 <div id='app2' align='center'><div id='app'><center>
 <br><br><br>
 
 <img src="carteira-de-identidade2.svg" width='90'><div style="font-size:1.6em; padding:2px; padding-top:5px; color:white;">INSTRUTOR</div>
 
 
-<input type='phone' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
-<br>
-	
+<p align="left" style="padding-left:31px;"><input type='phone' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+
 <select id='select'>
   <option><script>
 var veiculo = localStorage.getItem("veiculo"); 
@@ -125,7 +137,7 @@ document.write(veiculo); }
   <option>DJN-0045</option>
   <option>DSV-1016</option>
 
-</select><br> 
+</select><br></p> 
 
 <br>
 <span class="button1" onclick="sessionVariable();" />Ok</span>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<div id="content">
+<div id="content" style="display:none;">
 <script src="jquery.min.js"></script>
 
 <script>
 
-$("#content").hide();
+
 
 setTimeout(function() {
 
-  $('#content').fadeIn(400);
+  $('#content').fadeIn(200);
 
 
-}, 100); 
+}, 240); 
 
 var splash = localStorage.getItem("splash");
 if (splash == "1") { } else { location.href = "splash.html"; }
@@ -23,6 +23,17 @@ if (splash == "1") { } else { location.href = "splash.html"; }
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 #cpf {margin-left:32px;}
 * { font-family:Poppins Regular !important; }
 #erro {padding:20px; color:white; text-align:center;}

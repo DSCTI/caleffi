@@ -5,6 +5,17 @@
   <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 *{ font-family:Poppins Regular !important; }
 #aula  {margin-right:1px; font-weight:600; font-size: 1em;}
 #aluno {margin-right:1px; font-weight:600; font-size: 1em;}
@@ -57,7 +68,7 @@ font-size: 0.6em;
   <body>
 
 
-
+<div id="content" style="display:none;" align='center'>
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
@@ -68,7 +79,7 @@ font-size: 0.6em;
 <div id='result'></div>
 <br>
 
-
+<div id='content2' style="display:none;">
 
 <div class="button2" id='button' onclick="cancelar();" /><font color='white'><big><big>Transmitir depois</big></big></div>
 <p style='line-height:19px;'><small><small><font color='fffa75'>*Toque em transmitir depois caso você esteja sem internet.
@@ -80,6 +91,21 @@ font-size: 0.6em;
   </body>
 
 <script>
+
+
+setTimeout(function() {
+
+  $('#content').fadeIn(200);
+
+}, 240); 
+
+setTimeout(function() {
+
+  $('#content2').fadeIn(200);
+
+}, 7000); 
+
+
 
 var temp = localStorage.getItem("temp");
 temp = temp.replace(' ','');
@@ -107,7 +133,7 @@ resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
 
-var url = "https://grupocaleffi.com.br/app/recebe.php?dados=" + resultado;
+var url = "https://dscti.com.br/app/recebe.php?dados=" + resultado;
 
 
 document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';

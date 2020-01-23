@@ -6,6 +6,17 @@
 <script src="jquery.min.js"></script>
 
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 .pergunta {margin-top:12px; margin-bottom:25px;}
 *{ font-family:Poppins Regular !important; }
 #aula  {margin-right:9px; font-weight:600; font-size: 1em;}
@@ -128,7 +139,9 @@ font-size: 0.6em;
 
 <script>
 
-$('#content').hide(0);
+var aula = localStorage.getItem("aula");
+
+if (aula == "INICIAR AULA") {location.href = "start.html";}
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
@@ -191,7 +204,7 @@ location.href = "2.html";
 }
 
 if (feita == "1") {
-  $('#content').fadeIn(400);
+  $('#content').fadeIn(200);
   $('#load').fadeOut(50);
   localStorage.setItem("feita", "0");
 }
@@ -210,7 +223,7 @@ aula = aula.replace('Á','A');
 aula = aula.replace('Ç','C');
 aula = aula.replace(' ',''); 
 
-var url = "https://grupocaleffi.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -234,11 +247,11 @@ if (response == "restrito") {   $('#anterior').fadeIn(200); }
 
 var feita = localStorage.getItem("feita"); 
 
-if (feita == "1") { $('#load').fadeOut(50); $('#content').fadeIn(400); localStorage.setItem("feita", "0"); }
+if (feita == "1") { $('#load').fadeOut(50); $('#content').fadeIn(200); localStorage.setItem("feita", "0"); }
 
 if (feita != "1") {
 
-var url = "https://grupocaleffi.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -255,7 +268,7 @@ if (response == "feita") { location.href = "feita.html"; } else {
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } 
 
 
-$('#load').fadeOut(50);  $('#content').fadeIn(400); }
+$('#load').fadeOut(50);  $('#content').fadeIn(200); }
 
 })
 
@@ -264,7 +277,7 @@ $('#load').fadeOut(50);  $('#content').fadeIn(400); }
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
 
 
-  $('#content').fadeIn(400);
+  $('#content').fadeIn(200);
   $('#load').fadeOut(50);
 
 });

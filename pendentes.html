@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+  <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/><script src="jquery.min.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<div id="content" style="display:none;">
+
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 *{ font-family:Poppins Regular !important; }
 #aula  {margin-right:1px; font-weight:600; font-size: 1em;}
 #aluno {margin-right:1px; font-weight:600; font-size: 1em;}
@@ -53,14 +67,8 @@ location.href = "index.html";
 </script>
 
 
-<html>
-  <head><script src="jquery.min.js"></script>
-
-
-    <title>Autoescola Caleffi</title>
   
 
-<div id="content" style="display:none;">
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
@@ -80,7 +88,13 @@ location.href = "index.html";
 
 <script>
 
-$("#content").fadeIn(400);
+
+setTimeout(function() {
+
+  $('#content').fadeIn(200);
+
+}, 240); 
+
 
 for (var i = 0; i < localStorage.length; i++) {
 var key = localStorage.key(i);

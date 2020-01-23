@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+<div id="content" style="display:none;" align='center'>
 
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 *{ font-family:Poppins Regular !important; }
 body { margin:0px;  background-color:#132e54; font-family:arial;  font-family:arial; }
 
@@ -78,6 +89,12 @@ opacity:0.8;
 
 <script>
 
+setTimeout(function() {
+
+  $('#content').fadeIn(200);
+
+}, 240); 
+
 function sessionVariable1() {
 var aluno = localStorage.getItem("cpf");
 var id = "1";
@@ -104,7 +121,7 @@ location.href = "start.html";
 
 var aluno = localStorage.getItem("cpf");
 
-var url = "https://grupocaleffi.com.br/app/plano.php?aluno=" + aluno;  
+var url = "https://dscti.com.br/app/plano.php?aluno=" + aluno;  
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -126,7 +143,7 @@ location.href = "start.html";
  } else { 
 
 
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 $("#load").fadeOut(50);
 
 
@@ -136,7 +153,7 @@ $("#load").fadeOut(50);
 
 
 $.ajax(settings).fail(function (response) {
-$("#content").fadeIn(400);
+$("#content").fadeIn(200);
 $("#load").fadeOut(50);
 
   });

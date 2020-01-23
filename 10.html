@@ -8,6 +8,17 @@
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 #text{ width: 90%;  font-size: 0.7em; margin-top:10px;  padding:10px;   border: none;
   border-radius: 4px;}
 
@@ -50,9 +61,9 @@ font-size: 0.6em;
     
   </head>
   <body>
-
+<div id="content" style="display:none;" align='center'>
 <div class='quadro1'><SMALL> <span id='aula'></span>
-</script> <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
+ <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
 <div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
 
@@ -71,6 +82,12 @@ font-size: 0.6em;
   </body>
 
 <script>
+
+setTimeout(function() {
+
+  $('#content').fadeIn(200);
+
+}, 240); 
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 

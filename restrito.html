@@ -3,6 +3,17 @@
   <head><link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 *{ font-family:Poppins Regular !important; }
 
 body { margin:0px;  background-color:#132e54; }
@@ -32,7 +43,7 @@ input:hover {
 .quadro1 { max-width:400px;  max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
 
 </style>
-
+<div id="content" style="display:none;" align='center'>
     <title>Autoescola Caleffi</title>
 
 
@@ -70,6 +81,15 @@ input:hover {
 
 
 <script>
+
+
+
+setTimeout(function() {
+
+  $('#content').fadeIn(200);
+
+}, 240); 
+
 
 var aula = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML = aula;

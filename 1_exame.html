@@ -9,6 +9,17 @@
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 
 <style>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
 
 
 
@@ -240,7 +251,7 @@ aula = aula.replace('Á','A');
 aula = aula.replace('Ç','C');
 aula = aula.replace(' ',''); 
 
-var url = "https://grupocaleffi.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -262,7 +273,7 @@ if (response == "restrito") {   $('#anterior').fadeIn(200); }
 
 });
 
-setTimeout(function(){ $("#content").fadeIn(400); }, 100);
+setTimeout(function(){ $("#content").fadeIn(200); }, 100);
 
 var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
@@ -280,7 +291,7 @@ localStorage.setItem("soma", soma);
 
 if (soma > 3) {
 
-$("#fail").fadeIn(400);
+$("#fail").fadeIn(200);
 
 $("#botoes").hide(0);
 $("#eliminatorias").hide(0);
@@ -313,48 +324,48 @@ location.href = "10.html";
 }
 
 function eliminatorias() {
-$("#eliminatorias").fadeIn(400);
+$("#eliminatorias").fadeIn(200);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
 }
 
 function graves() {
-$("#graves").fadeIn(400);
+$("#graves").fadeIn(200);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
 }
 
 function medias() {
-$("#medias").fadeIn(400);
+$("#medias").fadeIn(200);
 $("#eliminatorias").hide(0);
 $("#graves").hide(0);
 $("#leves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
 }
 
 function leves() {
-$("#leves").fadeIn(400);
+$("#leves").fadeIn(200);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
-$("#sobe").fadeIn(400);
+$("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
@@ -368,8 +379,8 @@ $("#medias").hide(0);
 $("#graves").hide(0);
 $("#botoes").hide(0);
 $("#sobe").fadeOut(50);
-$("#botoes").fadeIn(400);
-$("#faltas").fadeIn(400);
+$("#botoes").fadeIn(200);
+$("#faltas").fadeIn(200);
 $("#back").fadeIn(200);
 }
 
