@@ -106,6 +106,26 @@ opacity:0.8;
 
 .x {font-size:1.4em; color:silver; padding:3px; }
 
+#fotos {margin-top:25px;}
+
+#fotos > *
+{
+
+background: url(no.png);
+  background-repeat: no-repeat;
+  background-size: 110px 110px;
+background-size: 110px 110px;
+
+}
+
+#fotos > *  {
+  
+width:110px; height:110px;
+border-radius:100px;
+border:1px solid sivler;
+
+}
+
 </style>
 
     <title>Autoescola Caleffi</title>
@@ -118,14 +138,25 @@ opacity:0.8;
 <br><br><br>
 <img src='logo.svg' width='240'>
 <br><br>
-<img src="carteira-de-identidade.svg" width='80'><div style="font-size:1.6em; padding:0px; color:white;">ALUNO</div>
+<div id="fotos">
 
-<input type='number' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+</div>
+<input type='number' placeholder='CPF do Aluno' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
 <br><br>
-<span class="button1" value="Ok" onclick="sessionVariable1();" />Ok</span>
-<br><br><br>
+<div style="height:80px;"><span id="botao" class="button1" value="Ok" onclick="sessionVariable1();" />Ok</span>
 
-<center><div class='button2' id='button1' onclick="sessionVariable();" ><b>TRANSMITIR AULAS</b></div>
+<div id="load" style="display:none;"><center><img src="load.gif" width="80"></center></div></div>
+
+
+<br>
+
+<center>
+
+
+
+<div class='button2' id='button1' onclick="sessionVariable();" >
+
+<b>TRANSMITIR AULAS</b></div>
 
 <BR><BR><img src="dscti.svg" width='49'><br><br>
 </div></div>
@@ -136,14 +167,30 @@ opacity:0.8;
   var value1 = localStorage.getItem("cpf");
   document.getElementById('cpf').value = value1;
 
+
+   var imageUrl = "https://dscti.com.br/app/fotos/" + value1 + ".jpg";
+
+
+
+$('#fotos').hide();
+document.getElementById('fotos').innerHTML= "<img src=" + imageUrl + ">";
+$('#fotos').fadeIn(120); 
+
+
+
+
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
 localStorage.setItem("cpf", cpf1);
 if (cpf1 > 0) {
+$('#botao').fadeOut(120); 
+setTimeout(function(){$('#load').fadeIn(120); }, 110);
+document.getElementById('fotos').innerHTML= "<img src=" + imageUrl + ">";
 
-window.location.href = "instrutor.html";   }
+setTimeout(function(){ 
+window.location.href = "instrutor.html"; }, 4000);
 
-}
+} }
 
 function sessionVariable2() {
 
@@ -167,7 +214,7 @@ document.getElementById('cpf').value = "";
 
 function sessionVariable() {
 
-window.location.href = "pendentes.html";
+window.location.href = "pendentes.html";  
 
 }
 
