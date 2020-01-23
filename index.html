@@ -4,8 +4,17 @@
 <script src="jquery.min.js"></script>
 
 <script>
+$(document).keypress(function (e) {
+    if (e.which == 13) {
+
+var cpf1 = document.getElementById("cpf").value;
+localStorage.setItem("cpf", cpf1);
+if (cpf1 > 0) {
+
+window.location.href = "instrutor.html";  }}
 
 
+});
 
 setTimeout(function() {
 
