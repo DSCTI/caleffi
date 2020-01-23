@@ -113,7 +113,9 @@ font-size: 0.6em;
 
 <div id='anterior'  style="display:none;"><b>Atenção! Alguma aula anterior não foi feita e transmitida!</b></div>
 <div id='anterior2' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
-<div id="load"><center><br><br><br><br><img src="load.gif" width="80"></center></div><div id='content' style="display: none;">
+<div id="load"><center><br><br><br><br><img src="load.gif" width="80"></center></div>
+
+<div id='content' style="display: none;">
 
 <div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
@@ -204,7 +206,7 @@ location.href = "2.html";
 }
 
 if (feita == "1") {
-  $('#content').fadeIn(200);
+  $('#content').fadeIn(100);
   $('#load').fadeOut(50);
   localStorage.setItem("feita", "0");
 }
@@ -235,7 +237,7 @@ var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno +
 
 $.ajax(settings).done(function (response) {
 
-if (response == "restrito") {   $('#anterior').fadeIn(200); } 
+if (response == "restrito") {  $('#anterior').fadeIn(200); } 
 
 })
 
@@ -247,7 +249,15 @@ if (response == "restrito") {   $('#anterior').fadeIn(200); }
 
 var feita = localStorage.getItem("feita"); 
 
-if (feita == "1") { $('#load').fadeOut(50); $('#content').fadeIn(200); localStorage.setItem("feita", "0"); }
+if (feita == "1") {
+
+setTimeout(function() {
+
+$('#load').fadeOut(50); $('#content').fadeIn(150); localStorage.setItem("feita", "0"); 
+
+}, 150); 
+
+}
 
 if (feita != "1") {
 
@@ -268,7 +278,12 @@ if (response == "feita") { location.href = "feita.html"; } else {
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } 
 
 
-$('#load').fadeOut(50);  $('#content').fadeIn(200); }
+$('#load').fadeOut(50); 
+
+setTimeout(function() {
+$('#content').fadeIn(100); 
+}, 150); 
+}
 
 })
 
@@ -276,9 +291,12 @@ $('#load').fadeOut(50);  $('#content').fadeIn(200); }
 
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
 
+$('#load').fadeOut(50); 
+setTimeout(function() {
+$('#content').fadeIn(100); 
+}, 150); 
 
-  $('#content').fadeIn(200);
-  $('#load').fadeOut(50);
+
 
 });
 
