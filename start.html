@@ -100,8 +100,6 @@ font-size:1.1em;
 background-color:white !important;
 }
 
-#attention {color:black !important; margin-top:15px;line-height:22px; padding:16px; text-align:center; font-size:0.95em; color: #1b1b1b; background-color:#fffb82; border-radius:10px;}
-#attention > * {color:black !important;}
 .button1 {
   background-color: #4CAF50;
   color: white;
@@ -221,7 +219,6 @@ max-width:200px;
 </div>
 
 <br>
-<div id="attention" style="display:none;"> <b>Atenção:</b> Você tem aulas pendentes de transmissão na internet, a evolução do aluno está desatualizada. <b><a href='pendentes.html'><br>Toque aqui para transmitir.</a></b></div>
 
 <br>
 
@@ -294,22 +291,7 @@ document.getElementById("result").innerHTML = "<font color='white'><small>Não f
   });
 
 
-var aluno = localStorage.getItem("cpf");
-var aula  = localStorage.getItem(aula);
 
-for (var i = 0; i < localStorage.length; i++) {
-var key = localStorage.key(i);
-var value = localStorage.getItem(key);
-var v = key.includes("pendente");
-
-if (v == true) {
-key = key.replace(' ','');
-window.localStorage.setItem("temp", key);
-$("#attention").fadeIn(200);
-
-}
-
-}
 
 
 </script>

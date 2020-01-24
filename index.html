@@ -30,10 +30,18 @@ if (splash == "1") { } else { location.href = "splash.html"; }
 </script>
 
   <head>
+
+
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.0, user-scalable=no">
 <div id="content" style="display:none;">
+<div id="attention" style="display:none;"> <b>Atenção:</b> Você tem aulas pendentes de transmissão, transmita o mais rápido possível! <b><a href='pendentes.html'><br>Toque aqui para transmitir.</a></b></div>
 
 <style>
+
+#attention {color:black !important; line-height:24px; padding:16px; text-align:center; font-size:1em; color: #1b1b1b; background-color:#fffb82; }
+#attention > * > * { text-decoration: none; color:black !important;}
+
+
 * {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -158,9 +166,9 @@ border-radius:100px;
 
 
 
-<div class='button2' id='button1' onclick="sessionVariable();" >
 
-<b>TRANSMITIR AULAS</b></div>
+
+
 
 <BR><BR><a href="teste.html"><img src="dscti.svg" width='49'></a><br><br>
 </div></div>
@@ -234,16 +242,29 @@ window.location.href = "instrutor.html"; }, 2000);
 
 } }
 
-function sessionVariable2() {
-
-window.location.href = "pendentes.html";
-
-}
 
 
 function x() {
 document.getElementById('cpf').value = "";
 document.getElementById("fotos").style.backgroundImage = "";
+}
+
+
+
+var aula  = localStorage.getItem(aula);
+
+for (var i = 0; i < localStorage.length; i++) {
+var key = localStorage.key(i);
+var value = localStorage.getItem(key);
+var v = key.includes("pendente");
+
+if (v == true) {
+key = key.replace(' ','');
+window.localStorage.setItem("temp", key);
+$("#attention").fadeIn(200);
+
+}
+
 }
 
 </script>
