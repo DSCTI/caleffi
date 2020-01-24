@@ -17,7 +17,7 @@
 <preference name="SplashScreen" value="none"/>
 
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
-<plugin name="org.apache.cordova.geolocation" spec="4.0.2" source="npm" />
+<plugin name="org.apache.cordova.geolocation" source="npm" />
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
