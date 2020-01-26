@@ -25,6 +25,13 @@
 
 
 
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
 
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -37,16 +44,14 @@
 <icon src="icons/android/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
 <access origin="*" />
-<plugin name="cordova-plugin-whitelist" version="1" />
+
 <allow-intent href="http://*/*" />
 <allow-intent href="https://*/*" />
 <allow-intent href="tel:*" />
 <allow-intent href="sms:*" />
 <allow-intent href="mailto:*" />
 <allow-intent href="geo:*" />
-<platform name="android">
-    <allow-intent href="market:*" />
-</platform>
+
 
 <platform name="ios">
     <allow-intent href="itms:*" />
