@@ -213,7 +213,7 @@ div {font-size:0.962em; line-height:24px; }
 
   </body>
 
-<div id="faltas" style="margin-top:8px;"><span id="faltas1"></span></div>
+<div id="faltas" style="margin-top:8px;"><span id="faltas1"></span></div><BR>
 <center><big><big><big><big><button id="sobe" class="button5" onclick="sobe();">VOLTAR</button>
 <big><br><br>
 <div id="botoes"><center>
@@ -224,7 +224,7 @@ div {font-size:0.962em; line-height:24px; }
 </center>
 <br></div></div>
 <big>
-<button id="concluir" class="button5" onclick="concluir();">CONTINUAR</button><br>
+<button id="concluir" class="button5" onclick="concluir();">CONCLUIR</button><br>
 </big>
 
 </big></big></big></big></big></big>
@@ -310,7 +310,6 @@ soma1 = "ELIMINADO";
 }
 
 
-
 document.getElementById("faltas").innerHTML= soma1; 
 
 $("#eliminatorias").hide(0);
@@ -372,7 +371,7 @@ $("#back").hide(0);
 }
 
 function sobe() {
-$("#concluir").hide(0);
+
 $("#leves").hide(0);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
@@ -381,7 +380,7 @@ $("#botoes").hide(0);
 $("#sobe").fadeOut(50);
 $("#botoes").fadeIn(200);
 $("#faltas").fadeIn(200);
-$("#back").fadeIn(200);
+$("#concluir").fadeIn(200);
 }
 
 
@@ -433,6 +432,4 @@ var aula = localStorage.getItem("aula");
 
 </div>
 
-
-<div id="back" style="position:fixed; z-index:5; bottom:0px; width:100%; padding-bottom:18px;"><center><a href="javascript:history.back()"><img src="voltar.svg" width="40"></a></center></div>
 
