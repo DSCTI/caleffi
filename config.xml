@@ -21,11 +21,11 @@
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="org.apache.cordova.geolocation" source="npm" />
 
-<icon src="icons/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi"/>
-<icon src="icons/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
-<icon src="icons/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
-<icon src="icons/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
-<icon src="icons/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
+<icon src="icons/mipmap-mdpi/launcher.png" gap:platform="android" gap:density="mdpi"/>
+<icon src="icons/mipmap-hdpi/launcher.png" gap:platform="android" gap:density="hdpi" />
+<icon src="icons/mipmap-xhdpi/launcher.png" gap:platform="android" gap:density="xhdpi" />
+<icon src="icons/mipmap-xxhdpi/launcher.png" gap:platform="android" gap:density="xxhdpi" />
+<icon src="icons/mipmap-xxxhdpi/launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
 <access origin="*" />
 
