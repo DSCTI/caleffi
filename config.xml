@@ -3,7 +3,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.caleffi.dscti" version="1.0.0">
 
 <name>Instrutores</name>
-
+<preference name="keepRunning" value="true" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="true" />
 <preference name="DisallowOverscroll" value="false" />
@@ -15,6 +15,7 @@
 <preference name="auto-hide-splash-screen" value="true" />
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
+<preference name="phonegap-version" value="cli-8.2.2" />
 
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="org.apache.cordova.geolocation" source="npm" />
