@@ -28,11 +28,11 @@
     <allow-intent href="https://*/*" />
 
 
-<icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
-
-<icon src="icons/android/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
-<icon src="icons/android/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
-<icon src="icons/android/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
+<icon src="icons/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
+<icon src="icons/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
+<icon src="icons/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
+<icon src="icons/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
+<icon src="icons/mipmap-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
 <access origin="*" />
 
