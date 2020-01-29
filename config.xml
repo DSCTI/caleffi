@@ -16,16 +16,16 @@
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
 <preference name="phonegap-version" value="cli-8.2.2" />
+<preference name="android-targetSdkVersion" value="28" />
 
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="org.apache.cordova.geolocation" source="npm" />
 
 
-
-<allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
-
-
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
 
 
 <icon src="icons/android/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
