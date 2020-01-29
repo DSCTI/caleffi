@@ -16,19 +16,14 @@
 <preference name="disable-cursor" value="false" />
 <preference name="SplashScreen" value="none"/>
 <preference name="phonegap-version" value="cli-9.0.0" />
-<preference name="android-targetSdkVersion" value="28" />
+
 
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="org.apache.cordova.geolocation" source="npm" />
 
 
-    <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
 
-
-<icon src="icons/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
+<icon src="icons/mipmap-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi"/>
 <icon src="icons/mipmap-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
 <icon src="icons/mipmap-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
 <icon src="icons/mipmap-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
@@ -36,6 +31,11 @@
 
 <access origin="*" />
 
+
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
 
 
 </widget>
