@@ -18,6 +18,7 @@
 <preference name="phonegap-version" value="cli-9.0.0" />
 <preference name="android-targetSdkVersion" value="28" />
 
+<plugin name="cordova-plugin-insomnia" source="npm" />
 <plugin name="cordova-plugin-autostart" source="npm"/>
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
@@ -30,6 +31,10 @@
 <plugin name="cordova-plugin-geolocation">
 <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
 </plugin>
+
+<feature name="Insomnia">
+  <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+</feature>
 
    <platform name="android">
         <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
