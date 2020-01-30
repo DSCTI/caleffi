@@ -23,11 +23,9 @@
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 
-
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
 </feature>
-
 
 <plugin name="cordova-plugin-android-permissions" />
 <plugin name="cordova-plugin-geolocation">
@@ -35,7 +33,6 @@
 </plugin>
 
    <platform name="android">
-        <uses-feature android:name="android.hardware.location.gps" />
         <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
