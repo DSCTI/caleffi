@@ -32,7 +32,7 @@ var options = {
 
 };
 
-navigator.geolocation.getCurrentPosition(onSuccess, onSuccess, options);
+navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
     
 
