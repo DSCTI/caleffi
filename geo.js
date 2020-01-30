@@ -35,7 +35,8 @@ var options = {
 navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
     
+}
 
 }, 3000);
 
-}}
+}
