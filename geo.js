@@ -26,8 +26,6 @@ var result = "///" + result1  + "//" +  result2  + location;
 
 localStorage.setItem(location1, result);
 
-alert (result);
-
 }
 
 function onError(error) {  }
