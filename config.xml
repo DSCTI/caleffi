@@ -22,13 +22,15 @@
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="org.apache.cordova.geolocation" source="npm" />
 <plugin name="cordova-plugin-android-permissions" />
-<plugin name="cordova-plugin-geolocation">
+<plugin name="cordova-plugin-geolocation" spec="~4">
+<variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
+</plugin>
 
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-
-
+   <platform name="android">
+        <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    </platform>
 
 <icon src="icons/mipmap-mdpi/launcher.png" gap:platform="android" gap:density="mdpi"/>
 <icon src="icons/mipmap-hdpi/launcher.png" gap:platform="android" gap:density="hdpi" />
