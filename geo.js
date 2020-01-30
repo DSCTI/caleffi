@@ -14,13 +14,13 @@ var aula = localStorage.getItem("aula"); if (aula == 0) {} else {
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
 
-var result = position.coords.latitude  + '//' +  position.coords.longitude + 'end'  + location;
+var result =  position.coords.latitude    + '//' +  position.coords.longitude     + 'end'  + location;
 localStorage.setItem(location1, result);
 alert (result);
     } 
 
   function onError(error) {
-  alert ("Erro ao obter a localização, autorize o uso do GPS nas configurações do aplicativo.");
+
 
     }
 

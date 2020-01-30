@@ -29,7 +29,7 @@
 
 <plugin name="cordova-plugin-android-permissions" />
 <plugin name="cordova-plugin-geolocation">
-<variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
+<variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Esse aplicativo coleta dados de Geolocalização." />
 </plugin>
 
 <feature name="Insomnia">
