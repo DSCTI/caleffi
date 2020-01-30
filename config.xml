@@ -18,8 +18,8 @@
 <preference name="phonegap-version" value="cli-9.0.0" />
 <preference name="android-targetSdkVersion" value="28" />
 
-<plugin name="org.apache.cordova.file-transfer" />
-<plugin name="org.apache.cordova.file" />
+
+<plugin name="cordova-plugin-file" />
 <plugin name="cordova-plugin-insomnia" source="npm" />
 <plugin name="cordova-plugin-autostart" source="npm"/>
 <plugin name="cordova-plugin-whitelist"/>
