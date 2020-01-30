@@ -10,52 +10,42 @@ window.plugins.insomnia.keepAwake();
 
 
 
-// call this once
-setupWatch(3000);
-
-// sets up the interval at the specified frequency
-function setupWatch(freq) {
-    // global var here so it can be cleared on logout (or whenever).
-    activeWatch = setInterval(watchLocation, freq);
-}
-
-// this is what gets called on the interval.
-function watchLocation() {
-    var gcp = navigator.geolocation.getCurrentPosition(
-            updateUserLoc, onLocationError, {
-                enableHighAccuracy: true
-            });
 
 
-    // console.log(gcp);
+var oldlong = "";
+var oldlat = "";
 
-}
+navigator.geolocation.watchPosition(onGpsChangeSuccess,onGpsError,{
+   maximumAge: 10000, 
+   enableHighAccuracy: false, 
+   timeout: 15000 
+ }
+);
 
-// do something with the results
+var onGpsChangeSuccess = function(){
+    //Watch was triggered...
 
-function updateUserLoc(position) {
+    if(oldlong != position.coords.longitude && oldlat!=position.coords.longitude){
 
-
-var location = {
-    lat : position.coords.latitude,
-    lng : position.coords.longitude
-};
-
+        //Changes detected
+        oldlong = position.coords.longitude;
+        oldlat = position.coords.latitude; 
+      
 
 var location = localStorage.getItem(location1);
-
-var result =  location.lat + '//' + location.lng  + 'end'  + location;
+var result =  oldlong + '//' + oldlat  + 'end'  + location;
 localStorage.setItem(location1, result);
 
 alert (result);
 
+   }else{
+    alert ("sem mudanças");
+   }
 }
 
-// stop watching
 
-function logout() {
-    clearInterval(activeWatch);
-}
+
+
 
 
 
