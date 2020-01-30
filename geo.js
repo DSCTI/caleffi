@@ -8,45 +8,19 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
-
-
-
-
-var oldlong = "";
-var oldlat = "";
-
-navigator.geolocation.watchPosition(onGpsChangeSuccess,onGpsError,{
-   maximumAge: 10000, 
-   enableHighAccuracy: false, 
-   timeout: 15000 
- }
-);
-
-var onGpsChangeSuccess = function(){
-    //Watch was triggered...
-
-    if(oldlong != position.coords.longitude && oldlat!=position.coords.longitude){
-
-        //Changes detected
-        oldlong = position.coords.longitude;
-        oldlat = position.coords.latitude; 
+    function onSuccess(position) {
       
-
 var location = localStorage.getItem(location1);
-var result =  oldlong + '//' + oldlat  + 'end'  + location;
+var result =  position.coords.latitude + '//' + position.coords.longitude  + 'end'  + location;
 localStorage.setItem(location1, result);
 
 alert (result);
 
-   }else{
-    alert ("sem mudanças");
-   }
+
 }
 
+function onError(error) {  }
 
-
-
-
-
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 5000, enableHighAccuracy: true });
 
 }
