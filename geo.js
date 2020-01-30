@@ -20,6 +20,6 @@ alert (result);
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 5000, enableHighAccuracy: true });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 
 }
