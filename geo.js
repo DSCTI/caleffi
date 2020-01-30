@@ -1,7 +1,8 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-   var location1 = aluno + "-location";
+var aluno = localStorage.getItem("cpf");
+var location1 = aluno + "-location";
 
 function onDeviceReady() {
 
