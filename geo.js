@@ -15,7 +15,7 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var result =  "s" + result1  + "e" +  result2  + location;
+var result = location + result1 + "e" +  result2  + "s";
 
 localStorage.setItem(location1, result);
 
@@ -23,6 +23,6 @@ localStorage.setItem(location1, result);
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: false });
 
 }
