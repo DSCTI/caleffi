@@ -1,6 +1,8 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+   var location1 = aluno + "-location";
+
 function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
@@ -21,7 +23,7 @@ function on_success(position){
     }
     lastUpdateTime = now;
 
-   var location1 = aluno + "-location";
+
 var location = localStorage.getItem(location1);
 
 var result =  position.coords.latitude + '//' +  position.coords.longitude  + 'end'  + location;
