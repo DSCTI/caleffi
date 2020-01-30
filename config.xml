@@ -22,6 +22,7 @@
 <plugin name="cordova-plugin-autostart" source="npm"/>
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
+<uses-feature android:name="android.hardware.location.gps" />
 
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
