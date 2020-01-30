@@ -136,8 +136,10 @@ resultado = resultado.replace('Á','A');
 
 var url = "https://dscti.com.br/app/recebe.php?dados=" + resultado;
 
-document.getElementById('result').innerHTML = '<font color=white>Enviando...</font>';
+
+document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
 	
+function myTimer2() {
 $.ajax({
     url: url,
     method: 'GET',
@@ -146,7 +148,8 @@ $.ajax({
      document.getElementById('result').innerHTML = 'Aguarde...';
     }
 });
- 
+}
+
 function myTimer() {
 var x = document.getElementById("result").textContent;
    if (x.includes("Aguarde")) {
@@ -156,7 +159,8 @@ location.href = "pendentes.html";
 } 
 }
 
-var myVar = setInterval(myTimer, 1000);
+var myVar = setInterval(myTimer, 2000);
+var myVar = setInterval(myTimer2, 2000);
 
 function cancelar() {
 location.href = "index.html";
