@@ -3,7 +3,7 @@
   <head>
     <title>FileWriter Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
     <script type="text/javascript" charset="utf-8">
 
 var aluno = localStorage.getItem("cpf");
@@ -14,10 +14,7 @@ var location2 = aluno + "///" + location2;
 
 alert (location2);
    
-    document.addEventListener("deviceready", onDeviceReady, false);
 
-    function onDeviceReady() {
-     
 
 $.ajax({
     data: 'data=' + location2,
@@ -27,10 +24,6 @@ $.ajax({
         alert("sucesso");
     }
 });
-
-
-
-    }
 
   
 
