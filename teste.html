@@ -9,13 +9,11 @@
 var aluno = localStorage.getItem("cpf");
 var location3 = aluno + "-location";
 var location = localStorage.getItem(location3);
+alert (location);
 
-    // Wait for device API libraries to load
-    //
+   
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // device APIs are available
-    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
@@ -30,19 +28,19 @@ var location = localStorage.getItem(location3);
 
     function gotFileWriter(writer) {
         writer.onwriteend = function(evt) {
-            console.log("contents of file now 'some sample text'");
+            alert("contents of file now 'some sample text'");
             writer.truncate(11);
             writer.onwriteend = function(evt) {
-                console.log("contents of file now 'some sample'");
+                alert("contents of file now 'some sample'");
                 writer.seek(4);
                 writer.write(location);
                 writer.onwriteend = function(evt){
-                    console.log("contents of file now 'some different text'");
+                    alert("contents of file now 'some different text'");
                 }
             };
         };
         writer.write(location);
-        alert (location);
+      
     }
 
     function fail(error) {
