@@ -15,7 +15,7 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var date = new Date();
+var date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
 var hour = date.getHours();
 var min = date.getMinutes();
 var sec = date.getSeconds();
