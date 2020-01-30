@@ -1,30 +1,5 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
+    <script type="text/javascript" charset="utf-8" src="geo.js"></script>
 
 
-
-
-    function onSuccess(position) {
-        var element = document.getElementById('geolocation');
-        element.innerHTML =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + element.innerHTML;
-    }
-
-
-    function onError(error) {
-  
-    }
-
-
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
-
-    }
-       
-    </script>
-  </head>
-  <body>
-    <p id="geolocation">Watching geolocation...</p>
-  </body>
-</html>
