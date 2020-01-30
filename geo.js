@@ -1,9 +1,14 @@
+
 document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() { window.plugins.insomnia.keepAwake(); }
 
 var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
 var aula = localStorage.getItem("aula"); if (aula == null) {} else {
 
 function onDeviceReady() {
+
+
 
     function onSuccess(position) {
 
