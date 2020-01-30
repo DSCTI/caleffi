@@ -1,11 +1,12 @@
-
 document.addEventListener("deviceready", onDeviceReady, false);
+
+setTimeout(function(){
+
+
 
 function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
-
-setTimeout(function(){
 
 function onSuccess(position) {
 
@@ -29,7 +30,7 @@ var options = {
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
-    
-}, 3000);
 
 }
+
+}, 3000);
