@@ -8,6 +8,12 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
+ document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+
+
     function onSuccess(position) {
       
 
@@ -15,7 +21,6 @@ window.plugins.insomnia.keepAwake();
 var location = localStorage.getItem(location1);
 var result =  position.coords.latitude + '//' + position.coords.longitude  + 'end'  + location;
 localStorage.setItem(location1, result);
-
 
 
 }
