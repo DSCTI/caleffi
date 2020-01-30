@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Device Properties Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 document.addEventListener("deviceready", onDeviceReady, false);
-var watchID = null;
 function onDeviceReady() {
-var options = { timeout: 30000 };
-watchID = navigator.geolocation.watchPosition(onSuccess, options);
-    }
+
+
+
 
     function onSuccess(position) {
         var element = document.getElementById('geolocation');
-        element.innerHTML =  position.coords.latitude    + '/'  + position.coords.longitude   +  '#'  + element.innerHTML;
+        element.innerHTML =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + element.innerHTML;
+    }
+
+
+    function onError(error) {
+  
+    }
+
+
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+
     }
        
     </script>
