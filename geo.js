@@ -5,8 +5,6 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
-
-
 setTimeout(function(){
 
 function onSuccess(position) {
