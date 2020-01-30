@@ -181,17 +181,18 @@ var value1 = localStorage.getItem("cpf");
 document.getElementById('cpf').value = value1;
 var cpf1 = document.getElementById("cpf").value;
 
+$("#fotos").hide(0);
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')";
 document.getElementById("fotos").style.backgroundImage = url;
-
-
+$("#fotos").fadeIn(250);
 
 setTimeout(function() {
 var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 }, 5500); 
 
 setTimeout(function() {
@@ -199,6 +200,7 @@ var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 }, 10500); 
 
 setTimeout(function() {
@@ -206,6 +208,7 @@ var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 }, 15500); 
 
 setTimeout(function() {
@@ -213,6 +216,7 @@ var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 }, 20500); 
    
 setTimeout(function() {
@@ -220,7 +224,16 @@ var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 }, 30500); 
+
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 6000); 
 
 function sessionVariable1() {
 var cpf1 = document.getElementById("cpf").value;
@@ -236,9 +249,10 @@ var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 
 setTimeout(function(){ 
-window.location.href = "instrutor.html"; }, 2000);
+window.location.href = "instrutor.html"; }, 2200);
 
 } }
 

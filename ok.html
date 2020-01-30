@@ -95,9 +95,8 @@ setTimeout(function() {
 
 }, 150); 
 
-var seconds = 4; // seconds for HTML
-var foo; // variable for clearInterval() function
-
+var seconds = 5; 
+var foo;
 function redirect() {
     document.location.href = 'pendentes.html';
 }
@@ -151,9 +150,6 @@ var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
 var aluno = localStorage.getItem("cpf");
 var aula = localStorage.getItem("aula");
-
-var soma2 = aluno + "-soma"; 
-localStorage.setItem(soma2, "0");
 
 var data = new Date();
 var dia     = data.getDate();           // 1-31

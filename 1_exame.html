@@ -1,6 +1,4 @@
 <!DOCclass html>
-<html>
-  <head>
 
 <script src="jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap" rel="stylesheet">
@@ -19,22 +17,17 @@
                                   supported by Chrome, Opera and Firefox */
 }
 
-
-
-
-
-.quadro1 { height:20px; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
-
+.quadro1 { height:20px; padding:12px; text-align:center; color:white; background-color:#1c457e; font-size:1.1em;}
 
 *{ font-family:Poppins Regular !important; }
-#aula  {margin-right:9px; font-weight:600; font-size: 1em;}
-#aluno {margin-right:9px; font-weight:600; font-size: 1em;}
-#questao {margin-right:5px; font-weight:600; font-size: 1em;}
+
+#aluno {  margin-right:9px; font-weight:600; font-size: 1em;}
+
 
 body {  margin:0px;  background-color:#132e54; }
 
 .button4{
-  width: 80%;  
+  width:70%; 
   background-color: #dd2208;
   color: white;
   padding: 14px;
@@ -47,6 +40,7 @@ font-size: 0.6em;
 }
 
 .button5{  
+  width:70%;  
   background-color: #0087c1;
   color: white;
   padding: 14px;
@@ -63,7 +57,7 @@ font-size: 0.6em;
 }
 
 .button3{
-  width: 80%;  
+  width:70%; 
   background-color: #db3f2a;
   color: white;
   padding: 14px;
@@ -76,7 +70,7 @@ font-size: 0.6em;
 }
 
 .button2{
-  width: 80%;  
+  width:70%;  
   background-color: #dc5a48;
   color: white;
   padding: 14px;
@@ -89,9 +83,8 @@ font-size: 0.6em;
 }
 
 .button1{
- width: 80%;  
+  width:70%;
   background-color: #dd7a6c;
-  width: 80%;
   color: white;
   padding: 14px;
   margin: 8px 0;
@@ -103,8 +96,21 @@ font-size: 0.6em;
 }
 
 .button5{
-  width: 80%;  
+  width:70%; 
   background-color: #4caf50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size: 0.6em;
+}
+
+.button6{
+  width:70%;
+  background-color: #d78900;
   color: white;
   padding: 14px;
   margin: 8px 0;
@@ -120,33 +126,27 @@ font-size: 0.6em;
 .mais:hover {opacity:0.6;}
 .menos:hover {opacity:0.6;}
 
-.p {margin-bottom:15px; background-color:white; border-radius:8px; padding:15px; background-color:#2d2d2d; color:white; }
-.p:hover {opacity:0.8; background-color:#e9503b; color:white;}
+.p {margin-bottom:15px; background-color:white; border-radius:8px; padding:18px; background-color:#1c457e; color:white; }
+.p:hover {opacity:1; background-color:#ba372d; color:white;}
 
 div {font-size:0.962em; line-height:24px; }
 
-#app2 {max-width:600px;}
-.p {  max-width:600px;     display: flex; 
+
+.p {   max-width:600px;   display: flex; 
   justify-content: center;
   align-items: center;
   color:white; background-image: url("red.svg");  min-height:50px; background-repeat: no-repeat; background-position: 18px; background-size: 50px;    padding:17px; padding-top:17px;    border-radius:100px; padding-left:70px;}
 
 #faltas {font-family: 'Orbitron', sans-serif !important; color:#202020; font-weight:800; border-radius:15px; font-size:2.7em; padding:35px; padding-right:12px; padding-left:12px; background-color:#ffcc00; max-width:300px; }
 
-#anterior, #anterior2 {padding:14px; background-color:#fffa75; wifdth:100%; text-align:center; font-size:1.1em;}
+#anterior, #anterior2 {padding:14px; background-color:#fffa75; width:100%; text-align:center; font-size:1.1em;}
+
 </style>
 
-    <title>Autoescola Caleffi</title>
-
-   
-  </head>
-  <body>
 
 
+<div class='quadro1'><SMALL><SMALL>Aluno:</SMALL> <span id='aluno'></span></SMALL></div>
 
-
-<div class='quadro1'><SMALL><span id='aula'></span>
-<SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
 <div id="content" style="display:none;" align='center'>
 <div id='anterior'  style="display:none;"><b>Atenção! Alguma aula anterior não foi feita e transmitida!</b></div>
 <div id='anterior2' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
@@ -154,11 +154,13 @@ div {font-size:0.962em; line-height:24px; }
 
 
 
-<div id='app2' align='center'><div id='app'><center></SMALL>
+<div id='app'><center>
 
 
 
 <br><center><img id ="fail" src='anxiety.svg' width='100' style="padding-top:20px; display:none;"></center>
+
+
 <br><div id="eliminatorias" class="title"><span><b><big>FALTAS ELIMINATÓRIAS</big></b></span><br><br>
 <div id="1" class="p"><span>Desobedecer à sinalização semafórica e de parada obrigatória.</span></div>
 <div id="2" class="p"><span>Avançar sobre o meio-fio.</span></div>
@@ -211,10 +213,8 @@ div {font-size:0.962em; line-height:24px; }
 
 
 
-  </body>
-
-<div id="faltas" style="margin-top:8px;"><span id="faltas1"></span></div><BR>
-<center><big><big><big><big><button id="sobe" class="button5" onclick="sobe();">VOLTAR</button>
+<div id="faltas" style="margin-top:8px;"><span id="faltas1"></span></div>
+<center><big><big><big><big><div id="sobe"><br><button class="button5" onclick="sobe();">VOLTAR</button></div>
 <big><br><br>
 <div id="botoes"><center>
 <button onclick="eliminatorias();" id="eliminatorias" class="button4">FALTAS ELIMINATÓRIAS</button>
@@ -224,7 +224,9 @@ div {font-size:0.962em; line-height:24px; }
 </center>
 <br></div></div>
 <big>
+<button id="zerar" class="button6" onclick="zerar();">ZERAR FALTAS</button><br>
 <button id="concluir" class="button5" onclick="concluir();">CONCLUIR</button><br>
+
 </big>
 
 </big></big></big></big></big></big>
@@ -232,7 +234,6 @@ div {font-size:0.962em; line-height:24px; }
 
 
 <center></center>
-
 
 
 <script>
@@ -299,16 +300,16 @@ $("#eliminatorias").hide(0);
 document.getElementById("faltas").style.backgroundColor = "#dd2208";
 
 soma1 = "ELIMINADO";
+
         window.setInterval (BlinkIt, 400);
         var color = "#ffffff";
         function BlinkIt () {
             var blink = document.getElementById ("faltas");
             color = (color == "#ffffff")? "#000000" : "#ffffff";
             blink.style.color = color; 
-        }
+       }
 
 }
-
 
 document.getElementById("faltas").innerHTML= soma1; 
 
@@ -332,6 +333,7 @@ $("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
+$("#zerar").hide(0);
 }
 
 function graves() {
@@ -344,6 +346,7 @@ $("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
+$("#zerar").hide(0);
 }
 
 function medias() {
@@ -356,6 +359,7 @@ $("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
+$("#zerar").hide(0);
 }
 
 function leves() {
@@ -368,10 +372,11 @@ $("#sobe").fadeIn(200);
 $("#faltas").hide(0);
 $("#concluir").hide(0);
 $("#back").hide(0);
+$("#zerar").hide(0);
 }
 
 function sobe() {
-
+$("#zerar").fadeIn(200);
 $("#leves").hide(0);
 $("#eliminatorias").hide(0);
 $("#medias").hide(0);
@@ -383,18 +388,64 @@ $("#faltas").fadeIn(200);
 $("#concluir").fadeIn(200);
 }
 
+function zerar() {
+var aluno = localStorage.getItem("cpf");
+var soma2 = aluno + "-soma"; 
+localStorage.setItem(soma2, "0");
+location.href = "1_exame.html";
+}
 
+$('#eliminatorias').on('click', function () { 
 
-document.getElementById("1").addEventListener("click", function()  { var exame = aluno + "-1exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);   location.href = "1_exame.html"; });
-document.getElementById("2").addEventListener("click", function()  { var exame = aluno + "-2exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("3").addEventListener("click", function()  { var exame = aluno + "-3exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("4").addEventListener("click", function()  { var exame = aluno + "-4exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("5").addEventListener("click", function()  { var exame = aluno + "-5exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("6").addEventListener("click", function()  { var exame = aluno + "-6exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("7").addEventListener("click", function()  { var exame = aluno + "-7exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("8").addEventListener("click", function()  { var exame = aluno + "-8exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("9").addEventListener("click", function()  { var exame = aluno + "-9exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
-document.getElementById("10").addEventListener("click", function() { var exame = aluno + "-10exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum);  location.href = "1_exame.html"; });
+setTimeout ( function() {
+
+$("#zerar").fadeIn(200);
+$("#leves").fadeOut(50);
+$("#medias").fadeOut(50);
+$("#graves").fadeOut(50);
+$("#botoes").fadeOut(50);
+$("#sobe").fadeOut(50);
+$("#faltas").fadeIn(200);
+$("#concluir").fadeIn(200);
+$("#fail").fadeIn(200);
+$("#botoes").fadeOut(50);
+$("#eliminatorias").fadeOut(50);
+
+}, 300);
+
+setTimeout ( function() {
+
+var obj = document.createElement("audio");
+obj.src = "warning.mp3"; 
+obj.play(); 
+
+document.getElementById("faltas").style.backgroundColor = "#dd2208";
+document.getElementById("faltas").innerHTML = "ELIMINADO";
+
+soma1 = "ELIMINADO";
+
+        window.setInterval (BlinkIt, 400);
+        var color = "#ffffff";
+        function BlinkIt () {
+            var blink = document.getElementById ("faltas");
+            color = (color == "#ffffff")? "#000000" : "#ffffff";
+            blink.style.color = color; 
+        }
+
+}, 200);
+
+});
+
+document.getElementById("1").addEventListener("click", function()  { var exame = aluno + "-1exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("2").addEventListener("click", function()  { var exame = aluno + "-2exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("3").addEventListener("click", function()  { var exame = aluno + "-3exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("4").addEventListener("click", function()  { var exame = aluno + "-4exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("5").addEventListener("click", function()  { var exame = aluno + "-5exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("6").addEventListener("click", function()  { var exame = aluno + "-6exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("7").addEventListener("click", function()  { var exame = aluno + "-7exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("8").addEventListener("click", function()  { var exame = aluno + "-8exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("9").addEventListener("click", function()  { var exame = aluno + "-9exame"; localStorage.setItem(exame, "1");  var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
+document.getElementById("10").addEventListener("click", function() { var exame = aluno + "-10exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 4 + + sum1; localStorage.setItem(soma2, sum); });
 
 document.getElementById("11").addEventListener("click", function() { var exame = aluno + "-11exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
 document.getElementById("12").addEventListener("click", function() { var exame = aluno + "-12exame"; localStorage.setItem(exame, "1"); var sum1  = localStorage.getItem(soma2); var sum = 3 + + sum1; localStorage.setItem(soma2, sum); location.href = "1_exame.html"; });
@@ -428,9 +479,6 @@ var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
 var nome = localStorage.getItem(nome); 
 var aula = localStorage.getItem("aula"); 
-
 </script>
-
-</div>
 
 

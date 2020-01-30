@@ -107,6 +107,28 @@ opacity:0.8;
 
 }
 
+#fotos 
+{
+height:110px; width:110px;
+background-repeat: no-repeat;
+background-size: 110px 110px;
+border-radius:100px;
+
+
+}
+
+#fotos2 
+{
+height:110px; width:110px;
+margin:15px;
+background: url(no.jpg);
+background-repeat: no-repeat;
+background-size: 110px 110px;
+background-size: 110px 110px;
+border-radius:100px;
+}
+
+
 </style>
 
     <title>Autoescola Caleffi</title>
@@ -116,12 +138,18 @@ opacity:0.8;
 <div align=center>
 <div style="  max-width:313px;  " align=center>
 <div id='app2' align='center'><div id='app'><center>
-<br><br><br>
-
-<img src="carteira-de-identidade2.svg" width='90'><div style="font-size:1.6em; padding:2px; padding-top:5px; color:white;">INSTRUTOR</div>
 
 
-<p align="left" style="padding-left:31px;"><input type='phone' placeholder='CPF' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+
+
+
+
+<br><br>
+<div id="fotos2">
+<div id="fotos">
+</div></div>
+<p align="left" style="padding-left:31px;">
+<input type='phone' placeholder='CPF do Instrutor' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
 
 <select id='select'>
   <option><script>
@@ -139,29 +167,88 @@ document.write(veiculo); }
 
 </select><br></p> 
 
-<br>
-<span class="button1" onclick="sessionVariable();" />Ok</span>
+
+<span class="button1" onclick="sessionVariable1();" />Ok</span>
+<div id="load2" style="display:none;"><center><img src="load.gif" width="80"></center></div></div>
 <p id="erro"></p><a href='index.html'></a><br>
 </div></div>
   </body>
 
 <script>
 
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 5500); 
 
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 10500); 
 
-var value = localStorage.getItem("instrutor");
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 15500); 
 
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 20500); 
+   
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 30500); 
 
-function sessionVariable() {
-var instrutor1 = document.getElementById("cpf").value;
+setTimeout(function() {
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
+}, 60000); 
 
-var n     = instrutor1.length;
+function sessionVariable1() {
+
+var obj = document.createElement("audio");
+obj.src = "start.mp3"; 
+obj.play(); 
+
+$('#erro').hide();
+
+var cpf1 = document.getElementById("cpf").value;
+
+var n     = cpf1.length;
 if (n == 11) {
 
-localStorage.setItem("instrutor", instrutor1);
 var e = document.getElementById("select");
 var value1 = e.options[e.selectedIndex].text;
-localStorage.setItem("veiculo", value1);
+if (value1 == "PLACA") { } else {
+
+$('.button1').fadeOut(120);
+setTimeout(function() {$('#load2').fadeIn(120);}, 160); 
+
+var cpf1 = document.getElementById("cpf").value;
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')"; 
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);
 
 var data = new Date();
 var dia     = data.getDate();           // 1-31
@@ -171,7 +258,7 @@ var ano2    = data.getYear();           // 2 dígitos
 var ano4    = data.getFullYear();       // 4 dígitos
 var hora    = data.getHours();          // 0-23
 var min     = data.getMinutes();        // 0-59
-var seg     = data.getSeconds();        // 0-59
+var seg     = data.getSeconds();        // 0-59s
 var mseg    = data.getMilliseconds();   // 0-999
 var tz      = data.getTimezoneOffset(); // em minutos
 
@@ -180,16 +267,22 @@ var hora1 = hora + ':' + min + ':' + seg;
 
 localStorage.setItem("start-data", data1);
 localStorage.setItem("start-hora", hora1);
+localStorage.setItem("instrutor", cpf1);
+localStorage.setItem("veiculo", value1);
 
-if (value1 == "PLACA") { } else {
-location.href = "start.html"; }
+setTimeout(function() {location.href = "start.html";}, 3000); 
 
- } else {
+}
 
+
+}
+
+else {
+
+$('#erro').fadeIn(120);
 document.getElementById("erro").innerHTML = "<small>CPF INVÁLIDO!</small>";
 
- }
-
+}
 
 }
 
