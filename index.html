@@ -2,6 +2,7 @@
 <html>
 
 <script src="jquery.min.js"></script>
+<script src="cordova.js"></script>
 
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 
@@ -169,6 +170,70 @@ border-radius:100px;
 
 <script>
 
+
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+    
+
+document.getElementById("getPosition").addEventListener("click", getPosition);
+document.getElementById("watchPosition").addEventListener("click", watchPosition);
+function getPosition() {
+   var options = {
+      enableHighAccuracy: true,
+      maximumAge: 3600000
+   }
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+   }
+}
+
+function watchPosition() {
+   var options = {
+      maximumAge: 3600000,
+      timeout: 3000,
+      enableHighAccuracy: true,
+   }
+   var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+   }
+} 
+
+
+
+
+
+    }
+
+
+
+
 var aluno = localStorage.getItem("cpf");
 var value1 = localStorage.getItem("cpf");
 document.getElementById('cpf').value = value1;
@@ -297,3 +362,6 @@ window.location.href = "pendentes.html";
 }
 
 </script>
+
+<button id = "getPosition">CURRENT POSITION</button>
+<button id = "watchPosition">WATCH POSITION</button>
