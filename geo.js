@@ -18,8 +18,6 @@ var location = localStorage.getItem(location1);
 var result =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + location;
 localStorage.setItem(location1, result);
 
-alert (result);
-
     } 
 
 
