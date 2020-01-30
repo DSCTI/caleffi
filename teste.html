@@ -9,48 +9,29 @@
 var aluno = localStorage.getItem("cpf");
 var location3 = aluno + "-location";
 var location2 = localStorage.getItem(location3);
-alert (location2);
 
+var location2 = aluno + "///" + location2;
+
+alert (location2);
    
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+     
+
+$.ajax({
+    data: 'data=' + location2,
+    url: 'https://dscti.com.br/app/recebe2.php',
+    method: 'POST', // or GET
+    success: function(msg) {
+        alert("sucesso");
+    }
+});
+
+
+
     }
 
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("location.deb", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-        
-            writer.truncate(11);
-            writer.onwriteend = function(evt) {
-          
-                writer.seek(4);
-                writer.write(location);
-                writer.onwriteend = function(evt){
-             
-                }
-            };
-        };
-        writer.write(location2);
-      
-    }
-
-    function fail(error) {
-        erro("erro");
-    }
+  
 
     </script>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p><a href='file:///persistent/location.deb'> Write File</p>
-  </body>
-</html>
