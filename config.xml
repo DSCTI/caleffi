@@ -22,6 +22,11 @@
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 
+<feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.GeoBroker" />
+</feature>
+
+
 <plugin name="cordova-plugin-android-permissions" />
 <plugin name="cordova-plugin-geolocation">
 <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
