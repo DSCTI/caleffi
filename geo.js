@@ -22,7 +22,7 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var result = '///' + result1  + '//' +  result2  + location;
+var result = "///" + result1  + "//" +  result2  + location;
 
 localStorage.setItem(location1, result);
 
@@ -32,6 +32,6 @@ localStorage.setItem(location1, result);
 function onError(error) {  }
 
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: false });
 
 }
