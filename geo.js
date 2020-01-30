@@ -24,9 +24,9 @@ var result1 = position.coords.latitude;
 var result2 = position.coords.longitude;
 
 
-var result = result1  + 'e' +  result2 + 'f'  + location;
+var result = "{lat: " + result1  + ', lng:' +  result2 + '},'  + location;
 
-var result = "///" + result;
+
 
 localStorage.setItem(location1, result);
 
