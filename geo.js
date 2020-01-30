@@ -3,14 +3,14 @@ function onDeviceReady() {
 
     function onSuccess(position) {
 
-var aluno = localStorage.getItem("cpf");
+var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
 
 var result =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + location;
 localStorage.setItem(location1, result);
-alert (result);
-    }
+
+    } }
 
 
     function onError(error) {
