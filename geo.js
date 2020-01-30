@@ -6,8 +6,8 @@ var location1 = aluno + "-location";
 
 function onDeviceReady() {
 
-
-
+window.plugins.insomnia.keepAwake();
+document.addEventListener("backbutton", function (e) {   e.preventDefault(); }, false );
 
 function onSuccess(position) {
 var location = localStorage.getItem(location1);
