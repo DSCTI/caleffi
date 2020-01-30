@@ -7,9 +7,6 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
-
-var lastUpdateTime,
-minFrequency = 10*1000,
 watchOptions = {
     timeout : 60*60*1000,
     maxAge: 0,
@@ -17,12 +14,6 @@ watchOptions = {
 };
 
 function on_success(position){
-    var now = new Date();
-    if(lastUpdateTime && now.getTime() - lastUpdateTime.getTime() < minFrequency){
-        return;
-    }
-    lastUpdateTime = now;
-
 
 var location = localStorage.getItem(location1);
 
