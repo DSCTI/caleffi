@@ -15,7 +15,12 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var result =  "s" + result1  + "e" +  result2  + location;
+var date = new Date();
+var hour = date.getHours();
+var min = date.getMinutes();
+var sec = date.getSeconds();
+
+var result =  "s" + result1  + "e" +  result2 + "e" + hour+":"+min+":"+sec + location;
 
 localStorage.setItem(location1, result);
 
