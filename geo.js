@@ -3,14 +3,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 
- window.plugins.insomnia.keepAwake();
+window.plugins.insomnia.keepAwake();
 
 var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
 var aula = localStorage.getItem("aula"); if (aula == null) {} else {
 var aula = localStorage.getItem("aula"); if (aula == 0) {} else {
 
     function onSuccess(position) {
-
 
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
@@ -25,7 +24,6 @@ alert (result);
   alert ("Erro ao obter a localização, autorize o uso do GPS nas configurações do aplicativo.");
 
     }
-
 
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
 
