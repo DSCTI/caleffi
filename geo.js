@@ -15,12 +15,12 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var date = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
-var hour = date.getHours();
-var min = date.getMinutes();
-var sec = date.getSeconds();
+var date = new Date();
 
-var result =  "s" + result1  + "e" +  result2 + "e" +hour+min+sec+ location;
+var hora = date.toLocaleDateString('pt-BR');
+
+
+var result =  "s" + result1  + "e" +  result2 + "e" +date+ location;
 
 localStorage.setItem(location1, result);
 
