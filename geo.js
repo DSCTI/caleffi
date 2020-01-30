@@ -25,7 +25,6 @@ alert (result);
 
 function onError(error) { alert ("erro");  }
 
-
 var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
 
 }
