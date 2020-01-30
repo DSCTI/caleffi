@@ -19,7 +19,6 @@ localStorage.setItem(location1, result);
 alert (result);
     } 
 
-
   function onError(error) {
   alert ("Erro ao obter a localização, autorize o uso do GPS nas configurações do aplicativo.");
 
