@@ -5,11 +5,9 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
-var aluno = localStorage.getItem("cpf");
+
 
 setTimeout(function(){
-
- if (aluno == null) {} else {
 
 function onSuccess(position) {
 
@@ -34,8 +32,6 @@ var options = {
 navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
     
-}
-
 }, 3000);
 
 }
