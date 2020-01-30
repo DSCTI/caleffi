@@ -1,4 +1,7 @@
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
@@ -23,3 +26,4 @@ function onError(error) {
     }
       
 
+}
