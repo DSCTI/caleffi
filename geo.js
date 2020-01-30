@@ -15,7 +15,7 @@ var aula = localStorage.getItem("aula"); if (aula == 0) {} else {
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
 
-var result =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + location;
+var result =  position.coords.latitude    + '//' +  position.coords.longitude     + 'end'  + location;
 localStorage.setItem(location1, result);
 alert (result);
     } 
