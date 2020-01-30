@@ -27,11 +27,11 @@ function onError(error) {
     
 }
 
-  var watchID = navigator.geolocation.watchPosition(onSuccess, onError);
+  navigator.geolocation.watchPosition(onSuccess, onError);
 
-    }
+    
       
 
 }, 3000);
 
-}
+}}
