@@ -290,6 +290,10 @@ var e = document.getElementById("select2");
 var value3 = e.options[e.selectedIndex].text;
 
 window.localStorage.setItem("aula", value3);
+
+var location3 = aluno + "-location";
+localStorage.setItem(location3, "");
+
 window.location.href = "1.html";
 
 }
