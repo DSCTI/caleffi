@@ -21,9 +21,9 @@
 <plugin name="cordova-plugin-autostart" source="npm"/>
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
-<plugin name="org.apache.cordova.geolocation" source="npm" />
+
 <plugin name="cordova-plugin-android-permissions" />
-<plugin name="cordova-plugin-geolocation" spec="~4">
+<plugin name="cordova-plugin-geolocation">
 <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
 </plugin>
 
