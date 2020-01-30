@@ -19,8 +19,11 @@ var date = new Date();
 
 var hora = date.toLocaleDateString('pt-BR');
 
+var hour = date.getHours();
+var min = date.getMinutes();
+var sec = date.getSeconds();
 
-var result =  "s" + result1  + "e" +  result2 + "e" +date+ location;
+var result =  "s" + result1  + "e" +  result2 + "e" +hour+min+sec+ location;
 
 localStorage.setItem(location1, result);
 
