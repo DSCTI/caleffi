@@ -144,11 +144,12 @@ BOTÃO REFAZER DESATIVADO
 
 <script>
 
-var faltas = localStorage.getItem("soma");
+var aluno = localStorage.getItem("cpf");
+var soma2 = aluno + "-soma"; 
+var faltas = localStorage.getItem(soma2);
 var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
-var aluno = localStorage.getItem("cpf");
 var aula = localStorage.getItem("aula");
 
 var data = new Date();
@@ -239,8 +240,8 @@ res = res.replace(' ','');
 
 localStorage.setItem(res, resultado);
 
-
 localStorage.setItem(soma2, "0");
+
 var exame = aluno + "-1exame"; localStorage.setItem(exame, "0");  
 var exame = aluno + "-2exame"; localStorage.setItem(exame, "0");
 var exame = aluno + "-3exame"; localStorage.setItem(exame, "0");

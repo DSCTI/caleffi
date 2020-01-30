@@ -281,14 +281,12 @@ var nome = aluno + "-nome";
 var nome = localStorage.getItem(nome); 
 document.getElementById("aluno").innerHTML= nome; 
 
-var soma = aluno + "-soma"; 
-var soma = localStorage.getItem(soma); 
 var soma2 = aluno + "-soma"; 
+var soma = localStorage.getItem(soma2); 
 
 if (soma == null) {soma1 = "0 FALTAS";} else {soma1 = soma + " FALTAS";}
 if (soma == 1) {soma1 = "1 FALTA";}
 
-localStorage.setItem("soma", soma);
 
 if (soma > 3) {
 
