@@ -7,7 +7,7 @@ function onDeviceReady() {
 
 var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
 var aula = localStorage.getItem("aula"); if (aula == null) {} else {
-
+var aula = localStorage.getItem("aula"); if (aula < 1) {} else {
 
     function onSuccess(position) {
 
@@ -17,7 +17,7 @@ var location = localStorage.getItem(location1);
 
 var result =  position.coords.latitude    + '//' +  position.coords.longitude     + '#'  + location;
 localStorage.setItem(location1, result);
-
+alert (result);
     } 
 
 
@@ -32,4 +32,4 @@ localStorage.setItem(location1, result);
     }
       
 
-} }
+} } }
