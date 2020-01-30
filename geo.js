@@ -1,5 +1,4 @@
 
-setTimeout(function(){
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -16,6 +15,7 @@ var result =  position.coords.latitude + '//' +  position.coords.longitude  + 'e
 localStorage.setItem(location1, result);
 
 alert (result);
+
     } 
 
 function onError(error) {
@@ -23,13 +23,13 @@ function onError(error) {
 }
 
 var options = {
-  enableHighAccuracy: true
-
+ timeout : 60*60*1000,
+ maxAge: 0,
+ enableHighAccuracy: true
 };
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
+navigator.geolocation.watchPosition(onSuccess,onError,options);
 
 }
 
-}, 3000);
