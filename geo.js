@@ -16,7 +16,6 @@ localStorage.setItem(location1, result);
 
 alert (result);
 
-
 }
 
 function onError(error) {  }
