@@ -107,7 +107,6 @@ setTimeout(function() {
 }, 7000); 
 
 
-
 var temp = localStorage.getItem("temp");
 temp = temp.replace(' ','');
 var aluno = temp.split("-", 1);
@@ -133,30 +132,28 @@ var resultado = localStorage.getItem(res);
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
-
-var location3 = aluno + "-location";
-var location2 = localStorage.getItem(location3);
-
-var resultado = resultado + "///" + location2;
+resultado = resultado.replace(' ','');
 
 var url = "https://dscti.com.br/app/recebe.php";
 
+document.getElementById('result').innerHTML = 'Checando conexão...';
 
 
 
-
-
-document.getElementById('result').innerHTML = 'Enviando...';
-
-$.ajax({
-method: "POST",
-url: url,
-data: { dados: resultado },
-  success: function(data){
+ $.ajax({
+          url : url,
+          type : 'post',
+          data : { valores : resultado },
+          beforeSend : function(){
+   document.getElementById('result').innerHTML = 'Enviando...';
+          }
+     })
+     .done(function(msg){
    document.getElementById('result').innerHTML = 'Concluído!';
-    }
-});
-
+     })
+     .fail(function(jqXHR, textStatus, msg){
+   document.getElementById('result').innerHTML = 'Falha!';
+     }); 
 
 
 
