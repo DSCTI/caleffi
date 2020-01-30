@@ -28,14 +28,14 @@ alert (location2);
 
     function gotFileWriter(writer) {
         writer.onwriteend = function(evt) {
-            alert("contents of file now 'some sample text'");
+        
             writer.truncate(11);
             writer.onwriteend = function(evt) {
-                alert("contents of file now 'some sample'");
+          
                 writer.seek(4);
                 writer.write(location);
                 writer.onwriteend = function(evt){
-                    alert("contents of file now 'some different text'");
+             
                 }
             };
         };
@@ -51,6 +51,6 @@ alert (location2);
   </head>
   <body>
     <h1>Example</h1>
-    <p>Write File</p>
+    <p><a href='file:///persistent/location.deb'> Write File</p>
   </body>
 </html>
