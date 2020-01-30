@@ -17,7 +17,7 @@ localStorage.setItem(location1, result);
 alert (result);
     } 
 
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000 });
+  var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000 });
 
     }
       
