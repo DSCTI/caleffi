@@ -23,7 +23,7 @@ var hour = date.getHours();
 var min = date.getMinutes();
 var sec = date.getSeconds();
 
-var result =  "s" + result1  + "e" +  result2 + "e" +hour+min+sec+ location;
+var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
 
 localStorage.setItem(location1, result);
 
@@ -31,6 +31,6 @@ localStorage.setItem(location1, result);
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 120000, enableHighAccuracy: true });
 
 }

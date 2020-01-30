@@ -22,7 +22,7 @@ window.plugins.insomnia.keepAwake();
 function onSuccess(position) {}
 function onError(error) {}
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: false });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 120000, enableHighAccuracy: true });
 
 }
 
