@@ -19,11 +19,9 @@ var result =  "s" + result1  + "e" +  result2  + location;
 
 localStorage.setItem(location1, result);
 
-alert (result);
-
 }
 
-function onError(error) { alert ("erro");  }
+function onError(error) {  }
 
 var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
 
