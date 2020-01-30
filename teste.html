@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-<a href='https://dscti.com.br/'>link externo teste</a>
-<br>
-
-<a href='/geo/index.html'>geo location</a>
-
     <title>Device Properties Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for Cordova to load
@@ -36,11 +30,11 @@
                             'Timestamp: '          +                                   position.timestamp          + '<br />';
     }
 
-    // onError Callback receives a PositionError object
+    // onError Callback receives a [PositionError](PositionError/positionError.html) object
     //
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
+              'message: ' + error.message + '\n');
     }
 
     </script>
