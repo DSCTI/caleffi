@@ -11,19 +11,19 @@ window.plugins.insomnia.keepAwake();
     function onSuccess(position) {
       
 
-setInterval(function(){
+
 var location = localStorage.getItem(location1);
 var result =  position.coords.latitude + '//' + position.coords.longitude  + 'end'  + location;
 localStorage.setItem(location1, result);
 alert (result); 
-}, 10000);
+
 
 }
 
 function onError(error) {  }
 
- 
+setInterval(function(){
 var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-
+}, 10000);
 
 }
