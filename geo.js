@@ -5,14 +5,13 @@ function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 
-
-
-var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
-
+var aluno = localStorage.getItem("cpf");
 
 setTimeout(function(){
 
-    function onSuccess(position) {
+ if (aluno == null) {} else {
+
+function onSuccess(position) {
 
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
