@@ -22,9 +22,11 @@ var location = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var result = "///" + result1  + "//" +  result2  + location;
+var result = '///' + result1  + '//' +  result2  + location;
 
 localStorage.setItem(location1, result);
+
+alert (result);
 
 }
 
