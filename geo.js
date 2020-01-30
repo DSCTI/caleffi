@@ -47,6 +47,8 @@ var location = localStorage.getItem(location1);
 var result =  location.lat + '//' + location.lng  + 'end'  + location;
 localStorage.setItem(location1, result);
 
+alert (result);
+
 }
 
 // stop watching
