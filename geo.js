@@ -1,6 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
+var aula = localStorage.getItem("aula"); if (aula == null) {} else {
 
 function onDeviceReady() {
 
@@ -26,4 +27,4 @@ localStorage.setItem(location1, result);
     }
       
 
-} 
+} }
