@@ -20,12 +20,13 @@ window.plugins.insomnia.keepAwake();
 
 var location = localStorage.getItem(location1);
 
-var result1 = position.coords.latitude;  result1.replace("-", "m");
-var result2 = position.coords.longitude;  result2.replace("-", "m");
+var result1 = position.coords.latitude; 
+var result2 = position.coords.longitude;
 
 
-var result = result1  + ' ' +  result2 + 'e'  + location;
+var result = result1  + 'e' +  result2 + 'f'  + location;
 
+var result = "///" + result;
 
 localStorage.setItem(location1, result);
 
