@@ -2,10 +2,31 @@
 <html>
 
 <script src="jquery.min.js"></script>
+<script src="cordova.js"></script>
 
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 
 <script>
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+
+window.plugins.insomnia.keepAwake();
+
+ document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+
+
+function onSuccess(position) {}
+function onError(error) {}
+
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: false });
+
+}
+
+
 $(document).keypress(function (e) {
     if (e.which == 13) {
 
