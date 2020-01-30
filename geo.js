@@ -20,6 +20,9 @@ window.plugins.insomnia.keepAwake();
 
 var location = localStorage.getItem(location1);
 var result =  position.coords.latitude + ' ' + position.coords.longitude  + 'e'  + location;
+
+var result = result.replace("-", "m");
+
 localStorage.setItem(location1, result);
 
 
