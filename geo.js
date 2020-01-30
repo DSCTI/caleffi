@@ -14,7 +14,7 @@ var aula = localStorage.getItem("aula"); if (aula == 0) {} else {
 var location1 = aluno + "-location";
 var location = localStorage.getItem(location1);
 
-var result =  position.coords.latitude    + '//' +  position.coords.longitude     + 'end'  + location;
+var result = position.coords.latitude  + '//' +  position.coords.longitude + 'end'  + location;
 localStorage.setItem(location1, result);
 alert (result);
     } 
@@ -24,7 +24,7 @@ alert (result);
 
     }
 
-    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000 });
 
     }
       
