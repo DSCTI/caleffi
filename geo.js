@@ -24,7 +24,7 @@ var result1 = position.coords.latitude;
 var result2 = position.coords.longitude;
 
 
-var result = "{lat: " + result1  + ', lng:' +  result2 + '},'  + location;
+var result = "#{lat: " + result1  + ', lng:' +  result2 + '},'  + location;
 
 
 
