@@ -9,7 +9,6 @@ var aula = localStorage.getItem("aula"); if (aula == null) {} else {
 function onDeviceReady() {
 
 
-
     function onSuccess(position) {
 
 
@@ -23,7 +22,7 @@ localStorage.setItem(location1, result);
 
 
     function onError(error) {
-  
+  alert ("Erro ao obter a localização, atuorize o uso do GPS nas configurações do aplicativo.");
     }
 
 
