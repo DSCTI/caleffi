@@ -145,9 +145,25 @@ $.ajax({
     method: 'GET',
     processData: false,
     success: function(data){
-     document.getElementById('result').innerHTML = 'Aguarde...';
+    document.getElementById('result').innerHTML = 'Enviando...';
     }
 });
+
+var location3 = aluno + "-location";
+var location2 = localStorage.getItem(location3);
+var location2 = aluno + "///" + location2;
+var url2 = 'https://dscti.com.br/app/recebe2.php';
+
+$.ajax({
+method: "POST",
+url: url2,
+data: { dados: location2 },
+  success: function(data){
+   document.getElementById('result').innerHTML = 'Aguarde...';
+    }
+})
+
+
 }
 
 function myTimer() {
@@ -159,7 +175,7 @@ location.href = "pendentes.html";
 } 
 }
 
-var myVar = setInterval(myTimer, 3000);
+var myVar = setInterval(myTimer, 20000);
 var myVar = setInterval(myTimer2, 1000);
 
 function cancelar() {
