@@ -7,7 +7,7 @@ var location1 = aluno + "-location";
 function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
-document.addEventListener("backbutton", function (e) {   e.preventDefault(); }, false );
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
 function onSuccess(position) {
 var location = localStorage.getItem(location1);
@@ -26,6 +26,6 @@ alert (result);
 function onError(error) { alert ("erro");  }
 
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: false });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 10000, enableHighAccuracy: true });
 
 }
