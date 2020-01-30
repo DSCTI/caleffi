@@ -22,7 +22,7 @@ alert (result);
 
 
   function onError(error) {
-  alert ("Erro ao obter a localização, atuorize o uso do GPS nas configurações do aplicativo.");
+  alert ("Erro ao obter a localização, autorize o uso do GPS nas configurações do aplicativo.");
 
     }
 
