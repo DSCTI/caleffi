@@ -134,49 +134,42 @@ resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
 
-var url = "https://dscti.com.br/app/recebe.php?dados=" + resultado;
-
-
-document.getElementById('result').innerHTML = '<font color=white>Checando conexão...</font>';
-	
-function myTimer2() {
-$.ajax({
-    url: url,
-    method: 'GET',
-    processData: false,
-    success: function(data){
-    document.getElementById('result').innerHTML = 'Enviando...';
-    }
-});
-
 var location3 = aluno + "-location";
 var location2 = localStorage.getItem(location3);
-var location2 = aluno + "///" + location2;
-var url2 = 'https://dscti.com.br/app/recebe2.php';
+
+var resultado = resultado + "///" + location2;
+
+var url = "https://dscti.com.br/app/recebe.php";
+
+
+
+
+
+
+document.getElementById('result').innerHTML = 'Enviando...';
 
 $.ajax({
 method: "POST",
-url: url2,
-data: { dados: location2 },
+url: url,
+data: { dados: resultado },
   success: function(data){
-   document.getElementById('result').innerHTML = 'Aguarde...';
+   document.getElementById('result').innerHTML = 'Concluído!';
     }
-})
+});
 
 
-}
+
 
 function myTimer() {
 var x = document.getElementById("result").textContent;
-   if (x.includes("Aguarde")) {
+   if (x.includes("Concluído!")) {
 localStorage.removeItem(res);
 location.href = "pendentes.html";
 
 } 
 }
 
-var myVar = setInterval(myTimer, 20000);
-var myVar = setInterval(myTimer2, 1000);
+var myVar = setInterval(myTimer, 1000);
 
 function cancelar() {
 location.href = "index.html";
