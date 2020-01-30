@@ -6,8 +6,6 @@ function onDeviceReady() {
 window.plugins.insomnia.keepAwake();
 
 var aluno = localStorage.getItem("cpf"); if (aluno == null) {} else {
-var aula = localStorage.getItem("aula"); if (aula == null) {} else {
-var aula = localStorage.getItem("aula"); if (aula == 0) {} else {
 
     function onSuccess(position) {
 
@@ -24,4 +22,4 @@ alert (result);
     }
       
 
-} } }
+}
