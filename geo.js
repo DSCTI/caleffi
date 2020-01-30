@@ -27,10 +27,14 @@ function onError(error) {
     
 }
 
-  navigator.geolocation.watchPosition(onSuccess, onError);
+var options = {
+  enableHighAccuracy: true
+
+};
+
+navigator.geolocation.getCurrentPosition(onSuccess, onSuccess, options);
 
     
-      
 
 }, 3000);
 
