@@ -8,8 +8,8 @@
 
 var aluno = localStorage.getItem("cpf");
 var location3 = aluno + "-location";
-var location = localStorage.getItem(location3);
-alert (location);
+var location2 = localStorage.getItem(location3);
+alert (location2);
 
    
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -39,7 +39,7 @@ alert (location);
                 }
             };
         };
-        writer.write(location);
+        writer.write(location2);
       
     }
 
