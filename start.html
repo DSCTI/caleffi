@@ -182,20 +182,14 @@ max-width:200px;
 
 <br><br>
 
-<img src="calendario.svg" width='70' style="padding-bottom:1px;"><span class='pergunta'><p>
-<font size="3" style="font-family: Poppins Regular !important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none">Aten��o: 
-Inicie a aula quando o aluno entrar no carro.</font></span><br>
-
-
-
-</p>
+<img src="calendario.svg" width='70' style="padding-bottom:1px;"><br>
 
 
 
 <div id='bn1'>
 
 <select id='select1'>
-  <option class="a0">INICIAR AULA</option>
+  <option class="a0">ESCOLHER AULA</option>
   <option class="a1">1ª PRÁTICA</option>
   <option class="a2">2ª PRÁTICA</option>
   <option class="a3">3ª PRÁTICA</option>
@@ -229,14 +223,14 @@ Inicie a aula quando o aluno entrar no carro.</font></span><br>
   <option class="a31">11ª PRÁTICA EXAME</option>
 
 </select><br><br>
-<span class="button1" onclick="sessionVariable1();" />Ok</span>
+<span class="button1" onclick="sessionVariable1();" />INICIAR</span>
 
 </div>
 
 <div id='bn2'>
 
 <select id='select2'>
-  <option class="a0">INICIAR AULA</option>
+  <option class="a0">ESCOLHER AULA</option>
   <option class="a1">1ª SIMULADOR</option>
   <option class="a2">2ª SIMULADOR</option>
   <option class="a3">3ª SIMULADOR</option>
@@ -271,7 +265,7 @@ Inicie a aula quando o aluno entrar no carro.</font></span><br>
 </select>
 
 <br><br>
-<span class="button1" onclick="sessionVariable2();" />Ok</span>
+<span class="button1" onclick="sessionVariable2();" />INICIAR</span>
 
 </div>
 
@@ -308,7 +302,7 @@ function sessionVariable1() {
 var e = document.getElementById("select1");
 var value3 = e.options[e.selectedIndex].text;
 
-if (value3 == "ESCOLHA A AULA") {} else {
+if (value3 == "ESCOLHER AULA") {} else {
 window.localStorage.setItem("aula", value3);
 window.location.href = "1.html";
 
