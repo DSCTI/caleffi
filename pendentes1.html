@@ -134,10 +134,7 @@ resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
 resultado = resultado.replace('Á','A');
 
-var location3 = aluno + "-location";
-var location = localStorage.getItem(location3);
-
-var url = "https://dscti.com.br/app/recebe.php?dados=" + resultado + location;
+var url = "https://dscti.com.br/app/recebe.php?dados=" + resultado;
 
 alert (url);
 
