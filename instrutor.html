@@ -177,58 +177,57 @@ document.write(veiculo); }
 <script>
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 5500); 
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 10500); 
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 15500); 
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 20500); 
    
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 30500); 
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value;
+var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
+$("#fotos").fadeIn(250);}
 }, 60000); 
 
 function sessionVariable1() {
 
 var obj = document.createElement("audio");
 obj.src = "start.mp3"; 
-obj.play(); 
 
 $('#erro').hide();
 
@@ -236,6 +235,8 @@ var cpf1 = document.getElementById("cpf").value;
 
 var n     = cpf1.length;
 if (n == 11) {
+
+obj.play(); 
 
 var e = document.getElementById("select");
 var value1 = e.options[e.selectedIndex].text;
