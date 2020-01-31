@@ -105,41 +105,10 @@ setTimeout(function() {
 
 }, 240); 
 
-var aula = localStorage.getItem("aula");
-document.getElementById("aula").innerHTML = aula;
 
-function sessionVariable1() {
-
-$('#content').fadeOut(150);
-
-var aula = localStorage.getItem("aula");
-localStorage.setItem("feita", "1");
-if (aula.includes("EXAME")) { 
-
-var aluno = localStorage.getItem("cpf");
-var soma2 = aluno + "-soma"; 
-localStorage.setItem(soma2, "0");
-location.href = "1_exame.html"; 
-
-} 
-
-else {
-location.href = "1.html"; 
-} 
-
-
-
-
-
-}
 function sessionVariable2() {
-
-$('#content').fadeOut(150);
-
- setTimeout(function() {
-localStorage.setItem(aula, "");
 location.href = "start.html";
-}, 200); }
+}
 
 
 </script>

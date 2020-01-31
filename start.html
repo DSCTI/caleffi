@@ -286,8 +286,8 @@ if (value3 == "ESCOLHER AULA") {} else {
 
 window.localStorage.setItem("aula", value3);
 
-var location3 = aluno + "-location";
-localStorage.setItem(location3, "");
+var geo1 = aluno + "-location";
+localStorage.setItem(geo1, "");
 
 window.location.href = "1.html";
 
@@ -299,18 +299,15 @@ var value3 = e.options[e.selectedIndex].text;
 
 if (value3 == "ESCOLHER AULA") {} else {
 
-var location3 = aluno + "-location";
-localStorage.setItem(location3, "");
+var geo1 = aluno + "-location";
+localStorage.setItem(geo1, "");
 
 window.localStorage.setItem("aula", value3);
 window.location.href = "1.html";
 
 } }
 
-function sessionVariable3() {
-window.location.href = "start.html";
 
-}
 
 
 // handles the click event, sends the query
