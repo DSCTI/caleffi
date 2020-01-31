@@ -27,10 +27,18 @@ var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
 
 localStorage.setItem(location1, result);
 
+alert ("ok");
+
 }
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 120000, enableHighAccuracy: true });
+
+  $interval(function() {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+  }, 20000);
+
+
 
 }
