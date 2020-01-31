@@ -35,7 +35,7 @@ function onError(error) {  }
 
 
   $interval(function() {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 120000, enableHighAccuracy: true });
 
   }, 20000);
 
