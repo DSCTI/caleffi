@@ -15,10 +15,10 @@ var location2 = localStorage.getItem(location1);
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
 
-var dt = new Date();
-var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
+var now = new Date(Date.now());
+var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-var result = "s"+result1+"e"+result2+"e" + time + location2;
+var result = "s"+result1+"e"+result2+"e" + hours + location2;
 
 localStorage.setItem(location1, result);
 
