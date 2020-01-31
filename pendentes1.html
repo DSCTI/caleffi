@@ -73,12 +73,12 @@ font-size: 0.6em;
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
-<img src="envio.svg" width='90'><br>
+
 <span class='pergunta'><br><big><font color=white><b><span id='aluno'></span> - <span id='aula'></span></b></big></font></a>
 <div class='quadro'>
+<B><SMALL><FONT COLOR=WHITE>TRANSMITINDO AULA<BR></SMALL></B>
 
-<div id='result'></div>
-<br>
+<img src="transmite.svg" width='140'><div id='result'></div>
 
 <div id='content2' style="display:none;">
 
@@ -104,7 +104,7 @@ setTimeout(function() {
 
   $('#content2').fadeIn(200);
 
-}, 7000); 
+}, 12000); 
 
 
 var temp = localStorage.getItem("temp");
@@ -166,7 +166,7 @@ location.href = "pendentes.html";
 } 
 }
 
-var myVar = setInterval(myTimer, 1000);
+var myVar = setInterval(myTimer, 5000);
 
 function cancelar() {
 location.href = "index.html";
