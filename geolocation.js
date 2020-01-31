@@ -1,4 +1,4 @@
-
+alert ("loaded");
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var aluno = localStorage.getItem("cpf");
