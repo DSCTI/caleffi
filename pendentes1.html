@@ -80,7 +80,7 @@ font-size: 0.6em;
 <img src="transmite.svg" width='140'><div id='result'></div>
 
 <div id='content2' style="display:none;">
-
+<br>
 <div class="button2" id='button' onclick="cancelar();" /><font color='white'><big><big>Transmitir depois</big></big></div>
 <p style='line-height:19px;'><small><small><font color='fffa75'>*Toque em transmitir depois caso você esteja sem internet.
 <br><br>
@@ -151,7 +151,7 @@ document.getElementById('result').innerHTML = 'Checando conexão...';
    document.getElementById('result').innerHTML = 'Concluído!';
      })
      .fail(function(jqXHR, textStatus, msg){
-   document.getElementById('result').innerHTML = 'Falha!';
+   document.getElementById('result').innerHTML = 'Falha ao transmitir! Você está com internet?';
      }); 
 
 
