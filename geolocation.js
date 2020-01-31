@@ -10,7 +10,7 @@ window.plugins.insomnia.keepAwake();
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
 function onSuccess(position) {
-var location = localStorage.getItem(location1);
+var location2 = localStorage.getItem(location1);
 
 var result1 = position.coords.latitude; 
 var result2 = position.coords.longitude;
@@ -23,7 +23,7 @@ var hour = date.getHours();
 var min = date.getMinutes();
 var sec = date.getSeconds();
 
-var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
+var result = "s"+result1+"e"+result2+"e" + hour + min + sec + location2;
 
 localStorage.setItem(location1, result);
 
@@ -31,13 +31,6 @@ localStorage.setItem(location1, result);
 
 function onError(error) {  }
 
-var watchID2 = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-
-window.setInterval(function(){
-
-var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-
-}, 5000);
-
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true  });
 
 }
