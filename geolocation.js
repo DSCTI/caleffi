@@ -1,8 +1,12 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+var aula = localStorage.getItem("aula");
 var aluno = localStorage.getItem("cpf");
 var location1 = aluno + "-location";
+
+if (aula == null) {} else {
+if (aula == 0) {} else {
 
 function onDeviceReady() {
 
@@ -30,3 +34,5 @@ function onError(error) {  }
 var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true  });
 
 }
+
+} }
