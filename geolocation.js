@@ -1,12 +1,10 @@
-alert ("loaded");
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var aluno = localStorage.getItem("cpf");
 var location1 = aluno + "-location";
 
 function onDeviceReady() {
-
-alert ("ready");
 
 window.plugins.insomnia.keepAwake();
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
@@ -29,9 +27,6 @@ var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
 
 localStorage.setItem(location1, result);
 
-
-alert ("ok");
-
 }
 
 function onError(error) {  }
@@ -42,7 +37,7 @@ window.setInterval(function(){
 
 var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 
-}, 25000);
+}, 10000);
 
 
 }
