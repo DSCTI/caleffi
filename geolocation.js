@@ -42,7 +42,7 @@ window.setInterval(function(){
 
 var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 
-}, 25000)
+}, 25000);
 
 
 }
