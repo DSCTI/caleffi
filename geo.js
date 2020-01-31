@@ -27,6 +27,8 @@ var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
 
 localStorage.setItem(location1, result);
 
+alert ("ok");
+
 }
 
 function onError(error) {  }
