@@ -18,7 +18,7 @@ window.plugins.insomnia.keepAwake();
         e.preventDefault();
     }, false );
 
-function onSuccess(position) {alert ("ok"); }
+function onSuccess(position) {}
 function onError(error) {}
 
 var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
