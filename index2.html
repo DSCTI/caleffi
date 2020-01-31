@@ -2,28 +2,11 @@
 <html>
 
 <script src="jquery.min.js"></script>
-<script src="cordova.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
 
 <script>
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-
-window.plugins.insomnia.keepAwake();
-
- document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
-    }, false );
-
-function onSuccess(position) {}
-function onError(error) {}
-
-var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-
-}
 
 
 $(document).keypress(function (e) {
@@ -54,7 +37,7 @@ if (splash == "1") { } else { location.href = "splash.html"; }
 
 <meta name=viewport content="width=device-width, initial-scale=1.2, maximum-scale=1.2, user-scalable=no">
 <div id="content" style="display:none;">
-<div id="attention" style="display:none;"> <a href='pendentes.html'><b>Aten√ß√£o:</b> Voc√™ tem aulas pendentes de transmiss√£o, transmita o mais r√°pido poss√≠vel! <b>Toque aqui para transmitir.</a></b></div>
+<div id="attention" style="display:none;"> <a href='pendentes.html'><b>AtenÁ„o:</b> VocÍ tem aulas pendentes de transmiss„o, transmita o mais r·pido possÌvel! <b>Toque aqui para transmitir.</a></b></div>
 
 <style>
 
@@ -271,7 +254,7 @@ setTimeout(function(){
 window.location.href = "instrutor.html"; 
 }, 2200);
 
-}  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INV√ÅLIDO!</small>";}
+}  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INV¡LIDO!</small>";}
 
 
 
