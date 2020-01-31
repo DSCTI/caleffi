@@ -6,6 +6,8 @@ var location1 = aluno + "-location";
 
 function onDeviceReady() {
 
+alert ("ready");
+
 window.plugins.insomnia.keepAwake();
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
@@ -26,6 +28,9 @@ var sec = date.getSeconds();
 var result = "s"+result1+"e"+result2+"e"+hour+min+sec+location;
 
 localStorage.setItem(location1, result);
+
+
+alert ("ok");
 
 }
 
