@@ -31,13 +31,13 @@ localStorage.setItem(location1, result);
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+var watchID2 = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 
 window.setInterval(function(){
 
 var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 
-}, 15000)
+}, 20000)
 
 
 }
