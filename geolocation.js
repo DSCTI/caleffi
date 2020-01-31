@@ -1,7 +1,6 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var aula = localStorage.getItem("aula");
 var aluno = localStorage.getItem("cpf");
 var location1 = aluno + "-location";
 
@@ -21,7 +20,7 @@ var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
 var aula = localStorage.getItem("aula"); 
-if (aula == "") {} else {
+if (aula == null) {} else {
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + location2;
 localStorage.setItem(location1, result); }
 
