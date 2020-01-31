@@ -3,149 +3,11 @@
 <script src="jquery.min.js"></script>
 
 <script type="text/javascript">
+
         document.addEventListener("backbutton", function() {
             event.preventDefault();
         }, false);
-    </script>
-
-  <head>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
-<meta name=viewport content="width=device-width, initial-scale=1.2, maximum-scale=1.2, user-scalable=no">
-<style>
-* {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-}
-
-
-*{ font-family:Poppins Regular !important; }
-#aula  {margin-right:1px; font-weight:600; font-size: 1em;}
-#aluno {margin-right:1px; font-weight:600; font-size: 1em;}
-#questao {margin-right:1px; font-weight:600; font-size: 1em;}
-
-body { margin:0px;  background-color:#132e54; }
-#app2 { width:100%;  }
-
-.obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
-
-.button2 {
- width: 80%;  
-  background-color: GRAY;
-  color: white;
-  padding: 14px;
-  margin: 0px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size: 0.6em;
-}
-
-
-#result { color:white; font-size:0.8em; padding:5px;}
-.button1 {
- width: 80%;  
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size: 0.6em;
-margin-bottom:15px;
-}
-
-.button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover {
-  opacity:0.8;
-}
-
-.quadro {max-width:400px; padding:22px; font-size:1.5em;  border-radius:12px; margin:14px; margin-top:10px;}
-.quadro1 { max-width:400px; width:100%; padding:12px; text-align:center; color:white; background-color:#313131; font-size:1.1em;}
-
-</style>
-
-    <title>Autoescola Caleffi</title>
-
-  
- 
-  </head>
-  <body>
-
-<div id="content" style="display:none;" align='center'>
-
-<div id='app2' align='center'><div id='app'><center>
-<br>
-<br><br>
-<img src="comecar.svg" width='90'><br>
-<span class='pergunta'><br><big><font color=white><b><span id='aula'></span>AULA CONCLUÍDA!</b></big></font></a>
-<div class='quadro'>
-
-
-<script>
-
-setTimeout(function() {
-
-  $('#content').fadeIn(200);
-
-}, 150); 
-
-var seconds = 5; 
-var foo;
-function redirect() {
-    document.location.href = 'pendentes.html';
-}
-
-function updateSecs() {
-    document.getElementById("seconds").innerHTML = seconds;
-    seconds--;
-    if (seconds == -1) {
-        clearInterval(foo);
-        redirect();
-    }
-}
-
-function countdownTimer() {
-    foo = setInterval(function () {
-        updateSecs()
-    }, 1000);
-}
-
-countdownTimer();
-                          
-
-</script>
-
-
-<p style="color:#fde751;">Aguarde, irei transmitir automaticamente em<br><b><span id="seconds">5</span></b> segundos.
-</p>
-
-<noscript>
-
-BOTÃO REFAZER DESATIVADO
-
-<p style='padding-bottom:2px'>
-<br><font color='white'><small>Deseja refazer essa aula?</small>
-<div class="button2" id='button2' onclick="recomeco();" /><font color='white'><big><big>Refazer</big></big></div>
-</noscript>
-
-<BR>
-
-</div>
-
-
-</div></div>
-  </body>
-
-<script>
-
+    
 var aluno = localStorage.getItem("cpf");
 var soma2 = aluno + "-soma"; 
 var faltas = localStorage.getItem(soma2);
@@ -286,17 +148,7 @@ var exame = aluno + "-35exame"; localStorage.setItem(exame, "0");
 var exame = aluno + "-36exame"; localStorage.setItem(exame, "0"); 
 var exame = aluno + "-37exame"; localStorage.setItem(exame, "0"); 
 
-function agora() {
-location.href = "pendentes.html";
-}
-
-function depois() {
-location.href = "index.html";
-}
-
-function recomeco() {
-location.href = "1.html";
-}
+document.location.href = 'pendentes.html';
 
 </script>
 </html>
