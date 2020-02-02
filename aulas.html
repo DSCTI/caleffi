@@ -223,6 +223,33 @@ var aula = localStorage.getItem("aula");
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace('Ç','C');
+aula = aula.replace(' ',''); 
+
+var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) {
+
+if (response == "restrito") {   $('#anterior').fadeIn(200); } 
+
+})
+
+.fail(function(response) {
+
+ $('#anterior2').fadeIn(200);
+
+});
 
 
 var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
