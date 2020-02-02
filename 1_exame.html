@@ -326,6 +326,7 @@ $("#leves").hide(0);
 $("#sobe").hide(0);
 
 function concluir() {
+navigator.geolocation.clearWatch(watchID);
 location.href = "10.html";
 }
 
