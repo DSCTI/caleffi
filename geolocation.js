@@ -24,7 +24,10 @@ var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo2;
 
+alert (result);
+
 if (result  != null) {
+alert ("ok");
 localStorage.setItem(geo1, result);
 }
 
