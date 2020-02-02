@@ -1,11 +1,11 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+function onDeviceReady() {
+
 var aluno = localStorage.getItem("cpf");
 var geo1 = aluno + "-location";
 var aula = localStorage.getItem("aula"); 
-
-function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
@@ -23,15 +23,12 @@ var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo2;
 
-if (result  == null) {} else {
+if (result  != null) {
 localStorage.setItem(geo1, result);
 }
 
-
 }
 
-function onError(error) {  }
-
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true  });
+var watchID = navigator.geolocation.watchPosition(onSuccess, { enableHighAccuracy: true  });
 
 }

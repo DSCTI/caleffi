@@ -93,13 +93,10 @@ var exame = e1 + "_" + e2 + "_" + e3 + "_" + e4 + "_" + e5 + "_" + e6 + "_" + e7
 var geo1 = aluno + "-location";
 var geo = localStorage.getItem(geo1);
 
-var obs ="geo ok";
-if (geo == null) { var obs = "sem geo"; }
-
 if (faltas == null) { var faltas = "0"; }
 
 var veiculo = localStorage.getItem("veiculo"); 
-var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo + "---" + obs;
+var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo;
 
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
