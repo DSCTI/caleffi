@@ -9,9 +9,15 @@ document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, f
 function onSuccess(position) {
 
 
-alert ("sucess!");
 
+var result1 = position.coords.latitude;   if (result1 == null) {var result1 = "1";} 
+var result2 = position.coords.longitude;  if (result2 == null) {var result2 = "1";}
+var speed = position.coords.speed;        
+var speed = speed.substring(0, 2);        if (speed == null) {var speed = "1";} 
 
+alert (result1);
+alert (result2);
+alert (speed);
 
 } 
 
