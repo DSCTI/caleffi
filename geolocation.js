@@ -21,9 +21,6 @@ var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo;
 
-var speed = speed.split(".");
-var speed =  speed[0];
-
 if (speed != null) {
 if (result2 != null) {
 if (result1 != null) {
@@ -32,8 +29,6 @@ if (geo != null) {
 if (aula != null) {
 
 localStorage.setItem(aluno + "-location", result);
-
-alert (result);
 
 }}}}}}
 
