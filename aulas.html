@@ -492,6 +492,11 @@ var questao = "9";var id = "0";var id2 = aluno + "-" + aula  + "-" + questao; lo
 
 
 function concluir() {
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+navigator.geolocation.clearWatch(watchID);
+}
 location.href = "10.html";
 }
 
