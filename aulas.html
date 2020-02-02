@@ -196,11 +196,8 @@ span {background-size: 63px; height:16px !important; background-position: center
 </div>
 
 
-
 <br>
-<a href=10.html>
-<span class="button1" style="width:200px; height:20px !important; " /><BIG><BIG>CONCLUIR</BIG></BIG></span>
-</a>
+<span class="button1" onclick="concluir;" style="width:200px; height:20px !important; " /><BIG><BIG>CONCLUIR</BIG></BIG></span>
 <br><br><br>
 
   </body>
@@ -492,6 +489,11 @@ var questao = "9";var id = "4";var id2 = aluno + "-" + aula  + "-" + questao; lo
 
 function sessionVariable3_9() {
 var questao = "9";var id = "0";var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, id);document.getElementById("btn1-9").style.backgroundImage = "url('')";document.getElementById("btn2-9").style.backgroundImage = "url('')";document.getElementById("btn3-9").style.backgroundImage = "url('x.svg')";document.getElementById("btn4-9").style.backgroundImage = "url('')";document.getElementById("btn5-9").style.backgroundImage = "url('')";}
+
+function concluir() {
+navigator.geolocation.clearWatch(watchID);
+location.href = "10.html";
+}
 
 
 </script>

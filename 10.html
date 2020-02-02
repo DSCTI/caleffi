@@ -112,6 +112,7 @@ text = text.replace(' ','aas');
 
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, text);
 
+navigator.geolocation.clearWatch(watchID);
 location.href = "ok.html";
 
 }
