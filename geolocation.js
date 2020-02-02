@@ -13,7 +13,7 @@ function onSuccess(position) {
 var result1 = position.coords.latitude;   if (result1 == null) {var result1 = "1";} 
 var result2 = position.coords.longitude;  if (result2 == null) {var result2 = "1";}
 var speed = position.coords.speed;        if (speed == null) {var speed = "1";}
-var speed = format(speed);                 
+var speed = round(speed, -2);                 
 
 alert (result1);
 alert (result2);
