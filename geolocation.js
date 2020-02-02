@@ -12,7 +12,7 @@ document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, f
 
 function onSuccess(position) {
 
-var geo2 = localStorage.getItem(geo1);    if (geo != null) {
+var geo2 = localStorage.getItem(geo1);
 
 var result1 = position.coords.latitude;   if (result1 == null) {var result1 = "1";}
 var result2 = position.coords.longitude;  if (result2 == null) {var result2 = "1";}
@@ -26,12 +26,8 @@ var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo2;
 
 alert (result);
 
-if (result  != null) {
-alert ("ok");
 localStorage.setItem(geo1, result);
-}
-
-} }
+} 
 
 function onError(error) {  }
 
