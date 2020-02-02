@@ -29,6 +29,8 @@ localStorage.setItem(geo1, result);
 
 }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, { timeout: 30000, enableHighAccuracy: true  });
+function onError(error) {  }
+
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {  enableHighAccuracy: true  });
 
 }
