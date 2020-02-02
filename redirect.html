@@ -1,0 +1,58 @@
+<script src="jquery.min.js"></script>
+
+<script>
+
+var aula = localStorage.getItem("aula");
+
+if (aula == "INICIAR AULA") {location.href = "start.html";}
+
+var aluno = localStorage.getItem("cpf");
+var nome = aluno + "-nome"; 
+var nome = localStorage.getItem(nome); 
+
+var aula = localStorage.getItem("aula"); 
+var plano1 = aluno + "-plano"; 
+var plano = localStorage.getItem(plano1); 
+
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace('Ç','C');
+aula = aula.replace(' ',''); 
+
+var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) {
+
+if (response == "feita") { location.href = "feita.html"; }  else {
+
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
+
+$('#load').fadeOut(50); 
+
+setTimeout(function() {
+location.href = "aulas.html";
+}, 50); 
+}
+
+})
+
+.fail(function(response) {
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
+$('#load').fadeOut(50); 
+setTimeout(function() {
+location.href = "aulas.html";
+}, 50); 
+
+});
+
+</script>
+
