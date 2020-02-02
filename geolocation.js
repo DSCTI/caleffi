@@ -3,15 +3,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 
-var aluno = localStorage.getItem("cpf");
-var geo1 = aluno + "-location";
-var aula = localStorage.getItem("aula"); 
-
 window.plugins.insomnia.keepAwake();
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
 function onSuccess(position) {
 
+var aluno = localStorage.getItem("cpf");
+var geo1 = aluno + "-location";
+var aula = localStorage.getItem("aula"); 
 var geo2 = localStorage.getItem(geo1);
 
 var result1 = position.coords.latitude;   if (result1 == null) {var result1 = "1";}
