@@ -91,14 +91,10 @@ var e37 = aluno + "-37exame"; var e37 = localStorage.getItem(e37); if (e37 == nu
 var exame = e1 + "_" + e2 + "_" + e3 + "_" + e4 + "_" + e5 + "_" + e6 + "_" + e7 + "_" + e8 + "_" + e9 + "_" + e10 + "_" + e11 + "_" + e12 + "_" + e13 + "_" + e14 + "_" + e15 + "_" + e16 + "_" + e17 + "_" + e18 + "_" + e19 + "_" + e20 + "_" + e21 + "_" + e22 + "_" + e23 + "_" + e24 + "_" + e25 + "_" + e26 + "_" + e27 + "_" + e28 + "_" + e29 + "_" + e30 + "_" + e31 + "_" + e32 + "_" + e33 + "_" + e34 + "_" + e35 + "_" + e36 + "_" + e37; 
 
 var geo1 = aluno + "-location";
-var geo4 = aluno + "-location2";
 var geo = localStorage.getItem(geo1);
-var geo3 = localStorage.getItem(geo4);
 
 var obs ="geo ok";
-
-if (geo == null) { var geo = geo3; var obs ="backup das geo"; }
-if (geo == null) { var obs "sem geo"; }
+if (geo == null) { var obs = "sem geo"; }
 
 if (faltas == null) { var faltas = "0"; }
 
