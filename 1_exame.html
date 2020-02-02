@@ -325,12 +325,9 @@ $("#graves").hide(0);
 $("#leves").hide(0);
 $("#sobe").hide(0);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
 function concluir() {
-navigator.geolocation.clearWatch(watchID);
 location.href = "10.html";
-}}
+}
 
 function eliminatorias() {
 $("#eliminatorias").fadeIn(200);

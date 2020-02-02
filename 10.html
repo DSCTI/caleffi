@@ -112,12 +112,9 @@ text = text.replace(' ','aas');
 
 var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, text);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-navigator.geolocation.clearWatch(watchID);
 location.href = "ok.html";
 }
-}
+
 
 </script>
 
