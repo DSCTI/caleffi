@@ -286,9 +286,9 @@ if (value3 == "ESCOLHER AULA") {} else {
 
 window.localStorage.setItem("aula", value3);
 
-var geo1 = aluno + "-location";
-localStorage.setItem(geo1, "");
 
+var geo1 = aluno + "-location";
+localStorage.setItem(geo1, "s");
 window.location.href = "redirect.html";
 
 } }
@@ -300,7 +300,7 @@ var value3 = e.options[e.selectedIndex].text;
 if (value3 == "ESCOLHER AULA") {} else {
 
 var geo1 = aluno + "-location";
-localStorage.setItem(geo1, "");
+localStorage.setItem(geo1, "s");
 
 window.localStorage.setItem("aula", value3);
 window.location.href = "redirect.html";
