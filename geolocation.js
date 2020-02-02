@@ -3,6 +3,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 var aluno = localStorage.getItem("cpf");
 var geo1 = aluno + "-location";
+var geo3 = aluno + "-location2";
 var aula = localStorage.getItem("aula"); 
 
 function onDeviceReady() {
@@ -20,6 +21,8 @@ var speed = (speed.substring(0, 2));
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+localStorage.setItem(geo3, geo2); //faz backup dos dados na na sessão geo3
 
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo2;
 
