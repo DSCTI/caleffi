@@ -15,6 +15,7 @@ var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
 var aula = localStorage.getItem("aula");
+var aula2 = localStorage.getItem("aula");
 
 var data = new Date();
 var dia     = data.getDate();           // 1-31
@@ -96,7 +97,7 @@ var geo = localStorage.getItem(geo1);
 if (faltas == null) { var faltas = "0"; }
 
 var veiculo = localStorage.getItem("veiculo"); 
-var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo;
+var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula2 + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo;
 
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');

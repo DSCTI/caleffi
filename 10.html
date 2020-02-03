@@ -104,18 +104,17 @@ var value1 = localStorage.getItem("aula");
 document.getElementById("aula").innerHTML= value1; 
 
 function sessionVariable1() {
-var questao = "10";
+
 var aula = localStorage.getItem("aula");
 var aluno = localStorage.getItem("cpf");
 var text = document.getElementById("text").value;
 text = text.replace(' ','aas');
 
-var id2 = aluno + "-" + aula  + "-" + questao; localStorage.setItem(id2, text);
+var id2 = aluno + "-" + aula  + "-" + "10"; localStorage.setItem(id2, text);
 
 location.href = "ok.html";
 
 }
-
 
 </script>
 
