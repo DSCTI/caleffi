@@ -73,9 +73,9 @@ font-size: 0.6em;
 <br>
 <br><br>
 
-<span class='pergunta'><br><big><font color=white><b><span id='aluno'></span> - <span id='aula'></span></b></big></font></a>
+<span class='pergunta'><br><big><font color=white><b><span id='aluno'></span></b></big></font></a>
 <div class='quadro'>
-<B><SMALL><FONT COLOR=WHITE>TRANSMITINDO AULA<BR></SMALL></B>
+
 
 <img src="transmite.svg" width='114'><div id='result'></div>
 
@@ -122,8 +122,7 @@ var name = aula2[1];
 name = name.replace('EXAME',' EXAME');
 name = name.replace('BALIZA',' BALIZA');
 
-document.getElementById("aula").innerHTML = aula1 + "ª " + name;
-document.getElementById("aluno").innerHTML = nome;
+document.getElementById("aluno").innerHTML = "Transmitindo aula de " + nome;
 
 var res = aluno + "-" + aula + "-" + "pendente";
 
