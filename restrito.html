@@ -2,7 +2,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.1, user-scalable=no">
 <html>
 <head>
-
+<script src="jquery.min.js"></script>
   <head>
 
 <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
@@ -71,11 +71,11 @@ input:hover {
 
 
 
-<font color=white>Aula</font><font color=#EBC000> 
+<font color=#EBC000> 
 
 
 
- <b><span id="aula"></span></b> <font color=white>ainda não disponível, faça e transmita a(s) aula(s) anterior(es)! </font><br><br>
+ <b><span id="aula">Aula ainda não disponível, faça e transmita a(s) aula(s) anterior(es)! </font><br><br>
 <big>
 <div class='button1'><a href='start.html'><font color=white>VOLTAR</font></div></a></small>
 </div>
@@ -96,8 +96,7 @@ setTimeout(function() {
 }, 240); 
 
 
-var aula = localStorage.getItem("aula");
-document.getElementById("aula").innerHTML = aula;
+
 
 </script>
 
