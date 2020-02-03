@@ -4,9 +4,7 @@
 
 <script type="text/javascript">
 
-        document.addEventListener("backbutton", function() {
-            event.preventDefault();
-        }, false);
+        document.addEventListener("backbutton", function() {  event.preventDefault();  }, false);
     
 var aluno = localStorage.getItem("cpf");
 var soma2 = aluno + "-soma"; 
@@ -15,7 +13,13 @@ var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
 var aula = localStorage.getItem("aula");
-var aula2 = localStorage.getItem("aula");
+
+aula = aula.replace(' ','');
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace(' ','aas');
+aula = aula.replace('Ç','C');
 
 var data = new Date();
 var dia     = data.getDate();           // 1-31
@@ -38,18 +42,16 @@ var nocoes  = localStorage.getItem(nocoes);
 var plano = aluno + "-plano";
 var plano  = localStorage.getItem(plano);
 
-var p1 = aluno + "-" + aula + "-" + "1";  var pergunta1  = localStorage.getItem(p1);   if (pergunta1 == null)  {var pergunta1 = "0";}
-var p2 = aluno + "-" + aula + "-" + "2";  var pergunta2  = localStorage.getItem(p2);   if (pergunta2 == null)  {var pergunta2 = "0";}
-var p3 = aluno + "-" + aula + "-" + "3";  var pergunta3  = localStorage.getItem(p3);   if (pergunta3 == null)  {var pergunta3 = "0";}
-var p4 = aluno + "-" + aula + "-" + "4";  var pergunta4  = localStorage.getItem(p4);   if (pergunta4 == null)  {var pergunta4 = "0";}
-var p5 = aluno + "-" + aula + "-" + "5";  var pergunta5  = localStorage.getItem(p5);   if (pergunta5 == null)  {var pergunta5 = "0";}
-var p6 = aluno + "-" + aula + "-" + "6";  var pergunta6  = localStorage.getItem(p6);   if (pergunta6 == null)  {var pergunta6 = "0";}
-var p7 = aluno + "-" + aula + "-" + "7";  var pergunta7  = localStorage.getItem(p7);   if (pergunta7 == null)  {var pergunta7 = "0";}
-var p8 = aluno + "-" + aula + "-" + "8";  var pergunta8  = localStorage.getItem(p8);   if (pergunta8 == null)  {var pergunta8 = "0";}
-var p9 = aluno + "-" + aula + "-" + "9";  var pergunta9  = localStorage.getItem(p9);   if (pergunta9 == null)  {var pergunta9 = "0";}
-var p10 = aluno + "-" + aula + "-" + "10"; var pergunta10 = localStorage.getItem(p10); if (pergunta10 == null) {var pergunta10 = "0";}
-
-aula = aula.replace(' ','');
+var p1 = aluno + "-" + aula + "-" + "1";  var q1  = localStorage.getItem(p1);   if (q1 == null)  {var q1 = "0";}
+var p2 = aluno + "-" + aula + "-" + "2";  var q2  = localStorage.getItem(p2);   if (q2 == null)  {var q2 = "0";}
+var p3 = aluno + "-" + aula + "-" + "3";  var q3  = localStorage.getItem(p3);   if (q3 == null)  {var q3 = "0";}
+var p4 = aluno + "-" + aula + "-" + "4";  var q4  = localStorage.getItem(p4);   if (q4 == null)  {var q4 = "0";}
+var p5 = aluno + "-" + aula + "-" + "5";  var q5  = localStorage.getItem(p5);   if (q5 == null)  {var q5 = "0";}
+var p6 = aluno + "-" + aula + "-" + "6";  var q6  = localStorage.getItem(p6);   if (q6 == null)  {var q6 = "0";}
+var p7 = aluno + "-" + aula + "-" + "7";  var q7  = localStorage.getItem(p7);   if (q7 == null)  {var q7 = "0";}
+var p8 = aluno + "-" + aula + "-" + "8";  var q8  = localStorage.getItem(p8);   if (q8 == null)  {var q8 = "0";}
+var p9 = aluno + "-" + aula + "-" + "9";  var q9  = localStorage.getItem(p9);   if (q9 == null)  {var q9 = "0";}
+var p10 = aluno + "-" + aula + "-" + "10"; var q10 = localStorage.getItem(p10); alert ( p10 );
 
 var e1 = aluno + "-1exame"; var e1 = localStorage.getItem(e1); if (e1 == null) { var e1 = "0";} 
 var e2 = aluno + "-2exame"; var e2 = localStorage.getItem(e2); if (e2 == null) { var e2 = "0";} 
@@ -97,7 +99,7 @@ var geo = localStorage.getItem(geo1);
 if (faltas == null) { var faltas = "0"; }
 
 var veiculo = localStorage.getItem("veiculo"); 
-var resultado = pergunta1 + "-" + pergunta2 + "-" + pergunta3 + "-" + pergunta4 + "-" + pergunta5 + "-" + pergunta6 + "-" + pergunta7 + "-" + pergunta8 + "-" + pergunta9 + "-" + pergunta10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + aula2 + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo;
+var resultado = q1 + "-" + q2 + "-" + q3 + "-" + q4 + "-" + q5 + "-" + q6 + "-" + q7 + "-" + q8 + "-" + q9 + "-" + q10 + "-" + data1 + "-" + hora1 + "-" + instrutor + "-" + aluno + "-" + data2 + "-" + hora2 + "-" + " " + "-" + nocoes + "-" + plano + "-" + exame + "-" + faltas + "-" + veiculo + "---" + geo;
 
 resultado = resultado.replace('ª','');
 resultado = resultado.replace('º','');
@@ -112,7 +114,7 @@ res = res.replace(' ','');
 localStorage.setItem(res, resultado);
 
 localStorage.setItem(soma2, "0");
-localStorage.setItem("aula", "");
+localStorage.setItem(geo1, "s");
 
 var exame = aluno + "-1exame"; localStorage.setItem(exame, "0");  
 var exame = aluno + "-2exame"; localStorage.setItem(exame, "0");
@@ -152,7 +154,7 @@ var exame = aluno + "-35exame"; localStorage.setItem(exame, "0");
 var exame = aluno + "-36exame"; localStorage.setItem(exame, "0"); 
 var exame = aluno + "-37exame"; localStorage.setItem(exame, "0"); 
 
-document.location.href = 'pendentes.html';
+location.href = "pendentes.html";
 
 </script>
 </html>
