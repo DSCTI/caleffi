@@ -36,9 +36,7 @@ var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno 
 $.ajax(settings).done(function (response) {
 
 if (response == "feita") { location.href = "feita.html"; }  else {
-
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
-
 location.href = "aulas.html"; }
 
 }
@@ -48,7 +46,6 @@ location.href = "aulas.html"; }
 .fail(function(response) {
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
-
 
 });
 
