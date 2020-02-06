@@ -14,7 +14,6 @@ var aluno = localStorage.getItem("cpf");
 var nome = aluno + "-nome"; 
 var nome = localStorage.getItem(nome); 
 
-var aula = localStorage.getItem("aula"); 
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 
@@ -38,23 +37,18 @@ $.ajax(settings).done(function (response) {
 
 if (response == "feita") { location.href = "feita.html"; }  else {
 
-if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 
-$('#load').fadeOut(50); 
+location.href = "aulas.html"; }
 
-setTimeout(function() {
-location.href = "aulas.html";
-}, 50); 
 }
 
 })
 
 .fail(function(response) {
-if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
-$('#load').fadeOut(50); 
-setTimeout(function() {
-location.href = "aulas.html";
-}, 50); 
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
+location.href = "aulas.html"; }
+
 
 });
 
