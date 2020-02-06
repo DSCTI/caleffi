@@ -251,6 +251,9 @@ var nome = aluno + "-nome";
 var nome = localStorage.getItem(nome); 
 
 var aula = localStorage.getItem("aula"); 
+
+if (aula.includes("EXAME")) {} else { location.href = "aulas.html"; }
+
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 

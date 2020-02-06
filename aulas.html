@@ -210,6 +210,8 @@ var nome = localStorage.getItem(nome);
 
 var aula = localStorage.getItem("aula"); 
 
+if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
+
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 
