@@ -275,8 +275,13 @@ var value3 = e.options[e.selectedIndex].text;
 
 if (value3 == "ESCOLHER AULA") {} else {
 
-window.localStorage.setItem("aula", value3);
+value3 = value3.replace('ª','');
+value3 = value3.replace('º','');
+value3 = value3.replace('Á','A');
+value3 = value3.replace('Ç','C');
+value3 = value3.replace(' ','');
 
+window.localStorage.setItem("aula", value3);
 
 var geo1 = aluno + "-location";
 localStorage.setItem(geo1, "s");
@@ -293,7 +298,14 @@ if (value3 == "ESCOLHER AULA") {} else {
 var geo1 = aluno + "-location";
 localStorage.setItem(geo1, "s");
 
+value3 = value3.replace('ª','');
+value3 = value3.replace('º','');
+value3 = value3.replace('Á','A');
+value3 = value3.replace('Ç','C');
+value3 = value3.replace(' ','');
+
 window.localStorage.setItem("aula", value3);
+
 window.location.href = "redirect.html";
 
 } }
