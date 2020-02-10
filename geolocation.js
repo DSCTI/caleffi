@@ -26,16 +26,15 @@ if (result2 != null) {
 if (result1 != null) {
 if (result != null) {
 if (geo != null) {
-if (aula != null) {
 
 localStorage.setItem(aluno + "-location", result);
 
-}}}}}}
+}}}}}
 
 } 
 
 function onError(error) {  }
 
-var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {  timeout: 3000, enableHighAccuracy: true  });
+var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {  timeout: 30000, enableHighAccuracy: true  });
 
 }

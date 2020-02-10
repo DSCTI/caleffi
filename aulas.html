@@ -1,4 +1,4 @@
-<!DOCclass html>
+﻿<!DOCclass html>
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.1, user-scalable=no">
 <html>
   <head>
@@ -277,6 +277,14 @@ var nome = aluno + "-nome";
 var nome = localStorage.getItem(nome); 
 document.getElementById("aluno").innerHTML= nome; 
 var value1 = localStorage.getItem("aula"); 
+
+var value1 = value1.replace("PRATICA", " Prática");
+var value1 = value1.replace("SIMULADOR", " Simulador");
+var value1 = value1.replace("ABERTO", "  Exame extra");
+var value1 = value1.replace("REFORCO", " Reforço");
+var value1 = value1.replace("EXAME", " Exame");
+
+
 document.getElementById("aula").innerHTML= value1; 
 
 var questao = "1"
