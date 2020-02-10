@@ -1,304 +1,55 @@
-<!DOCclass html>
-<meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.1, user-scalable=no">
-<meta http-equiv="pragma" content="no-cache" />
+
+<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html>
+<head>
+
+
 <script src="jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="geolocation-check.js"></script>
 
-<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
-
-<script>
-
-
-$(document).keypress(function (e) {
-    if (e.which == 13) {
-
-var cpf1 = document.getElementById("cpf").value;
-localStorage.setItem("cpf", cpf1);
-if (cpf1 > 0) {
-
-window.location.href = "instrutor.html";  }}
-
-
-});
-
-setTimeout(function() {
-
-  $('#content').fadeIn(220);
-
-}, 300); 
-
-var splash = localStorage.getItem("splash");
-if (splash == "1") { } else { location.href = "splash.html"; }
-
-</script>
-
-  <head>
-
-
-
-<div id="content" style="display:none;">
-<div id="attention" style="display:none;"><small><a href='pendentes.html'><b>Atenção:</b> Você tem aulas pendentes de transmissão, transmita o mais rápido possível! <b>Toque aqui para transmitir.</small></a></b></div>
 
 <style>
 
-#attention {color:black !important; line-height:24px; padding:16px; text-align:center; font-size:1em; color: #1b1b1b; background-color:#fffb82; }
-#attention > * > * { text-decoration: none; color:black !important;}
-#attention > *  { text-decoration: none; color:black !important;}
 
-button, div {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+body { 
+   background-color: #ee5522; 
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3CradialGradient id='a' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23FB3'/%3E%3Cstop offset='1' stop-color='%23ee5522'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='750' x2='1550' y2='750'%3E%3Cstop offset='0' stop-color='%23f7882b'/%3E%3Cstop offset='1' stop-color='%23ee5522'/%3E%3C/linearGradient%3E%3Cpath id='s' fill='url(%23b)' d='M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z'/%3E%3Cg id='g'%3E%3Cuse href='%23s' transform='scale(0.12) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.2) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.25) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(0.3) rotate(-20)'/%3E%3Cuse href='%23s' transform='scale(0.4) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(0.5) rotate(20)'/%3E%3Cuse href='%23s' transform='scale(0.6) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.7) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.835) rotate(-40)'/%3E%3Cuse href='%23s' transform='scale(0.9) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(1.05) rotate(25)'/%3E%3Cuse href='%23s' transform='scale(1.2) rotate(8)'/%3E%3Cuse href='%23s' transform='scale(1.333) rotate(-60)'/%3E%3Cuse href='%23s' transform='scale(1.45) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(1.6) rotate(10)'/%3E%3C/g%3E%3C/defs%3E%3Cg transform='rotate(0 0 0)'%3E%3Cg transform='rotate(0 0 0)'%3E%3Ccircle fill='url(%23a)' r='3000'/%3E%3Cg opacity='0.5'%3E%3Ccircle fill='url(%23a)' r='2000'/%3E%3Ccircle fill='url(%23a)' r='1800'/%3E%3Ccircle fill='url(%23a)' r='1700'/%3E%3Ccircle fill='url(%23a)' r='1651'/%3E%3Ccircle fill='url(%23a)' r='1450'/%3E%3Ccircle fill='url(%23a)' r='1250'/%3E%3Ccircle fill='url(%23a)' r='1175'/%3E%3Ccircle fill='url(%23a)' r='900'/%3E%3Ccircle fill='url(%23a)' r='750'/%3E%3Ccircle fill='url(%23a)' r='500'/%3E%3Ccircle fill='url(%23a)' r='380'/%3E%3Ccircle fill='url(%23a)' r='250'/%3E%3C/g%3E%3Cg transform='rotate(0 0 0)'%3E%3Cuse href='%23g' transform='rotate(10)'/%3E%3Cuse href='%23g' transform='rotate(120)'/%3E%3Cuse href='%23g' transform='rotate(240)'/%3E%3C/g%3E%3Ccircle fill-opacity='0.1' fill='url(%23a)' r='3000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
 }
-
-
-#cpf {margin-left:32px;}
-* { font-family:Poppins Regular !important; }
-#erro {padding:20px; color:white; text-align:center;}
-body { margin:0px;  background-color:#132e54; }
-#app2 { width:100%;  height:400px;}
-#app {max-width:400px; 
-  border-radius: 5px;
-  padding: 20px;
-}
-
-
-input[type=number], select {font-family:Poppins Regular;
-width:205px;
-text-align:center;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
- height: 40px;
-font-size:1.4em;
-padding:8px;
-}
-
-.button1 {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 25px 10px 25px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size:1.3em;
-min-width:100px;
-max-width:200px;
-}
-
-.button2 {
-  background-color: #e0ad11;
-  color: #132e54;
-  padding: 12px 15px 10px 15px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-text-align:center;
-font-size:1.1em;
-min-width:100px;
-max-width:200px;
-}
-
-
- .button1:hover, .button2:hover {
-opacity:0.8;
-
-}
-
-.x {font-size:1.4em; color:silver; padding:3px; }
-
-
-
-#fotos 
-{
-height:110px; width:110px;
-background-repeat: no-repeat;
-background-size: 110px 110px;
-border-radius:100px;
-
-
-}
-
-#fotos2 
-{
-height:110px; width:110px;
-margin:15px;
-background: url(no.jpg);
-background-repeat: no-repeat;
-background-size: 110px 110px;
-background-size: 110px 110px;
-border-radius:100px;
-}
-
-
 
 
 </style>
 
-    
+<body  style=" display:none; ">
+<div id="dscti" style="  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center; position:absolute; width:100%; height:100%; z-index:9999;"><img class = "logo" style=" display:none; " src="dscti.svg" width="120"></div>
 
 
-   
-  </head>
-  <body>
-<div id='app2' align='center'><div id='app'><center>
-<br><br><br>
-<img src='logo.svg' width='240'>
-<br><br>
-<div id="fotos2">
-<div id="fotos">
-</div></div>
-<input type='number' placeholder='CPF do Aluno' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
-<br><br>
-<div style="height:80px;"><span id="botao" class="button1" value="Ok" onclick="sessionVariable1();" />Ok</span>
-
-<div id="load" style="display:none;"><center><img src="load.svg" width="80"></center></div></div>
-
-
-<center>
-
-<BR><BR><img src="dscti.svg" width='49'></a><br><br>
-</div></div>
-  </body>
+</body>
 
 <script>
 
-var aluno = localStorage.getItem("cpf");
-var value1 = localStorage.getItem("cpf");
-document.getElementById('cpf').value = value1;
-var cpf1 = document.getElementById("cpf").value;
 
-$("#fotos").hide(0);
 
-var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')";
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
+$('body').fadeIn(200);
+
+$('img').fadeIn(300);
+
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 5500); 
+
+  $('body').fadeOut(500);
+
+
+}, 2500); 
 
 setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 10500); 
 
-setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 15500); 
+ window.location.href = "splash2.html";
 
-setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 20500); 
-   
-setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 30500); 
-
-setTimeout(function() {
-var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);}
-}, 6000); 
-
-function sessionVariable1() {
-var cpf1 = document.getElementById("cpf").value;
-var n = cpf1.length; if (n == 11) {
-
-$('#erro').fadeIn(120);
-$('#botao').fadeOut(120); 
-
-localStorage.setItem("cpf", cpf1);
-
-setTimeout(function(){$('#load').fadeIn(90); }, 100);
-
-var cpf1 = document.getElementById("cpf").value;
-var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
-var url = "url('"+ imageUrl +"')"; 
-document.getElementById("fotos").style.backgroundImage = url;
-$("#fotos").fadeIn(250);
-
-setTimeout(function(){ 
-window.location.href = "instrutor.html"; 
-}, 2200);
-
-}  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>";}
-
-
-
-}
-
-
-
-function x() {
-document.getElementById('cpf').value = "";
-document.getElementById("fotos").style.backgroundImage = "";
-}
-
-
-
-var aula  = localStorage.getItem(aula);
-
-for (var i = 0; i < localStorage.length; i++) {
-var key = localStorage.key(i);
-var value = localStorage.getItem(key);
-var v = key.includes("pendente");
-
-if (v == true) {
-key = key.replace(' ','');
-window.localStorage.setItem("temp", key);
-$("#attention").fadeIn(200);
-
-}
-
-}
-
-</script>
-<p id="erro"></p>
-
-
-</html>
-
-<script>
-
-function sessionVariable() {
-
-window.location.href = "pendentes.html";  
-
-}
+}, 3000);
 
 </script>
 

@@ -1,58 +1,49 @@
-Ôªø<!DOCclass html>
+<!DOCclass html>
 <meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.1, user-scalable=no">
-  <head>
 <meta http-equiv="pragma" content="no-cache" />
 <script src="jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="geolocation-check.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+
+<script>
 
 
-<script> 
+$(document).keypress(function (e) {
+    if (e.which == 13) {
 
-$( document ).ready(function() {
-$("#load").hide();
-$("#content").hide();
-$("#load").fadeIn(200);
+var cpf1 = document.getElementById("cpf").value;
+localStorage.setItem("cpf", cpf1);
+if (cpf1 > 0) {
 
-var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome";
-
-var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
-
- $.ajax({
-    url: url, type: 'GET',
-   
-}).done(function(response) {
-
-if (response == "sem") { window.location.href = "sem.html"; }
-
-localStorage.setItem(nome, response);
-$("#load").fadeOut(20);
-$("#content").fadeIn(200);
-
-
-})
-
-.fail(function(response) {
-$("#load").fadeOut(50);
-localStorage.setItem(nome, aluno);
-$("#content").fadeIn(200);
+window.location.href = "instrutor.html";  }}
 
 
 });
 
-});
+setTimeout(function() {
+
+  $('#content').fadeIn(220);
+
+}, 300); 
+
 
 </script>
 
-<div id="load"><br><br><br><center><img src="load.svg" width="80"></center></div>
-
-
+  <head>
 
 
 
 <div id="content" style="display:none;">
+<div id="attention" style="display:none;"><small><a href='pendentes.html'><b>AtenÁ„o:</b> VocÍ tem aulas pendentes de transmiss„o, transmita o mais r·pido possÌvel! <b>Toque aqui para transmitir.</small></a></b></div>
 
+<style>
 
-<link rel="stylesheet" type="text/css" href="fonts/style.css"/><style>
+#attention {color:black !important; line-height:24px; padding:16px; text-align:center; font-size:1em; color: #1b1b1b; background-color:#fffb82; }
+#attention > * > * { text-decoration: none; color:black !important;}
+#attention > *  { text-decoration: none; color:black !important;}
+
 button, div, span {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -64,29 +55,28 @@ button, div, span {
 }
 
 
-*{ font-family:Poppins Regular !important; }
-.x {font-size:1.5em; color:silver; padding:3px; }
+#cpf {margin-left:32px;}
+* { font-family:Poppins Regular !important; }
 #erro {padding:20px; color:white; text-align:center;}
-body { margin:0px;  background-color:#132e54;  font-family:arial; }
-#app2 { width:100%; }
+body { margin:0px;  background-color:#132e54; }
+#app2 { width:100%;  height:400px;}
 #app {max-width:400px; 
   border-radius: 5px;
   padding: 20px;
 }
 
 
-
 input[type=number], select {font-family:Poppins Regular;
-  width: 200px;
-  padding: 12px 20px;
+width:205px;
+text-align:center;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-text-align:center;
-font-size:1.2em;
-background-color:white !important;
+ height: 40px;
+font-size:1.4em;
+padding:8px;
 }
 
 .button1 {
@@ -103,10 +93,29 @@ min-width:100px;
 max-width:200px;
 }
 
- .button1:hover {
+.button2 {
+  background-color: #e0ad11;
+  color: #132e54;
+  padding: 12px 15px 10px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:1.1em;
+min-width:100px;
+max-width:200px;
+}
+
+
+ .button1:hover, .button2:hover {
 opacity:0.8;
 
 }
+
+.x {font-size:1.4em; color:silver; padding:3px; }
+
+
 
 #fotos 
 {
@@ -130,52 +139,50 @@ border-radius:100px;
 }
 
 
+
+
 </style>
 
     
-    
+
+
+   
   </head>
   <body>
-<div align=center>
-<div style="  max-width:313px;  " align=center>
 <div id='app2' align='center'><div id='app'><center>
-
-
-
-
-
-
+<br><br><br>
+<img src='logo.svg' width='240'>
 <br><br>
 <div id="fotos2">
 <div id="fotos">
 </div></div>
-<p align="left" style="padding-left:31px;">
-<input type='number' placeholder='CPF do Instrutor' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+<input type='number' placeholder='CPF do Aluno' size='13' id='cpf'> <span class="x" value="x" onclick="x();" /><img src='del.svg' width='21'></span>
+<br><br>
+<div style="height:80px;"><span id="botao" class="button1" value="Ok" onclick="sessionVariable1();" />Ok</span>
 
-<select id='select'>
-  <option><script>
-var veiculo = localStorage.getItem("veiculo"); 
-if (veiculo == null) {document.write("PLACA"); } else { 
-document.write(veiculo); }
-</script></option>
-  <option>SIM-0000</option>
-  <option>FNG-1191</option>
-  <option>FSD-3002</option>
-  <option>FWL-4763</option>
-  <option>ECV-9304</option>
-  <option>DJN-0045</option>
-  <option>DSV-1016</option>
-
-</select><br></p> 
+<div id="load" style="display:none;"><center><img src="load.svg" width="80"></center></div></div>
 
 
-<span class="button1" onclick="sessionVariable1();" />Ok</span>
-<div id="load2" style="display:none;"><center><img src="load.svg" width="80"></center></div></div>
-<p id="erro"></p><a href='aluno.html'></a><br>
+<center>
+
+<BR><BR><img src="dscti.svg" width='49'></a><br><br>
 </div></div>
   </body>
 
 <script>
+
+var aluno = localStorage.getItem("cpf");
+var value1 = localStorage.getItem("cpf");
+document.getElementById('cpf').value = value1;
+var cpf1 = document.getElementById("cpf").value;
+
+$("#fotos").hide(0);
+
+var n = cpf1.length; if (n == 11) {
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
+var url = "url('"+ imageUrl +"')";
+document.getElementById("fotos").style.backgroundImage = url;
+$("#fotos").fadeIn(250);}
 
 setTimeout(function() {
 var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {
@@ -223,28 +230,18 @@ var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
 var url = "url('"+ imageUrl +"')"; 
 document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);}
-}, 60000); 
+}, 6000); 
 
 function sessionVariable1() {
-
-var obj = document.createElement("audio");
-obj.src = "start.mp3"; 
-
-$('#erro').hide();
-
 var cpf1 = document.getElementById("cpf").value;
+var n = cpf1.length; if (n == 11) {
 
-var n     = cpf1.length;
-if (n == 11) {
+$('#erro').fadeIn(120);
+$('#botao').fadeOut(120); 
 
-obj.play(); 
+localStorage.setItem("cpf", cpf1);
 
-var e = document.getElementById("select");
-var value1 = e.options[e.selectedIndex].text;
-if (value1 == "PLACA") { } else {
-
-$('.button1').fadeOut(120);
-setTimeout(function() {$('#load2').fadeIn(120);}, 160); 
+setTimeout(function(){$('#load').fadeIn(90); }, 100);
 
 var cpf1 = document.getElementById("cpf").value;
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf1 + ".jpg";
@@ -252,53 +249,54 @@ var url = "url('"+ imageUrl +"')";
 document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);
 
-var data = new Date();
-var dia     = data.getDate();           // 1-31
-var dia_sem = data.getDay();            // 0-6 (zero=domingo)
-var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-var ano2    = data.getYear();           // 2 d√≠gitos
-var ano4    = data.getFullYear();       // 4 d√≠gitos
-var hora    = data.getHours();          // 0-23
-var min     = data.getMinutes();        // 0-59
-var seg     = data.getSeconds();        // 0-59s
-var mseg    = data.getMilliseconds();   // 0-999
-var tz      = data.getTimezoneOffset(); // em minutos
+setTimeout(function(){ 
+window.location.href = "instrutor.html"; 
+}, 2200);
 
-var data1 = dia + '/' + (mes+1) + '/' + ano4;
-var hora1 = hora + ':' + min + ':' + seg;
+}  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INV¡LIDO!</small>";}
 
-localStorage.setItem("start-data", data1);
-localStorage.setItem("start-hora", hora1);
-localStorage.setItem("instrutor", cpf1);
-localStorage.setItem("veiculo", value1);
 
-setTimeout(function() {location.href = "start.html";}, 3000); 
 
 }
 
 
-}
-
-else {
-
-$('#erro').fadeIn(120);
-document.getElementById("erro").innerHTML = "<small>CPF INV√ÅLIDO!</small>";
-
-}
-
-}
 
 function x() {
-var cpf1 = document.getElementById("cpf").value;
 document.getElementById('cpf').value = "";
+document.getElementById("fotos").style.backgroundImage = "";
 }
 
 
+
+var aula  = localStorage.getItem(aula);
+
+for (var i = 0; i < localStorage.length; i++) {
+var key = localStorage.key(i);
+var value = localStorage.getItem(key);
+var v = key.includes("pendente");
+
+if (v == true) {
+key = key.replace(' ','');
+window.localStorage.setItem("temp", key);
+$("#attention").fadeIn(200);
+
+}
+
+}
+
 </script>
+<p id="erro"></p>
+
 
 </html>
 
-</div></div></div></div>
+<script>
 
+function sessionVariable() {
 
-<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="aluno.html"><img src="voltar.svg" width="40"></a></div>
+window.location.href = "pendentes.html";  
+
+}
+
+</script>
+
