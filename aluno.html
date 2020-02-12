@@ -246,7 +246,7 @@ function sessionVariable1() {
 $('#erro').fadeOut(50);
 $('#botao').fadeOut(1); 
 
-localStorage.setItem("cpf", cpf1);
+var aluno = document.getElementById("cpf").value;
 
 setTimeout(function(){$('#load').fadeIn(90); }, 100);
 
@@ -257,7 +257,7 @@ document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);
 
 
-var aluno = document.getElementById("cpf").value;
+
 var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
 
 $.ajax({ url: url, type: 'GET',  }).done(function(response) {
@@ -297,6 +297,9 @@ window.location.href = "start.html";
 
 .fail(function(response) {
 
+localStorage.setItem("nome", aluno);
+localStorage.setItem("cpf", aluno);
+
 var instrutor = localStorage.getItem("instrutor");
 if (instrutor == null) {
 window.location.href = "instrutor.html"; 
@@ -305,13 +308,6 @@ window.location.href = "start.html";
 }
 
 });
-
-
-
-
-
-
-
 
 
 } 
