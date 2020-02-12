@@ -1,4 +1,4 @@
-<style>
+﻿<style>
 body {  margin:0px;  background-color:#132e54; }
 </style><body>
 
@@ -22,6 +22,8 @@ aula = aula.replace('º','');
 aula = aula.replace('Á','A');
 aula = aula.replace('Ç','C');
 aula = aula.replace(' ',''); 
+aula = aula.replace(' BALIZA','');
+aula = aula.replace('BALIZA','');
 
 var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
