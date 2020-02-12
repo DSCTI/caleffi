@@ -215,12 +215,6 @@ if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 
-aula = aula.replace('ª','');
-aula = aula.replace('º','');
-aula = aula.replace('Á','A');
-aula = aula.replace('Ç','C');
-aula = aula.replace(' ',''); 
-
 var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
     "async": true,
