@@ -97,6 +97,13 @@ var exame = e1 + "_" + e2 + "_" + e3 + "_" + e4 + "_" + e5 + "_" + e6 + "_" + e7
 var geo1 = aluno + "-location";
 var geo = localStorage.getItem(geo1);
 
+var geo2 = aluno + "-location-backup";
+var geo3 = localStorage.getItem(geo2);
+
+if (geo == "s") {geo = geo3;}
+
+if (geo == "s") {geo = "erro de gravação";}
+
 if (faltas == null) { var faltas = "0"; }
 
 var veiculo = localStorage.getItem("veiculo"); 
@@ -116,6 +123,7 @@ localStorage.setItem(res, resultado);
 
 localStorage.setItem(soma2, "0");
 localStorage.setItem(geo1, "s");
+localStorage.setItem(geo2, "s");
 
 var exame = aluno + "-1exame"; localStorage.setItem(exame, "0");  
 var exame = aluno + "-2exame"; localStorage.setItem(exame, "0");

@@ -37,6 +37,11 @@ var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno 
 
 $.ajax(settings).done(function (response) {
 
+var geo1 = aluno + "-location";
+var geo2 = aluno + "-location-backup";
+localStorage.setItem(geo1, "s");
+localStorage.setItem(geo2, "s");
+
 if (response == "feita") { location.href = "feita.html"; }  else {
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
@@ -46,6 +51,12 @@ location.href = "aulas.html"; }
 })
 
 .fail(function(response) {
+
+var geo1 = aluno + "-location";
+var geo2 = aluno + "-location-backup";
+localStorage.setItem(geo1, "s");
+localStorage.setItem(geo2, "s");
+
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
 
