@@ -70,6 +70,8 @@ max-width:200px;
 
 <script>
 
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
+
 $( document ).ready(function() {
 $("#load").hide();
 $("#content").hide();
@@ -107,8 +109,6 @@ $("#content").fadeIn(200);
     
 
     <script type="text/javascript" charset="utf-8">
-
-
 
 
 var aluno = localStorage.getItem("cpf");
@@ -183,146 +183,9 @@ var name = localStorage.getItem(name);
 
 
 
-<br><br>
 
-<img src="calendario.svg" width='70' style="padding-bottom:1px;"><p>
-
-
-<div id='bn1'>
-
-<select id='select1'>
-  <option class="a0">ESCOLHER AULA</option>
-  <option class="a1">1ª PRÁTICA</option>
-  <option class="a2">2ª PRÁTICA</option>
-  <option class="a3">3ª PRÁTICA</option>
-  <option class="a4">4ª PRÁTICA</option>
-  <option class="a5">5ª PRÁTICA BALIZA</option>
-  <option class="a6">6ª PRÁTICA</option>
-  <option class="a7">7ª PRÁTICA</option>
-  <option class="a8">8ª PRÁTICA</option>
-  <option class="a9">9ª PRÁTICA</option>
-  <option class="a10">10ª PRÁTICA</option>
-  <option class="a11">11ª PRÁTICA</option>
-  <option class="a12">12ª PRÁTICA</option>
-  <option class="a13">13ª PRÁTICA EXAME</option>
-  <option class="a14">14ª PRÁTICA</option>
-  <option class="a15">15ª PRÁTICA</option>
-  <option class="a16">16ª PRÁTICA</option>
-  <option class="a17">17ª PRÁTICA</option>
-  <option class="a18">18ª PRÁTICA EXAME</option>
-  <option class="a19">19ª PRÁTICA</option>
-  <option class="a20">20ª PRÁTICA</option>
-  <option class="a21">1ª REFORÇO</option>
-  <option class="a22">2ª REFORÇO</option>
-  <option class="a23">3ª REFORÇO</option>
-  <option class="a24">4ª REFORÇO</option>
-  <option class="a23">5ª REFORÇO</option>
-  <option class="a31">EXAME ABERTO</option>
-
-</select><br><br>
-<span class="button1" onclick="sessionVariable1();" />INICIAR</span>
-
-</div>
-
-<div id='bn2'>
-
-<select id='select2'>
-  <option class="a0">ESCOLHER AULA</option>
-  <option class="a1">1ª SIMULADOR</option>
-  <option class="a2">2ª SIMULADOR</option>
-  <option class="a3">3ª SIMULADOR</option>
-  <option class="a4">4ª SIMULADOR</option>
-  <option class="a5">5ª SIMULADOR</option>
-  <option class="a1">1ª PRÁTICA</option>
-  <option class="a2">2ª PRÁTICA</option>
-  <option class="a3">3ª PRÁTICA</option>
-  <option class="a4">4ª PRÁTICA</option>
-  <option class="a5">5ª PRÁTICA BALIZA</option>
-  <option class="a6">6ª PRÁTICA</option>
-  <option class="a7">7ª PRÁTICA</option>
-  <option class="a8">8ª PRÁTICA</option>
-  <option class="a9">9ª PRÁTICA</option>
-  <option class="a10">10ª PRÁTICA EXAME</option>
-  <option class="a11">11ª PRÁTICA</option>
-  <option class="a12">12ª PRÁTICA</option>
-  <option class="a13">13ª PRÁTICA</option>
-  <option class="a14">14ª PRÁTICA</option>
-  <option class="a15">15ª PRÁTICA EXAME</option>
-  <option class="a21">1ª REFORÇO</option>
-  <option class="a22">2ª REFORÇO</option>
-  <option class="a23">3ª REFORÇO</option>
-  <option class="a24">4ª REFORÇO</option>
-  <option class="a23">5ª REFORÇO</option>
-  <option class="a31">EXAME ABERTO</option>
-</select>
-
-<br><br>
-<span class="button1" onclick="sessionVariable2();" />INICIAR</span>
-
-</div>
-
-<br>
-
-<br>
 
 <script>
-
-if (plano == 1) {
-var x = document.getElementById("bn1");
-x.style.display = "none";
-}
-
-if (plano == 2) {
-var x = document.getElementById("bn2");
-x.style.display = "none";
-}
-
-function sessionVariable2() {
-var e = document.getElementById("select2");
-var value3 = e.options[e.selectedIndex].text;
-
-if (value3 == "ESCOLHER AULA") {} else {
-
-value3 = value3.replace('ª','');
-value3 = value3.replace('º','');
-value3 = value3.replace('Á','A');
-value3 = value3.replace('Ç','C');
-value3 = value3.replace(' ','');
-value3 = value3.replace(' ','');
-value3 = value3.replace(' BALIZA','');
-value3 = value3.replace('BALIZA','');
-window.localStorage.setItem("aula", value3);
-
-var geo1 = aluno + "-location";
-localStorage.setItem(geo1, "s");
-window.location.href = "redirect.html";
-
-} }
-
-function sessionVariable1() {
-var e = document.getElementById("select1");
-var value3 = e.options[e.selectedIndex].text;
-
-if (value3 == "ESCOLHER AULA") {} else {
-
-var geo1 = aluno + "-location";
-localStorage.setItem(geo1, "s");
-
-value3 = value3.replace('ª','');
-value3 = value3.replace('º','');
-value3 = value3.replace('Á','A');
-value3 = value3.replace('Ç','C');
-value3 = value3.replace(' ','');
-value3 = value3.replace(' ','');
-value3 = value3.replace(' BALIZA','');
-value3 = value3.replace('BALIZA','');
-
-window.localStorage.setItem("aula", value3);
-
-window.location.href = "redirect.html";
-
-} }
-
 
 
 
@@ -341,15 +204,17 @@ var url = "https://dscti.com.br/app/aulas.php?plano=" + plano + "&aluno=" + alun
 
   $.ajax(settings).done(function (response) {
 $("#result").hide();
+$("#botao").hide();
 document.getElementById("result").innerHTML = response;
 $("#result").fadeIn(200);
-
+$("#botao").fadeIn(200);
   })
 
   $.ajax(settings).fail(function (response) {
 $("#result").fadeIn(200);
+$("#botao").fadeIn(200);
 $("#load").fadeOut(50);
-document.getElementById("result").innerHTML = "<font color='white'><small>Não foi possível conectar-se com o servidor. Toque em recarregar para tentar novamente!<br>";
+document.getElementById("result").innerHTML = "<font color='white'><small><br><br><br>Não foi possível conectar-se com o servidor. Toque em recarregar para tentar novamente. Se preferir, você pode continuar offline.<br><br>";
 
   });
 
@@ -358,13 +223,19 @@ document.getElementById("result").innerHTML = "<font color='white'><small>Não f
 
 
 </script>
-<div id="result"><br><img src="load.svg" width="80"></div>
+
+<div id="result"><br><img src="load.svg" width="80"><br><br>
+</div>
 
 
+<BR><SMALL><A HREF="start2.html">
+<span class="button1" id="botao" onclick="sessionVariable2();" />INICIAR NOVA AULA</span></a>
 </html>
 
 <br>
 <br>
+<br>
+</div>
 
 <script>
 var instrutor = localStorage.getItem("instrutor");
@@ -383,3 +254,5 @@ document.getElementById("foto2").style.backgroundImage = url;
 $('#foto').on('click', function() {   location.href = 'aluno.html'    });
 
 </script>
+
+

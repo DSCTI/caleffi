@@ -84,8 +84,10 @@ input:hover {
 
 <script>
 
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
+
 function sessionVariable1() {
-location.href = "start.html";
+location.href = "start2.html";
 }
 
 setTimeout(function() {

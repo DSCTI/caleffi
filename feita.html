@@ -100,6 +100,9 @@ input:hover {
 
 
 <script>
+
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
+
 setTimeout(function() {
 
   $('#content').fadeIn(200);
@@ -108,7 +111,7 @@ setTimeout(function() {
 
 
 function sessionVariable2() {
-location.href = "start.html";
+location.href = "start2.html";
 }
 
 

@@ -1,0 +1,278 @@
+﻿<!DOCclass html>
+<meta name=viewport content="width=device-width, initial-scale=1.1, maximum-scale=1.1, user-scalable=no">
+<html>
+<head>
+<style>
+
+#foto, #foto2
+{
+background: url(no.jpg);
+background-repeat: no-repeat;
+background-size: 45px 45px;
+width:45px; height:45px;
+border-radius:100px;
+
+}
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+* { text-decoration:none; font-family:Poppins Regular !important; }
+body { margin:0px;  background-color:#132e54; font-family:arial;  font-family:arial; }
+#app2 { width:100%; }
+#app {max-width:500px; width:80%; 
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+input[type=phone], select { font-family:Poppins Regular;
+  width: 235px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+font-size:1.1em;
+background-color:white !important;
+}
+
+.button1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+text-align:center;
+font-size:1.3em;
+min-width:100px;
+max-width:200px;
+}
+
+ .button1:hover { opacity:0.8; }
+
+</style>
+
+  <head>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
+
+var aluno = localStorage.getItem("cpf");
+var plano = aluno + "-" + "plano"; 
+var plano = localStorage.getItem(plano);
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+
+
+
+<div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="start.html"><img src="voltar.svg" width="40"></a></div>
+
+<div id="foto"  style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
+<div id="foto2" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:69px; width:45px; height:45px;"></div>
+
+
+
+    
+
+  </head>
+
+
+
+
+  <body>
+<div id='app2' align='center'><div id='app'><center>
+
+
+
+
+<br><br>
+
+<img src="calendario.svg" width='70' style="padding-bottom:1px;"><p>
+
+
+<div id='bn1'>
+
+<select id='select1'>
+  <option class="a0">ESCOLHER AULA</option>
+  <option class="a1">1ª PRÁTICA</option>
+  <option class="a2">2ª PRÁTICA</option>
+  <option class="a3">3ª PRÁTICA</option>
+  <option class="a4">4ª PRÁTICA</option>
+  <option class="a5">5ª PRÁTICA BALIZA</option>
+  <option class="a6">6ª PRÁTICA</option>
+  <option class="a7">7ª PRÁTICA</option>
+  <option class="a8">8ª PRÁTICA</option>
+  <option class="a9">9ª PRÁTICA</option>
+  <option class="a10">10ª PRÁTICA</option>
+  <option class="a11">11ª PRÁTICA</option>
+  <option class="a12">12ª PRÁTICA</option>
+  <option class="a13">13ª PRÁTICA EXAME</option>
+  <option class="a14">14ª PRÁTICA</option>
+  <option class="a15">15ª PRÁTICA</option>
+  <option class="a16">16ª PRÁTICA</option>
+  <option class="a17">17ª PRÁTICA</option>
+  <option class="a18">18ª PRÁTICA EXAME</option>
+  <option class="a19">19ª PRÁTICA</option>
+  <option class="a20">20ª PRÁTICA</option>
+  <option class="a21">1ª REFORÇO</option>
+  <option class="a22">2ª REFORÇO</option>
+  <option class="a23">3ª REFORÇO</option>
+  <option class="a24">4ª REFORÇO</option>
+  <option class="a23">5ª REFORÇO</option>
+  <option class="a31">EXAME ABERTO</option>
+
+</select><br><br>
+<span class="button1" onclick="sessionVariable1();" />INICIAR</span>
+
+</div>
+
+<div id='bn2'>
+
+<select id='select2'>
+  <option class="a0">ESCOLHER AULA</option>
+  <option class="a1">1ª SIMULADOR</option>
+  <option class="a2">2ª SIMULADOR</option>
+  <option class="a3">3ª SIMULADOR</option>
+  <option class="a4">4ª SIMULADOR</option>
+  <option class="a5">5ª SIMULADOR</option>
+  <option class="a1">1ª PRÁTICA</option>
+  <option class="a2">2ª PRÁTICA</option>
+  <option class="a3">3ª PRÁTICA</option>
+  <option class="a4">4ª PRÁTICA</option>
+  <option class="a5">5ª PRÁTICA BALIZA</option>
+  <option class="a6">6ª PRÁTICA</option>
+  <option class="a7">7ª PRÁTICA</option>
+  <option class="a8">8ª PRÁTICA</option>
+  <option class="a9">9ª PRÁTICA</option>
+  <option class="a10">10ª PRÁTICA EXAME</option>
+  <option class="a11">11ª PRÁTICA</option>
+  <option class="a12">12ª PRÁTICA</option>
+  <option class="a13">13ª PRÁTICA</option>
+  <option class="a14">14ª PRÁTICA</option>
+  <option class="a15">15ª PRÁTICA EXAME</option>
+  <option class="a21">1ª REFORÇO</option>
+  <option class="a22">2ª REFORÇO</option>
+  <option class="a23">3ª REFORÇO</option>
+  <option class="a24">4ª REFORÇO</option>
+  <option class="a23">5ª REFORÇO</option>
+  <option class="a31">EXAME ABERTO</option>
+</select>
+
+<br><br>
+<span class="button1" onclick="sessionVariable2();" />INICIAR</span>
+
+</div>
+
+<br>
+
+<br>
+
+<script>
+
+if (plano == 1) {
+var x = document.getElementById("bn1");
+x.style.display = "none";
+}
+
+if (plano == 2) {
+var x = document.getElementById("bn2");
+x.style.display = "none";
+}
+
+function sessionVariable2() {
+var e = document.getElementById("select2");
+var value3 = e.options[e.selectedIndex].text;
+
+if (value3 == "ESCOLHER AULA") {} else {
+
+value3 = value3.replace('ª','');
+value3 = value3.replace('º','');
+value3 = value3.replace('Á','A');
+value3 = value3.replace('Ç','C');
+value3 = value3.replace(' ','');
+value3 = value3.replace(' ','');
+value3 = value3.replace(' BALIZA','');
+value3 = value3.replace('BALIZA','');
+window.localStorage.setItem("aula", value3);
+
+var geo1 = aluno + "-location";
+localStorage.setItem(geo1, "s");
+window.location.href = "redirect.html";
+
+} }
+
+function sessionVariable1() {
+var e = document.getElementById("select1");
+var value3 = e.options[e.selectedIndex].text;
+
+if (value3 == "ESCOLHER AULA") {} else {
+
+var geo1 = aluno + "-location";
+localStorage.setItem(geo1, "s");
+
+value3 = value3.replace('ª','');
+value3 = value3.replace('º','');
+value3 = value3.replace('Á','A');
+value3 = value3.replace('Ç','C');
+value3 = value3.replace(' ','');
+value3 = value3.replace(' ','');
+value3 = value3.replace(' BALIZA','');
+value3 = value3.replace('BALIZA','');
+
+window.localStorage.setItem("aula", value3);
+
+window.location.href = "redirect.html";
+
+} }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>
+
+<br>
+<br>
+
+<script>
+var instrutor = localStorage.getItem("instrutor");
+var imageUrl = "https://dscti.com.br/app/fotos/" + instrutor + ".jpg";
+var url = "url('"+ imageUrl +"')";  
+document.getElementById("foto").style.backgroundImage = url;
+
+$('#foto2').on('click', function() {   location.href = 'instrutor.html'    });
+
+
+var aluno = localStorage.getItem("cpf");
+var imageUrl = "https://dscti.com.br/app/fotos/" + aluno + ".jpg";
+var url = "url('"+ imageUrl +"')";  
+document.getElementById("foto2").style.backgroundImage = url;
+
+$('#foto').on('click', function() {   location.href = 'aluno.html'    });
+
+</script>
