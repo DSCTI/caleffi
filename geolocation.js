@@ -30,6 +30,8 @@ if (geo != null) {
 localStorage.setItem(aluno + "-location-backup", result);
 localStorage.setItem(aluno + "-location", result);
 
+if (aula == null) {location.href = "start.html";}
+
 }}}}}
 
 } 

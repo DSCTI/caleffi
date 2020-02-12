@@ -15,6 +15,8 @@ var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
 var aula = localStorage.getItem("aula");
 
+if (aula == null) {location.href = "start.html";}
+
 aula = aula.replace(' ','');
 aula = aula.replace('ª','');
 aula = aula.replace('º','');
@@ -124,6 +126,7 @@ localStorage.setItem(res, resultado);
 localStorage.setItem(soma2, "0");
 localStorage.setItem(geo1, "s");
 localStorage.setItem(geo2, "s");
+localStorage.setItem("aula", "");
 
 var exame = aluno + "-1exame"; localStorage.setItem(exame, "0");  
 var exame = aluno + "-2exame"; localStorage.setItem(exame, "0");

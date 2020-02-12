@@ -209,6 +209,8 @@ var nome = localStorage.getItem("nome"); if (nome == null) {nome =  aluno;}
 
 var aula = localStorage.getItem("aula"); 
 
+if (aula == null) {location.href = "start.html";}
+
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; }
 
 var plano1 = aluno + "-plano"; 

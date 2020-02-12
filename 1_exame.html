@@ -247,6 +247,7 @@ var aluno = localStorage.getItem("cpf");
 var nome = localStorage.getItem("nome"); if (nome == null) {nome =  aluno;}
 var aula = localStorage.getItem("aula"); 
 
+if (aula == null) {location.href = "start.html";}
 if (aula.includes("EXAME")) {} else { location.href = "aulas.html"; }
 
 var plano1 = aluno + "-plano"; 
