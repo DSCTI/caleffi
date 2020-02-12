@@ -244,7 +244,7 @@ function sessionVariable1() {
 
 
 $('#erro').fadeOut(50);
-$('#botao').fadeOut(1); 
+$('#botao').fadeOut(50); 
 
 var aluno = document.getElementById("cpf").value;
 
@@ -270,9 +270,9 @@ var n = aluno.length; if (n != 11) {
 document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>"; 
 }
 
-$('#erro').fadeIn(120);
-$('#botao').fadeIn(120); 
-$('#load').fadeOut(120); 
+$('#load').hide(); 
+$('#erro').fadeIn(60);
+$('#botao').fadeIn(60); 
 
 }
 
