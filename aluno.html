@@ -153,7 +153,7 @@ border-radius:100px;
 
 </style>
 
-    
+    <div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
 
 
    
@@ -161,7 +161,7 @@ border-radius:100px;
   <body>
 <div id='app2' align='center'><div id='app'><center>
 <br><br><br>
-<img src='logo.svg' width='240'>
+<img src='logo.svg' width='230'>
 <br><br>
 <div id="fotos2">
 <div id="fotos">
@@ -180,6 +180,8 @@ border-radius:100px;
   </body>
 
 <script>
+
+document.getElementById("foto").style.backgroundImage = "https://dscti.com.br/app/no.jpg";
 
 var aluno = localStorage.getItem("cpf");
 var value1 = localStorage.getItem("cpf");
@@ -311,6 +313,8 @@ $("#attention").fadeIn(200);
 
 <script>
 
+
+
 function sessionVariable() {
 
 window.location.href = "pendentes.html";  
@@ -319,14 +323,17 @@ window.location.href = "pendentes.html";
 
 </script>
 
-<div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
+
 
 
 <script>
 var instrutor = localStorage.getItem("instrutor");
 var imageUrl = "https://dscti.com.br/app/fotos/" + instrutor + ".jpg";
 var url = "url('"+ imageUrl +"')";  
+
+if (instrutor != null) {
 document.getElementById("foto").style.backgroundImage = url;
+}
 
 $('#foto').on('click', function() {   location.href = 'instrutor.html'    });
 

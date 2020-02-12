@@ -326,7 +326,10 @@ document.getElementById('cpf').value = "";
 var cpf = localStorage.getItem("cpf");
 var imageUrl = "https://dscti.com.br/app/fotos/" + cpf + ".jpg";
 var url = "url('"+ imageUrl +"')";  
+
+if (cpf != null) {
 document.getElementById("foto").style.backgroundImage = url;
+}
 
 $('#foto').on('click', function() {   location.href = 'aluno.html'    });
 
