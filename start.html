@@ -166,7 +166,7 @@ var name = localStorage.getItem(name);
 <div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="aluno.html"><img src="voltar.svg" width="40"></a></div>
 
 <div id="foto"  style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
-<div id="foto2" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:69px; width:45px; height:45px;"></div>
+
 
 
 
@@ -224,7 +224,7 @@ document.getElementById("result").innerHTML = "<font color='white'><small><br><b
 
 </script>
 
-<div id="result"><br><img src="load.svg" width="80"><br><br>
+<div id="result"><small><br><br></small><img src="load.svg" width="80"><br><br><br>
 </div>
 
 
@@ -243,15 +243,9 @@ var imageUrl = "https://dscti.com.br/app/fotos/" + instrutor + ".jpg";
 var url = "url('"+ imageUrl +"')";  
 document.getElementById("foto").style.backgroundImage = url;
 
-$('#foto2').on('click', function() {   location.href = 'instrutor.html'    });
+$('#foto').on('click', function() {   location.href = 'instrutor.html'    });
 
 
-var aluno = localStorage.getItem("cpf");
-var imageUrl = "https://dscti.com.br/app/fotos/" + aluno + ".jpg";
-var url = "url('"+ imageUrl +"')";  
-document.getElementById("foto2").style.backgroundImage = url;
-
-$('#foto').on('click', function() {   location.href = 'aluno.html'    });
 
 </script>
 
