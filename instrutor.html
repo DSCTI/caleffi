@@ -5,45 +5,8 @@
 <script src="jquery.min.js"></script>
 
 
-<script> 
-
-$( document ).ready(function() {
-$("#load").hide();
-$("#content").hide();
-$("#load").fadeIn(200);
-
-var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome";
-
-var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
-
- $.ajax({
-    url: url, type: 'GET',
-   
-}).done(function(response) {
-
-if (response == "sem") { window.location.href = "sem.html"; }
-
-localStorage.setItem(nome, response);
-$("#load").fadeOut(20);
-$("#content").fadeIn(200);
 
 
-})
-
-.fail(function(response) {
-$("#load").fadeOut(50);
-localStorage.setItem(nome, aluno);
-$("#content").fadeIn(200);
-
-
-});
-
-});
-
-</script>
-
-<div id="load"><br><br><br><center><img src="load.svg" width="80"></center></div>
 
 
 
@@ -186,6 +149,10 @@ document.write(veiculo); }
   </body>
 
 <script>
+
+
+$("#content").fadeIn(200);
+
 
 setTimeout(function() {
 var cpf1 = document.getElementById("cpf").value; var n = cpf1.length; if (n == 11) {

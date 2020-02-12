@@ -204,8 +204,8 @@ span {background-size: 63px; height:16px !important; background-position: center
 <script>
 
 var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome"; 
-var nome = localStorage.getItem(nome); 
+
+var nome = localStorage.getItem("nome"); if (nome == null) {nome =  aluno;}
 
 var aula = localStorage.getItem("aula"); 
 
@@ -243,8 +243,7 @@ setTimeout(function() {
 
 }, 50); 
 
-var nome = aluno + "-nome"; 
-var nome = localStorage.getItem(nome); 
+
 document.getElementById("aluno").innerHTML= nome; 
 var value1 = localStorage.getItem("aula"); 
 

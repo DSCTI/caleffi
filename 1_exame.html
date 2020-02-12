@@ -244,9 +244,7 @@ div {font-size:0.962em; line-height:24px; }
 <script>
 
 var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome"; 
-var nome = localStorage.getItem(nome); 
-
+var nome = localStorage.getItem("nome"); if (nome == null) {nome =  aluno;}
 var aula = localStorage.getItem("aula"); 
 
 if (aula.includes("EXAME")) {} else { location.href = "aulas.html"; }
@@ -285,8 +283,7 @@ if (response == "restrito") {   $('#anterior').fadeIn(200); }
 setTimeout(function(){ $("#content").fadeIn(200); }, 100);
 
 var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome"; 
-var nome = localStorage.getItem(nome); 
+
 document.getElementById("aluno").innerHTML= nome; 
 
 var soma2 = aluno + "-soma"; 

@@ -10,23 +10,11 @@
 <script>
 
 
-$(document).keypress(function (e) {
-    if (e.which == 13) {
-
-var cpf1 = document.getElementById("cpf").value;
-localStorage.setItem("cpf", cpf1);
-if (cpf1 > 0) {
-
-window.location.href = "instrutor.html";  }}
-
-
-});
-
 setTimeout(function() {
 
   $('#content').fadeIn(220);
 
-}, 300); 
+}, 200); 
 
 
 </script>
@@ -112,7 +100,7 @@ max-width:200px;
   border-radius: 4px;
   cursor: pointer;
 text-align:center;
-font-size:1.1em;
+font-size:1.0em;
 min-width:100px;
 max-width:200px;
 }
@@ -244,12 +232,19 @@ document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);}
 }, 6000); 
 
-function sessionVariable1() {
-var cpf1 = document.getElementById("cpf").value;
-var n = cpf1.length; if (n == 11) {
 
-$('#erro').fadeIn(120);
-$('#botao').fadeOut(120); 
+
+
+
+
+
+
+
+function sessionVariable1() {
+
+
+$('#erro').fadeOut(50);
+$('#botao').fadeOut(1); 
 
 localStorage.setItem("cpf", cpf1);
 
@@ -261,7 +256,46 @@ var url = "url('"+ imageUrl +"')";
 document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);
 
-setTimeout(function(){ 
+
+var aluno = document.getElementById("cpf").value;
+var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
+
+$.ajax({ url: url, type: 'GET',  }).done(function(response) {
+
+
+
+
+
+if (response == "sem") {
+
+document.getElementById("erro").innerHTML = "<small><br>ALUNO NÃO ENCONTRADO, CONFIRA O CPF!</small>"; 
+
+$('#erro').fadeIn(120);
+$('#botao').fadeIn(120); 
+$('#load').fadeOut(120); 
+
+}
+
+else {
+
+localStorage.setItem("nome", response);
+localStorage.setItem("cpf", aluno);
+
+var instrutor = localStorage.getItem("instrutor");
+if (instrutor == null) {
+window.location.href = "instrutor.html"; 
+} else {
+window.location.href = "start.html"; 
+
+}}
+
+
+
+})
+
+
+
+.fail(function(response) {
 
 var instrutor = localStorage.getItem("instrutor");
 if (instrutor == null) {
@@ -270,17 +304,17 @@ window.location.href = "instrutor.html";
 window.location.href = "start.html"; 
 }
 
-
-
-}, 2200);
-
-}  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>";}
+});
 
 
 
-}
 
 
+
+
+
+
+} 
 
 function x() {
 document.getElementById('cpf').value = "";
@@ -289,21 +323,13 @@ document.getElementById("fotos").style.backgroundImage = "";
 
 
 
-var aula  = localStorage.getItem(aula);
+$(document).keypress(function (e) {
+    if (e.which == 13) {
 
-for (var i = 0; i < localStorage.length; i++) {
-var key = localStorage.key(i);
-var value = localStorage.getItem(key);
-var v = key.includes("pendente");
+sessionVariable1();
 
-if (v == true) {
-key = key.replace(' ','');
-window.localStorage.setItem("temp", key);
-$("#attention").fadeIn(200);
+}});
 
-}
-
-}
 
 </script>
 <p id="erro"></p>

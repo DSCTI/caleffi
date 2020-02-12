@@ -54,7 +54,7 @@ font-size: 0.6em;
 
 
 .quadro {max-width:400px; padding:22px; font-size:1.5em; background-color:#eaeaea; border-radius:12px; margin:14px; margin-top:20px;}
-.quadro1 { height:20px;  padding:12px; text-align:center; color:white; background-color:#1c457e; font-size:1.1em;}
+.quadro1 { height:20px;  padding:12px; text-align:center; color:white; background-color:#1c457e; font-size:1.0em;}
 
 </style>
 
@@ -97,8 +97,7 @@ setTimeout(function() {
 }, 50); 
 
 var aluno = localStorage.getItem("cpf");
-var nome = aluno + "-nome"; 
-var nome = localStorage.getItem(nome); 
+var nome = localStorage.getItem("nome"); if (nome == null) {nome =  aluno;}
 document.getElementById("aluno").innerHTML= nome; 
 var value1 = localStorage.getItem("aula");
 
