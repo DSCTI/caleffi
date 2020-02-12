@@ -257,18 +257,18 @@ document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);
 
 
-
 var url = "https://dscti.com.br/app/aluno.php?aluno=" + aluno;  
 
 $.ajax({ url: url, type: 'GET',  }).done(function(response) {
 
 
-
-
-
 if (response == "sem") {
 
 document.getElementById("erro").innerHTML = "<small><br><br>ALUNO NÃO ENCONTRADO, CONFIRA O CPF!</small>"; 
+
+var n = aluno.length; if (n != 11) {
+document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>"; 
+}
 
 $('#erro').fadeIn(120);
 $('#botao').fadeIn(120); 
@@ -297,6 +297,11 @@ window.location.href = "start.html";
 
 .fail(function(response) {
 
+var n = aluno.length; if (n != 11) {
+document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>"; 
+
+} else {
+
 localStorage.setItem("nome", aluno);
 localStorage.setItem("cpf", aluno);
 
@@ -306,6 +311,8 @@ window.location.href = "instrutor.html";
 } else {
 window.location.href = "start.html"; 
 }
+}
+
 
 });
 
