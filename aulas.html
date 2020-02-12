@@ -20,7 +20,7 @@ button,div,span {
                                   supported by Chrome, Opera and Firefox */
 }
 
-#anterior, #anterior2 {padding:14px; background-color:#fffa75; wifdth:100%; text-align:center; font-size:1.1em;}
+#anterior, #anterior2 {padding:14px; background-color:#fffa75; wifdth:100%; text-align:center; font-size:1.0em;}
 
 .pergunta { margin:8px; padding-top:18px; font-size:0.95em; color:white;}
 *{ font-family:Poppins Regular !important; }
@@ -103,7 +103,7 @@ font-size: 0.63em;
 
 
 .quadro {max-width:484px; padding:12px; padding-top:0px; font-size:1.2em; background-color:#1c457e; border-radius:12px; margin:14px; }
-.quadro1 { height:20px;  height:20px;  padding:12px; text-align:center; color:white; background-color:#1c457e; font-size:1.1em;}
+.quadro1 { height:20px;  height:20px;  padding:12px; text-align:center; color:white; background-color:#1c457e; font-size:1.0em;}
 
 span {background-size: 63px; height:16px !important; background-position: center; background-repeat: no-repeat;}
 
@@ -120,8 +120,7 @@ span {background-size: 63px; height:16px !important; background-position: center
 <SMALL>Aluno:</SMALL> <span id='aluno'></span> </div>
 
 
-<div id='anterior'  style="display:none;"><b>Atenção! A aula anterior não foi feita e transmitida!</b></div>
-<div id='anterior2' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
+<div id='anterior' style="display:none;"><b>Atenção! Você parece estar sem internet, não pude checar se as aulas anteriores foram feitas.</b></div>
 
 <div id="content" style="display:none;" align='center'><div id='app2' align='center'><div id='app'><center></SMALL>
 <br>
@@ -233,30 +232,7 @@ if (response == "restrito") {   location.href = "restrito.html"; }
 
 .fail(function(response) {
 
- $('#anterior2').fadeIn(200);
-
-});
-
-
-var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": url,
-    "method": "GET",
-    "processData": false,
-    "contentType": false
-  }
-
-$.ajax(settings).done(function (response) {
-
-if (response == "restrito") {  $('#anterior').fadeIn(200); } 
-
-})
-
-.fail(function(response) {
-
- $('#anterior2').fadeIn(200);
+ $('#anterior').fadeIn(200);
 
 });
 
