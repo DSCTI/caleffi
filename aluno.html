@@ -40,6 +40,16 @@ setTimeout(function() {
 
 <style>
 
+#foto
+{
+background: url(no.jpg);
+background-repeat: no-repeat;
+background-size: 45px 45px;
+width:45px; height:45px;
+border-radius:100px;
+
+}
+
 #attention {color:black !important; line-height:24px; padding:16px; text-align:center; font-size:1em; color: #1b1b1b; background-color:#fffb82; }
 #attention > * > * { text-decoration: none; color:black !important;}
 #attention > *  { text-decoration: none; color:black !important;}
@@ -250,7 +260,16 @@ document.getElementById("fotos").style.backgroundImage = url;
 $("#fotos").fadeIn(250);
 
 setTimeout(function(){ 
+
+var instrutor = localStorage.getItem("instrutor");
+if (instrutor == null) {
 window.location.href = "instrutor.html"; 
+} else {
+window.location.href = "start.html"; 
+}
+
+
+
 }, 2200);
 
 }  else {$('#erro').fadeIn(120); document.getElementById("erro").innerHTML = "<small><br><br>CPF INVÁLIDO!</small>";}
@@ -300,3 +319,15 @@ window.location.href = "pendentes.html";
 
 </script>
 
+<div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
+
+
+<script>
+var instrutor = localStorage.getItem("instrutor");
+var imageUrl = "https://dscti.com.br/app/fotos/" + instrutor + ".jpg";
+var url = "url('"+ imageUrl +"')";  
+document.getElementById("foto").style.backgroundImage = url;
+
+$('#foto').on('click', function() {   location.href = 'instrutor.html'    });
+
+</script>

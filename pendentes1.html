@@ -21,7 +21,7 @@
 #aluno {margin-right:1px; font-weight:600; font-size: 1em;}
 #questao {margin-right:1px; font-weight:600; font-size: 1em;}
 
-body { margin:0px;  background-color:#132e54; }
+body { margin:0px;  margin-left:25px; margin-right:25px;  background-color:#132e54; }
 #app2 { width:100%;  }
 
 .obs {line-height:24px; font-size: 0.9em; padding-top:25px;}
@@ -92,6 +92,7 @@ font-size: 0.6em;
 
 <script>
 
+document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
 setTimeout(function() {
 

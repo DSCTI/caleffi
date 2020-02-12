@@ -130,6 +130,16 @@ border-radius:100px;
 }
 
 
+#foto
+{
+background: url(no.jpg);
+background-repeat: no-repeat;
+background-size: 45px 45px;
+width:45px; height:45px;
+border-radius:100px;
+
+}
+
 </style>
 
     
@@ -272,8 +282,14 @@ localStorage.setItem("start-hora", hora1);
 localStorage.setItem("instrutor", cpf1);
 localStorage.setItem("veiculo", value1);
 
+var aluno = localStorage.getItem("cpf");
+if (aluno != null) {
 setTimeout(function() {location.href = "start.html";}, 3000); 
+}
 
+else {
+setTimeout(function() {location.href = "aluno.html";}, 3000); 
+}
 }
 
 
@@ -302,3 +318,16 @@ document.getElementById('cpf').value = "";
 
 
 <div style="position:fixed; z-index:5; top:0px; left:0px; padding:15px;"><a href="aluno.html"><img src="voltar.svg" width="40"></a></div>
+
+<div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
+
+
+<script>
+var cpf = localStorage.getItem("cpf");
+var imageUrl = "https://dscti.com.br/app/fotos/" + cpf + ".jpg";
+var url = "url('"+ imageUrl +"')";  
+document.getElementById("foto").style.backgroundImage = url;
+
+$('#foto').on('click', function() {   location.href = 'aluno.html'    });
+
+</script>
