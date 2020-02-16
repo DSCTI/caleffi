@@ -22,7 +22,7 @@
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
 <plugin name="cordova-plugin-facedetection-lite" />
-<plugin name="org.apache.cordova.camera" />
+<plugin name="cordova-plugin-camera" />
 
 
 
