@@ -22,11 +22,16 @@
 <plugin name="cordova-plugin-autostart" source="npm"/>
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
-<plugin name="cordova-plugin-facedetection-lite"/>
+
 
 <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
 </feature>
+
+<config-file target="AndroidManifest.xml" parent="/*" mode="merge">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+
 
 <plugin name="cordova-plugin-android-permissions" />
 <plugin name="cordova-plugin-geolocation">
