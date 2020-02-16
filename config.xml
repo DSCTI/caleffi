@@ -21,7 +21,7 @@
 <plugin name="cordova-plugin-insomnia" source="npm" />
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
-<plugin name="org.apache.cordova.camera" />
+<plugin name="cordova-plugin-camer" />
 
 
 <feature name="Geolocation">
