@@ -21,7 +21,6 @@
 <plugin name="cordova-plugin-insomnia" source="npm" />
 <plugin name="cordova-plugin-whitelist"/>
 <plugin name="cordova-plugin-inappbrowser" source="npm" spec="2.0.2"/>
-<plugin name="cordova-plugin-camera" />
 
 
 <feature name="Geolocation">
@@ -43,7 +42,6 @@
    <platform name="android">
         <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission name="android.permission.CAMERA" />
         <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     </platform>
 
