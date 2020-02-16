@@ -103,12 +103,6 @@ setTimeout(function() {
 
 }, 240); 
 
-setTimeout(function() {
-
-  $('#content2').fadeIn(200);
-
-}, 12000); 
-
 
 var temp = localStorage.getItem("temp");
 
@@ -160,7 +154,7 @@ document.getElementById('result').innerHTML = 'Checando conexão...';
           type : 'post',
           data : { valores : resultado },
           beforeSend : function(){
-   $('#content2').fadeOut(200);
+  
    document.getElementById('result').innerHTML = 'Aguarde!';
           }
      })

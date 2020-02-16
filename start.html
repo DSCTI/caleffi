@@ -6,7 +6,15 @@ document.write("<meta name=viewport content='width=device-width, initial-scale="
 
 <html>
 <head>
+
+<div id="attention" style="display:none;"><small><a href='pendentes.html'><b>Atenção:</b> Você tem aulas pendentes de transmissão, transmita o mais rápido possível! <b>Toque aqui para transmitir.</small></a></b></div>
+
 <style>
+
+#attention {color:black !important; line-height:19px; padding:16px;  padding-left:99px;   padding-right:73px;  text-align:center; font-size:1.1em; color: #1b1b1b; background-color:#fffb82; }
+#attention > * > * { text-decoration: none; color:black !important;}
+#attention > *  { text-decoration: none; color:black !important;}
+
 
 #foto, #foto2
 {
@@ -73,6 +81,16 @@ max-width:200px;
 
 
 <script>
+
+for (var i = 0; i < localStorage.length; i++) {
+var key = localStorage.key(i);
+var value = localStorage.getItem(key);
+var v = key.includes("pendente");
+
+if (v == true) {
+key = key.replace(' ','');
+window.localStorage.setItem("temp", key);
+$("#attention").fadeIn(500); } }
 
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
