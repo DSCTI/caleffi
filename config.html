@@ -82,17 +82,13 @@ input:hover {
 <table border="1"  style="border-collapse: collapse" bgcolor="#E2E2E2">
 	<tr>    
 
-<td onclick="menos3()"  align="center" style="border-style: solid; border-width: 1px">
-		<b>-3</b></td>
-		
-<td onclick="menos2()"  align="center" style="border-style: solid; border-width: 1px">
-		<b>-2</b></td>
+
 		
 <td onclick="menos1()"  align="center" style="border-style: solid; border-width: 1px">
 		<b>-1</b></td>
 		
 <td onclick="normal()"  align="center" style="border-style: solid; border-width: 1px">
-		<b> <small>normal</small> </b></td>
+		<b> 1 </b></td>
 		
 <td onclick="mais1()"  align="center" style="border-style: solid; border-width: 1px">
 		<b>+1</b></td>
@@ -157,15 +153,7 @@ localStorage.setItem("size", "1.0");
 location.href = "aluno.html";
 }
 
-function menos2() {
-localStorage.setItem("size", "0.9");
-location.href = "aluno.html";
-}
 
-function menos3() {
-localStorage.setItem("size", "0.8");
-location.href = "aluno.html";
-}
 
 function del() {
 localStorage.clear();
