@@ -1,5 +1,11 @@
-Ôªø<!DOCclass html>
-<meta name=viewport content="width=device-width, initial-scale=1.2, maximum-scale=1.2, user-scalable=no">
+<!DOCclass html>
+<script>
+var size = localStorage.getItem("size");
+</script>
+<meta name=viewport content="width=device-width, initial-scale=<script>document.write(size);</script>, maximum-scale=<script>document.write(size);</script>, user-scalable=no">
+
+
+
   <head>
 <meta http-equiv="pragma" content="no-cache" />
 <script src="jquery.min.js"></script>
@@ -233,8 +239,8 @@ var data = new Date();
 var dia     = data.getDate();           // 1-31
 var dia_sem = data.getDay();            // 0-6 (zero=domingo)
 var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-var ano2    = data.getYear();           // 2 d√≠gitos
-var ano4    = data.getFullYear();       // 4 d√≠gitos
+var ano2    = data.getYear();           // 2 dÌgitos
+var ano4    = data.getFullYear();       // 4 dÌgitos
 var hora    = data.getHours();          // 0-23
 var min     = data.getMinutes();        // 0-59
 var seg     = data.getSeconds();        // 0-59s
@@ -265,7 +271,7 @@ setTimeout(function() {location.href = "aluno.html";}, 2000);
 else {
 
 $('#erro').fadeIn(120);
-document.getElementById("erro").innerHTML = "<small>CPF INV√ÅLIDO!</small>";
+document.getElementById("erro").innerHTML = "<small>CPF INV¡LIDO!</small>";
 
 }
 

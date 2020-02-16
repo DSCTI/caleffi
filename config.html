@@ -68,7 +68,7 @@ input:hover {
 <div id='app2' align='center'><div id='app'><center>
 <br>
 <br><br>
-<img src="comecar.svg" width='90'>
+<img src="config.svg" width='90'>
 
 <div class='quadro'>
 
@@ -76,7 +76,43 @@ input:hover {
 
 <font color='white'>
 
- <b><span id="aula"><small></b>Aula ainda não disponível, faça e transmita a(s) aula(s) anterior(es)!</small></font><br><br>
+ <b><span id="aula"><small></b>Tamanho da tela</small></font><br><br>
+
+<table border="1" width="" height="40" style="border-collapse: collapse" bgcolor="#E2E2E2">
+	<tr>    
+
+<td onclick="menos3()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>-3</b></td>
+		
+<td onclick="menos2()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>-2</b></td>
+		
+<td onclick="menos1()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>-1</b></td>
+		
+<td onclick="normal()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>1</b></td>
+		
+<td onclick="mais1()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>+1</b></td>
+		
+<td onclick="mais2()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>+2</b></td>
+                
+<td onclick="mais3()" width="35" height="35" align="center" style="border-style: solid; border-width: 1px">
+		<b>+3</b></td>
+
+
+	</tr>
+</table><br><br>
+
+
+
+
+
+
+
+
 <big>
 <div class='button1' onclick="sessionVariable1();"><font color=white>VOLTAR</font></div></small>
 </div>
@@ -91,7 +127,42 @@ input:hover {
 document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, false );
 
 function sessionVariable1() {
-location.href = "start.html";
+location.href = "aluno.html";
+}
+
+function mais3() {
+localStorage.setItem("size", "1.5");
+location.href = "aluno.html";
+}
+
+function mais2() {
+localStorage.setItem("size", "1.4");
+location.href = "aluno.html";
+}
+
+function mais1() {
+localStorage.setItem("size", "1.3");
+location.href = "aluno.html";
+}
+
+function normal() {
+localStorage.setItem("size", "1.2");
+location.href = "aluno.html";
+}
+
+function menos1() {
+localStorage.setItem("size", "1.1");
+location.href = "aluno.html";
+}
+
+function menos2() {
+localStorage.setItem("size", "1.0");
+location.href = "aluno.html";
+}
+
+function menos3() {
+localStorage.setItem("size", "0.9");
+location.href = "aluno.html";
 }
 
 setTimeout(function() {
@@ -99,9 +170,6 @@ setTimeout(function() {
   $('#content').fadeIn(200);
 
 }, 240); 
-
-
-
 
 </script>
 

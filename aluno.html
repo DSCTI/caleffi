@@ -1,5 +1,9 @@
 <!DOCclass html>
-<meta name=viewport content="width=device-width, initial-scale=1.2, maximum-scale=1.2, user-scalable=no">
+<script>
+var size = localStorage.getItem("size");
+</script>
+<meta name=viewport content="width=device-width, initial-scale=<script>document.write(size);</script>, maximum-scale=<script>document.write(size);</script>, user-scalable=no">
+
 <meta http-equiv="pragma" content="no-cache" />
 <script src="jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -141,9 +145,8 @@ border-radius:100px;
 
 </style>
 
-    <div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
-
-
+<div id="config" style="border-radius:100px; position:fixed; z-index:6; top:15px; left:15px; width:42px; height:42px;"><a href="config.html"><img src="config.svg" width="42"></a></div>
+<div id="foto" style="border-radius:100px; position:fixed; z-index:5; top:15px; right:15px; width:45px; height:45px;"></div>
    
   </head>
   <body>
@@ -169,7 +172,7 @@ border-radius:100px;
 
 <script>
 
-document.getElementById("foto").style.backgroundImage = "https://dscti.com.br/app/no.jpg";
+document.getElementById("foto").style.backgroundImage = "no.jpg";
 
 var aluno = localStorage.getItem("cpf");
 var value1 = localStorage.getItem("cpf");
