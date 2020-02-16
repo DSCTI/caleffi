@@ -28,9 +28,9 @@
     <param name="android-package" value="org.apache.cordova.GeoBroker" />
 </feature>
 
-<config-file target="AndroidManifest.xml" parent="/*" mode="merge">
+
             <uses-permission android:name="android.permission.CAMERA" />
-        </config-file>
+
 
 
 <plugin name="cordova-plugin-android-permissions" />
