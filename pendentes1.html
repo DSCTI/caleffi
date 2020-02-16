@@ -107,25 +107,39 @@ setTimeout(function() {
 
   $('#content2').fadeIn(200);
 
-}, 8000); 
+}, 12000); 
 
 
 var temp = localStorage.getItem("temp");
+
+var nome = temp.split("pendente");
+var nome = nome[0].split("-");
+
+var nome = nome[0];
+
 temp = temp.replace(' ','');
 var aluno = temp.split("-", 1);
 var aula = temp.split("-", 2);
 
-var aula = aula[1];
+var aula  = aula[1];
+
+
+
+var aul = aula.replace("PRATICA", " Prática");
+var aul = aul.replace("SIMULADOR", " Simulador");
+var aul = aul.replace("ABERTO", "  Exame extra");
+var aul = aul.replace("REFORCO", " Reforço");
+var aul = aul.replace("EXAME", " Exame");
+
+
 var aula1 = aula.split("ª", 1);
 var aula2 = aula.split("ª", 2);
-
-var nome = localStorage.getItem(nome);
 
 var name = aula2[1];
 name = name.replace('EXAME',' EXAME');
 name = name.replace('BALIZA',' BALIZA');
 
-document.getElementById("aluno").innerHTML = "Transmitindo aula de " + nome;
+document.getElementById("aluno").innerHTML = "Transmitindo Aula " + aul + " de " + nome;
 
 var res = aluno + "-" + aula + "-" + "pendente";
 
@@ -146,14 +160,25 @@ document.getElementById('result').innerHTML = 'Checando conexão...';
           type : 'post',
           data : { valores : resultado },
           beforeSend : function(){
-   document.getElementById('result').innerHTML = 'Transmitindo aula, aguarde!';
+   $('#content2').fadeOut(200);
+   document.getElementById('result').innerHTML = 'Aguarde!';
           }
      })
      .done(function(msg){
+  $('#content2').fadeOut(200);
    document.getElementById('result').innerHTML = 'Concluído!';
      })
      .fail(function(jqXHR, textStatus, msg){
-   document.getElementById('result').innerHTML = 'Você está sem internet!';
+
+
+   document.getElementById('result').innerHTML = 'Erro ao conectar!';
+
+setTimeout(function() {
+
+  $('#content2').fadeIn(200);
+
+}, 1000); 
+
      }); 
 
 

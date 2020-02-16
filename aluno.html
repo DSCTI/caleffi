@@ -22,7 +22,6 @@ setTimeout(function() {
 
 }, 200); 
 
-
 </script>
 
   <head>
@@ -173,6 +172,16 @@ border-radius:100px;
   </body>
 
 <script>
+
+for (var i = 0; i < localStorage.length; i++) {
+var key = localStorage.key(i);
+var value = localStorage.getItem(key);
+var v = key.includes("pendente");
+
+if (v == true) {
+key = key.replace(' ','');
+window.localStorage.setItem("temp", key);
+$("#attention").fadeIn(500); } }
 
 document.getElementById("foto").style.backgroundImage = "no.jpg";
 

@@ -14,6 +14,7 @@ var data2 = localStorage.getItem("start-data");
 var hora2 = localStorage.getItem("start-hora");
 var instrutor = localStorage.getItem("instrutor");
 var aula = localStorage.getItem("aula");
+var nome = localStorage.getItem("nome");
 
 if (aula == null) {location.href = "start.html";}
 
@@ -118,8 +119,6 @@ resultado = resultado.replace(' ','aas');
 resultado = resultado.replace('Ç','C');
 
 var res = aluno + "-" + aula + "-" + "pendente";
-
-res = res.replace(' ',''); 
 
 localStorage.setItem(res, resultado);
 
