@@ -1,8 +1,8 @@
 <!DOCclass html>
 <script>
 var size = localStorage.getItem("size");
+document.write("<meta name=viewport content='width=device-width, initial-scale=" + size + ", maximum-scale=" + size + ", user-scalable=no'>" );
 </script>
-<meta name=viewport content="width=device-width, initial-scale=<script>document.write(size);</script>, maximum-scale=<script>document.write(size);</script>, user-scalable=no">
 
 <html>
 <head>
@@ -104,15 +104,18 @@ input:hover {
 
 
 	</tr>
-</table><br><br>
+</table>&nbsp;<p><font color='white'>
 
+ <small>Apagar dados</small></font></p>
+<p><font color='white' style="font-size: 10pt">
 
+ (excluí todos dados até as aulas pendentes de transmissão, esse procedimento é 
+irreversível).</font><br></p>
+<p>
+<img id="del" src="delete.svg" width='60'></p>
+<p><br>
 
-
-
-
-
-
+</p>
 <big>
 <div class='button1' onclick="sessionVariable1();"><font color=white>VOLTAR</font></div></small>
 </div>
@@ -163,6 +166,12 @@ location.href = "aluno.html";
 function menos3() {
 localStorage.setItem("size", "0.9");
 location.href = "aluno.html";
+}
+
+function del() {
+localStorage.clear();
+localStorage.setItem("size", "1.0");
+location.href = "index.html";
 }
 
 
