@@ -17,9 +17,7 @@ var result1 = position.coords.latitude;
 var result2 = position.coords.longitude;              
 var speed = position.coords.speed;
 
-var speed0 = (speed.charAt(0));   
-
-if (speed0 > 1) {
+if (speed > 1) {
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
@@ -35,9 +33,9 @@ localStorage.setItem(aluno + "-location", result);
 if (aula == null)  {location.href = "start.html";}
 if (aluno == null) {location.href = "aluno.html";}
 
-}}}}
+}}}
 
-} 
+}}
 
 function onError(error) {  }
 
