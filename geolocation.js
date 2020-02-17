@@ -23,8 +23,9 @@ var speed1 = speed.charAt(0);
 var speed2 = speed.charAt(1);
 var speed3 = speed.charAt(2);
 var speed4 = speed.charAt(3);
+var speed5 = speed.charAt(4);
 
-var speed = speed1 + speed2 + speed3 + speed4;
+var speed = speed1 + speed2 + speed3 + speed4 + speed5;
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
@@ -42,7 +43,7 @@ if (aluno == null) {location.href = "aluno.html";}
 
 }}}
 
-} 
+}}
 
 function onError(error) {  }
 
