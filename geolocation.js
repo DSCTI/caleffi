@@ -16,7 +16,6 @@ var geo = localStorage.getItem(aluno + "-location");
 var result1 = position.coords.latitude;   
 var result2 = position.coords.longitude;              
 var speed = position.coords.speed;
-var speed = Math.floor(speed);
 
 if (speed != null) {
 
@@ -43,7 +42,7 @@ if (aluno == null) {location.href = "aluno.html";}
 
 }}}
 
-} }
+} 
 
 function onError(error) {  }
 
