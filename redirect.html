@@ -102,11 +102,11 @@ location.href = "aulas.html"; }
 var geo1 = aluno + "-location";
 var geo2 = aluno + "-location-backup";
 
-localStorage.setItem("start-data", data);
-localStorage.setItem("start-hora", hora);
-
 localStorage.setItem(geo1, "s");
 localStorage.setItem(geo2, "s");
+
+localStorage.setItem("start-data", data);
+localStorage.setItem("start-hora", hora);
 
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
