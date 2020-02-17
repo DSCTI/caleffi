@@ -1,9 +1,6 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var aluno = localStorage.getItem("cpf");
-var aula = localStorage.getItem("aula"); 
-
 function onDeviceReady() {
 
 window.plugins.insomnia.keepAwake();
@@ -13,6 +10,9 @@ function onSuccess(position) {
 
 var geo = localStorage.getItem(aluno + "-location");
 
+
+var aluno = localStorage.getItem("cpf");
+var aula = localStorage.getItem("aula"); 
 var result1 = position.coords.latitude;   
 var result2 = position.coords.longitude;  
 var speed = position.coords.speed;              
@@ -30,6 +30,7 @@ localStorage.setItem(aluno + "-location-backup", result);
 localStorage.setItem(aluno + "-location", result);
 
 if (aula == null) {location.href = "start.html";}
+if (aluno == null) {location.href = "aluno.html";}
 
 }}}
 
