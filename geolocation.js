@@ -25,14 +25,15 @@ var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo;
 if (speed != null) {
 if (result2 != null) {
 if (result1 != null) {
+if (geo != null) {
 
 localStorage.setItem(aluno + "-location-backup", result);
 localStorage.setItem(aluno + "-location", result);
 
-if (aula == null) {location.href = "start.html";}
+if (aula == null)  {location.href = "start.html";}
 if (aluno == null) {location.href = "aluno.html";}
 
-}}}
+}}}}
 
 } 
 
