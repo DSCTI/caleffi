@@ -17,20 +17,11 @@ var result1 = position.coords.latitude;
 var result2 = position.coords.longitude;  
 var speed = position.coords.speed;              
 
-var speed1 = (speed.charAt(0)); 
-var speed2 = (speed.charAt(1)); 
-var speed3 = (speed.charAt(2)); 
-var speed4 = (speed.charAt(3)); 
+var speed0 = (speed.charAt(0));   
 
-var speed = speed1 + speed2 + speed3 + speed4;  
-
-alert  (speed);
-
-var speed0 = (speed.charAt(0)); 
 alert  (speed0);
 
 if (speed0 > 0) {
-
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
