@@ -21,22 +21,17 @@ var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo;
 
-alert (geo);
-alert (result);
-
 
 if (speed != null) {
 if (result2 != null) {
 if (result1 != null) {
-if (result != null) {
-if (geo != null) {
 
 localStorage.setItem(aluno + "-location-backup", result);
 localStorage.setItem(aluno + "-location", result);
 
 if (aula == null) {location.href = "start.html";}
 
-}}}}}
+}}}
 
 } 
 
