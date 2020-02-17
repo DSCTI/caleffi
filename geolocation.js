@@ -16,7 +16,6 @@ var geo = localStorage.getItem(aluno + "-location");
 var result1 = position.coords.latitude;   
 var result2 = position.coords.longitude;              
 var speed = position.coords.speed;
-var speed = parseInt(speed);
 
 if (speed > 1) {
 
