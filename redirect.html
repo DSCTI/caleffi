@@ -56,17 +56,19 @@ var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno +
 
 $.ajax(settings).done(function (response) { 
 
-if (response == "restrito") { location.href = "restrito.html"; }
+if (response == "restrito") { location.href = "restrito.html"; } else {
+continue();
+}
 
 })
 
 .fail(function(response) {
-
+continue();
 });
 
 
 
-
+function continue() {
 
 
 var url2 = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
@@ -112,6 +114,9 @@ if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
 
 });
+
+
+}
 
 </script>
 
