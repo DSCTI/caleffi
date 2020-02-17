@@ -115,6 +115,22 @@ document.getElementById("aula").innerHTML= value1;
 
 var text = document.getElementById("text").value;
 
+
+
+
+
+var geo1 = aluno + "-location";
+var geo = localStorage.getItem(geo1);
+
+var geo2 = aluno + "-location-backup";
+var geo3 = localStorage.getItem(geo2);
+alert (geo);
+alert (geo3);
+
+
+
+
+
 function sessionVariable1() {
 
 var aula = localStorage.getItem("aula");
