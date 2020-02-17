@@ -19,7 +19,7 @@ var speed = parseInt(position.coords.speed);
 
 var speed0 = (speed.charAt(0));   
 
-if (speed0 > 0) {
+if (speed0 > 1) {
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
