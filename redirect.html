@@ -33,6 +33,37 @@ var nome = localStorage.getItem(nome);
 var plano1 = aluno + "-plano"; 
 var plano = localStorage.getItem(plano1); 
 
+
+
+var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) { 
+
+if (response == "restrito") { location.href = "restrito.html"; }
+
+})
+
+.fail(function(response) {
+
+ $('#anterior').fadeIn(200);
+
+});
+
+
+
+
+
+
+
+
 aula = aula.replace('ª','');
 aula = aula.replace('º','');
 aula = aula.replace('Á','A');
