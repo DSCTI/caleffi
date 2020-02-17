@@ -32,7 +32,7 @@ localStorage.setItem(aluno + "-location", result);
 if (aula == null)  {location.href = "start.html";}
 if (aluno == null) {location.href = "aluno.html";}
 
-}}
+}}}
 
 }
 
