@@ -8,11 +8,11 @@ document.addEventListener("backbutton", function (e) {  e.preventDefault(); }, f
 
 function onSuccess(position) {
 
-var geo = localStorage.getItem(aluno + "-location");
-
-
 var aluno = localStorage.getItem("cpf");
 var aula = localStorage.getItem("aula"); 
+
+var geo = localStorage.getItem(aluno + "-location");
+
 var result1 = position.coords.latitude;   
 var result2 = position.coords.longitude;  
 var speed = position.coords.speed;              
