@@ -14,15 +14,18 @@ var aula = localStorage.getItem("aula");
 var geo = localStorage.getItem(aluno + "-location");
 
 var result1 = position.coords.latitude;   
-var result2 = position.coords.longitude;              
-var speed = position.coords.speed;
+var result2 = position.coords.longitude;  
+var speed = position.coords.speed;              
 
 var now = new Date(Date.now());
 var hours = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 var result = "s"+result1+"e"+result2+"e" + hours + "e" + speed + geo;
 
+
+if (speed != null) {
 if (result2 != null) {
 if (result1 != null) {
+if (geo != null) {
 
 localStorage.setItem(aluno + "-location-backup", result);
 localStorage.setItem(aluno + "-location", result);
@@ -30,9 +33,9 @@ localStorage.setItem(aluno + "-location", result);
 if (aula == null)  {location.href = "start.html";}
 if (aluno == null) {location.href = "aluno.html";}
 
-}}
+}}}}
 
-}
+} 
 
 function onError(error) {  }
 
