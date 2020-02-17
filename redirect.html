@@ -34,6 +34,15 @@ var plano1 = aluno + "-plano";
 var plano = localStorage.getItem(plano1); 
 
 
+aula = aula.replace('ª','');
+aula = aula.replace('º','');
+aula = aula.replace('Á','A');
+aula = aula.replace('Ç','C');
+aula = aula.replace(' ',''); 
+aula = aula.replace(' BALIZA','');
+aula = aula.replace('BALIZA','');
+
+
 
 var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
@@ -53,8 +62,6 @@ if (response == "restrito") { location.href = "restrito.html"; }
 
 .fail(function(response) {
 
- $('#anterior').fadeIn(200);
-
 });
 
 
@@ -62,21 +69,11 @@ if (response == "restrito") { location.href = "restrito.html"; }
 
 
 
-
-
-aula = aula.replace('ª','');
-aula = aula.replace('º','');
-aula = aula.replace('Á','A');
-aula = aula.replace('Ç','C');
-aula = aula.replace(' ',''); 
-aula = aula.replace(' BALIZA','');
-aula = aula.replace('BALIZA','');
-
-var url = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+var url2 = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": url,
+    "url": url2,
     "method": "GET",
     "processData": false,
     "contentType": false
