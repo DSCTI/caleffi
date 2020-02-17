@@ -34,7 +34,7 @@ if (aluno == null) {location.href = "aluno.html";}
 
 }}
 
-}}
+}
 
 function onError(error) {  }
 
