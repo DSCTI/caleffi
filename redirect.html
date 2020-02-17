@@ -42,6 +42,32 @@ aula = aula.replace(' ','');
 aula = aula.replace(' BALIZA','');
 aula = aula.replace('BALIZA','');
 
+var url2 = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url2,
+    "method": "GET",
+    "processData": false,
+    "contentType": false
+  }
+
+$.ajax(settings).done(function (response) {
+
+if (response == "feita") { location.href = "feita.html"; }  
+
+})
+
+.fail(function(response) {});
+
+var geo1 = aluno + "-location";
+var geo2 = aluno + "-location-backup";
+
+localStorage.setItem(geo1, "s");
+localStorage.setItem(geo2, "s");
+
+localStorage.setItem("start-data", data);
+localStorage.setItem("start-hora", hora);
 
 
 var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
@@ -57,41 +83,7 @@ var url = "https://dscti.com.br/app/aula.php?aula=" + aula + "&aluno=" + aluno +
 $.ajax(settings).done(function (response) { 
 
 if (response == "restrito") { location.href = "restrito.html"; } else {
-continue();
-}
 
-})
-
-.fail(function(response) {
-continue();
-});
-
-
-
-function continue() {
-
-
-var url2 = "https://dscti.com.br/app/feita.php?aula=" + aula + "&aluno=" + aluno + "&plano=" + plano;
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": url2,
-    "method": "GET",
-    "processData": false,
-    "contentType": false
-  }
-
-$.ajax(settings).done(function (response) {
-
-var geo1 = aluno + "-location";
-var geo2 = aluno + "-location-backup";
-localStorage.setItem(geo1, "s");
-localStorage.setItem(geo2, "s");
-
-localStorage.setItem("start-data", data);
-localStorage.setItem("start-hora", hora);
-
-if (response == "feita") { location.href = "feita.html"; }  else {
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
 
@@ -100,23 +92,9 @@ location.href = "aulas.html"; }
 })
 
 .fail(function(response) {
-
-var geo1 = aluno + "-location";
-var geo2 = aluno + "-location-backup";
-
-localStorage.setItem(geo1, "s");
-localStorage.setItem(geo2, "s");
-
-localStorage.setItem("start-data", data);
-localStorage.setItem("start-hora", hora);
-
 if (aula.includes("EXAME")) { location.href = "1_exame.html"; } else {
 location.href = "aulas.html"; }
-
 });
-
-
-}
 
 </script>
 
